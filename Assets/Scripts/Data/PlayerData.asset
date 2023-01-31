@@ -20,7 +20,6 @@ MonoBehaviour:
   WallSlideVelocity: 1
   StartOffset: {x: 0.61, y: 1.1}
   StopOffset: {x: 0.39, y: 0.5}
-  DashCooldown: 1
   DashTime: 0.2
   DashVelocity: 25
   AirDrag: 10
@@ -34,3 +33,6 @@ MonoBehaviour:
   InteractLayer:
     serializedVersion: 2
     m_Bits: 128
+  ProjectileLayer:
+    serializedVersion: 2
+    m_Bits: 1024

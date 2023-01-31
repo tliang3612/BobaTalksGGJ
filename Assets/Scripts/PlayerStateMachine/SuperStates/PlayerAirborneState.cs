@@ -7,6 +7,7 @@ public class PlayerAirborneState : PlayerState
     private bool _isGrounded;
     private bool _isTouchingWall;
     private bool _isRising;
+    private bool _isOnJumpable;
 
     private bool _jumpInput;
     private bool _jumpInputStopped;
@@ -18,7 +19,7 @@ public class PlayerAirborneState : PlayerState
     
     
 
-    public PlayerAirborneState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey) : base(player, stateMachine, playerData, animKey)
+    public PlayerAirborneState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioClip audioToPlay) : base(player, stateMachine, playerData, animKey, audioToPlay)
     {
     }
 
@@ -29,6 +30,7 @@ public class PlayerAirborneState : PlayerState
         _isGrounded = _playerReference.CheckIfGrounded();
         _isRising = _playerReference.CheckIfRising();
         _isTouchingWall = _playerReference.CheckIfTouchingWall();
+        _isOnJumpable = _playerReference.CheckIfOnJumpable();
 
     }
 
@@ -48,14 +50,17 @@ public class PlayerAirborneState : PlayerState
         _inputX = _playerReference.InputController.NormalizedInputX;
         _dashInput = _playerReference.InputController.DashInputPressed;
 
-        HandleJumpMultipler();
-
-        if (_isGrounded && !_isRising) // Check for if player landed
+        if(_isOnJumpable && !_isRising)
+        {
+            _stateMachine.TransitionState(_playerReference.JumpState);
+        }
+        else if (_isGrounded && !_isRising) // Check for if player landed
         {
             _stateMachine.TransitionState(_playerReference.LandState);
         }  
-        else if(_jumpInput && _playerReference.JumpState.CanJump()) // Check if can jump in air
+        else if(_jumpInput && _playerReference.JumpState.CanJump() && !_isOnJumpable) // Check if can jump in air
         {
+            HandleJumpMultipler();
             _playerReference.InputController.UseJumpInput();
             _stateMachine.TransitionState(_playerReference.JumpState);
         }
@@ -89,12 +94,9 @@ public class PlayerAirborneState : PlayerState
 
     private void HandleJumpMultipler()
     {
-        if (_isRising)
-        {
-            if (_jumpInputStopped)
-            {
-                _playerReference.SetVelocityY(_playerReference.CurrentVelocity.y * _playerData.HeldJumpHeightMultiplier);
-            }             
+        if (_isRising &&  _jumpInputStopped)
+        {         
+            _playerReference.SetVelocityY(_playerReference.CurrentVelocity.y * _playerData.HeldJumpHeightMultiplier);                        
         }
     }
 

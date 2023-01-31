@@ -9,7 +9,7 @@ public class PlayerInteractState : PlayerAbilityState
     private bool _interactStateFinished;
     private bool _interactInput;
 
-    public PlayerInteractState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey) : base(player, stateMachine, playerData, animKey)
+    public PlayerInteractState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioClip audioToPlay) : base(player, stateMachine, playerData, animKey, audioToPlay)
     {
     }
 
@@ -38,6 +38,7 @@ public class PlayerInteractState : PlayerAbilityState
     {
         base.OnStateEnter();
         Interactable.Interact();
+        _playerReference.SetVelocityToZero();
     }
 
     public override void OnStateExit()

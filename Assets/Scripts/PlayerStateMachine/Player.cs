@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //State Machine
-    public PlayerStateMachine StateMachine { get; private set; } 
+    public PlayerStateMachine StateMachine { get; private set; }
+
+    [SerializeField] private int _maxPlayerHealth;
+    private int _currentPlayerHealth;
 
     #region PlayerState Variables  
     public PlayerIdleState IdleState { get; private set; }
@@ -18,12 +22,18 @@ public class Player : MonoBehaviour
     public PlayerInteractState InteractState { get; private set; }
     #endregion
 
+    #region AudioClips
+    public AudioClip JumpAudioClip;
+    public AudioClip RunAudioClip;
+    public AudioClip DeathAudioClip;
+
+    #endregion
+
     #region Reference Variables
     public PlayerInputController InputController { get; private set; }
     public Animator Anim { get; private set; }
     public Rigidbody2D Rb { get; private set; }
     public SpriteRenderer PlayerSprite { get; private set; }
-
     [SerializeField] private PlayerData _playerData;
     #endregion
 
@@ -41,26 +51,26 @@ public class Player : MonoBehaviour
         get { return IsFacingRight ? 1 : -1; }
         private set { }
     }
-    #endregion  
+    #endregion
+
+    #region Events
+    public Action PlayerDeathEvent;
+    public Action<int> PlayerHealthChangedEvent;
+
+    #endregion
 
     #region Unity Callback Functions
     private void Awake()
     {
         StateMachine = new PlayerStateMachine();
+        //DeathAudioClip = resources.load(blah);
 
         PlayerSprite = GetComponent<SpriteRenderer>();
         InputController = GetComponent<PlayerInputController>();
         Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody2D>();
 
-        IdleState = new PlayerIdleState(this, StateMachine, _playerData, "Idle");
-        MoveState = new PlayerMoveState(this, StateMachine, _playerData, "Move");
-        JumpState = new PlayerJumpState(this, StateMachine, _playerData, "Airborne"); //JumpState would just call airborne animation
-        AirborneState = new PlayerAirborneState(this, StateMachine, _playerData, "Airborne");
-        LandState = new PlayerLandState(this, StateMachine, _playerData, "Land");
-        WallSlideState = new PlayerWallSlideState(this, StateMachine, _playerData, "WallSlide");
-        DashState = new PlayerDashState(this, StateMachine, _playerData, "Dash");
-        InteractState = new PlayerInteractState(this, StateMachine, _playerData, "Idle");
+        InitializeStates();
 
         FindObjectOfType<DialogueManager>().PowerupReceivedEvent += OnPowerupReceived;
     }
@@ -68,6 +78,19 @@ public class Player : MonoBehaviour
     {
         IsFacingRight = true;
         StateMachine.Initialize(IdleState);
+        _currentPlayerHealth = _maxPlayerHealth;      
+    }
+
+    private void InitializeStates()
+    {
+        IdleState = new PlayerIdleState(this, StateMachine, _playerData, "Idle", null);
+        MoveState = new PlayerMoveState(this, StateMachine, _playerData, "Move", null);
+        JumpState = new PlayerJumpState(this, StateMachine, _playerData, "Airborne", null); //JumpState would just call airborne animation
+        AirborneState = new PlayerAirborneState(this, StateMachine, _playerData, "Airborne", null);
+        LandState = new PlayerLandState(this, StateMachine, _playerData, "Land", null);
+        WallSlideState = new PlayerWallSlideState(this, StateMachine, _playerData, "WallSlide", null);
+        DashState = new PlayerDashState(this, StateMachine, _playerData, "Dash", null);
+        InteractState = new PlayerInteractState(this, StateMachine, _playerData, "Idle", null);
     }
 
     private void Update()
@@ -142,6 +165,18 @@ public class Player : MonoBehaviour
         return Physics2D.Raycast(_wallDetector.position, Vector2.right * FacingDirection, _playerData.WallDetectionDistance, _playerData.GroundLayer);
     }
 
+    public bool CheckIfOnJumpable()
+    {
+        var hit = Physics2D.OverlapCircle(_groundDetector.position, _playerData.GroundDetectionRadius, _playerData.ProjectileLayer);
+        if(hit && hit.GetComponent<IJumpable>() != null)
+        {
+            return true;
+        }
+
+        return false;
+        
+    }
+
     /// <summary>
     /// Returns null if there is no interactable
     /// </summary>
@@ -174,8 +209,30 @@ public class Player : MonoBehaviour
         PlayerSprite.flipX = !IsFacingRight;
     }   
 
+    public void TakeDamage()
+    {
+        _currentPlayerHealth--;
+        PlayerHealthChangedEvent?.Invoke(_currentPlayerHealth);
+
+        if (_currentPlayerHealth <= 0)
+            Die();
+    }
+
+    public void IncreaseHealth()
+    {
+        _currentPlayerHealth++;
+        Mathf.Clamp(_currentPlayerHealth, 0, 3);
+        PlayerHealthChangedEvent?.Invoke(_currentPlayerHealth);
+    }
+
+    public void Die()
+    {
+        PlayerDeathEvent?.Invoke();
+    }
+
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
     private void AnimationFinishedTrigger() => StateMachine.CurrentState.AnimationFinishedTrigger();
+
 
     #endregion
 

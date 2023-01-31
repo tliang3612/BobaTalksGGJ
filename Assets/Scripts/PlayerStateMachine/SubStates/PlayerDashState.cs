@@ -12,7 +12,7 @@ public class PlayerDashState : PlayerAbilityState
 
     private Vector2 _dashDirection;
 
-    public PlayerDashState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey) : base(player, stateMachine, playerData, animKey)
+    public PlayerDashState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioClip audioToPlay) : base(player, stateMachine, playerData, animKey, audioToPlay)
     {
     }
 

@@ -1,11 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 [CreateAssetMenu(fileName = "CreatePlayerData", menuName = "PlayerData/BaseData")]
 public class PlayerData : ScriptableObject
 {
-
     [Header("Move State")]
     public float MovementVelocity = 10;
 
@@ -35,4 +36,5 @@ public class PlayerData : ScriptableObject
     public float WallDetectionDistance = 1;
     public float InteractDetectionRadius;
     public LayerMask InteractLayer;
+    public LayerMask ProjectileLayer;
 }

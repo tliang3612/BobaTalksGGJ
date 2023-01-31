@@ -13,14 +13,15 @@ public abstract class PlayerState
     protected bool _isExitingState;
 
     private string _animBoolKey;
-    private string _requiredPowerup;
+    private AudioClip _audioClipToPlay;
 
-    public PlayerState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey)
+    public PlayerState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioClip audioToPlay)
     {
         _playerReference = player;
         _stateMachine = stateMachine;
         _playerData = playerData;
         _animBoolKey = animKey;
+        _audioClipToPlay = audioToPlay;
     }
 
     public virtual void OnStateEnter()

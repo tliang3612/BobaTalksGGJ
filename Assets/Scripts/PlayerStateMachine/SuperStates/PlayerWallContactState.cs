@@ -9,7 +9,7 @@ public class PlayerWallContactState : PlayerState
     protected int _inputX;
 
 
-    public PlayerWallContactState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey) : base(player, stateMachine, playerData, animKey)
+    public PlayerWallContactState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioClip audioToPlay) : base(player, stateMachine, playerData, animKey,audioToPlay)
     {
     }
 

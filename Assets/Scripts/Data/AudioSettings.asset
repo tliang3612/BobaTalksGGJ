@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 128626eb4491ad846893d0b94faff721, type: 3}
+  m_Name: AudioSettings
+  m_EditorClassIdentifier: 
+  MasterVolumeName: MasterVolume
+  MusicVolumeName: MusicVolume
+  SfxVolumeName: SfxVolume
+  TargetAudioMixer: {fileID: 24100000, guid: 3af1d1181ef23dc4f9ff703dfd143d47, type: 2}
+  MasterAudioMixerGroup: {fileID: 24300002, guid: 3af1d1181ef23dc4f9ff703dfd143d47, type: 2}
+  MusicAudioMixerGroup: {fileID: 6053414588138172168, guid: 3af1d1181ef23dc4f9ff703dfd143d47, type: 2}
+  SfxAudioMixerGroup: {fileID: 281417865705655583, guid: 3af1d1181ef23dc4f9ff703dfd143d47, type: 2}
+  MixerValuesMultiplier: 20
+  MasterVolume: 1
+  MasterOn: 1
+  MusicVolume: 1
+  MusicOn: 1
+  SfxVolume: 1
+  SfxOn: 1

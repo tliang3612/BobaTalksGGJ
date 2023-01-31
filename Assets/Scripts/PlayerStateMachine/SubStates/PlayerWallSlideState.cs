@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerWallSlideState : PlayerWallContactState
 {
-    public PlayerWallSlideState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey) : base(player, stateMachine, playerData, animKey)
+    public PlayerWallSlideState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioClip audioToPlay) : base(player, stateMachine, playerData, animKey,  audioToPlay)
     {
     }
 

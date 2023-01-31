@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerLandState : PlayerGroundedState
 {
-    public PlayerLandState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey) : base(player, stateMachine, playerData, animKey)
+    public PlayerLandState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioClip audioToPlay) : base(player, stateMachine, playerData, animKey, audioToPlay)
     {
     }
 
@@ -33,12 +33,13 @@ public class PlayerLandState : PlayerGroundedState
 
     public override void OnStateEnter()
     {
-        base.OnStateEnter();
+        base.OnStateEnter();        
     }
 
     public override void OnStateExit()
     {
         base.OnStateExit();
+        _playerReference.SetVelocityToZero();
     }
 
     public override void PhysicsUpdate()
