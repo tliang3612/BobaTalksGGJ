@@ -1,0 +1,34 @@
+{
+    "name": "GUI",
+    "maps": [
+        {
+            "name": "GUI",
+            "id": "c408c93a-864a-4b10-82d7-3a893df98fca",
+            "actions": [
+                {
+                    "name": "Reload Scene",
+                    "type": "Button",
+                    "id": "7b6634ca-aeca-4c15-9f20-7f3df696bfc8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "68e6160f-5afc-421d-8b59-3f9b834ed6a6",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reload Scene",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

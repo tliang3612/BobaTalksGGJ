@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1794e77d3003f49b7e544354e4893b, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  Lines:
+  - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
+    LineText: Hi this is player speaking
+  - CharacterSpeaking: {fileID: 11400000, guid: 692ecf31d9d8de1409ad4977f7b4ea35, type: 2}
+    LineText: Hi this is npc speaking
+  - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
+    LineText: player speaking again
+  - CharacterSpeaking: {fileID: 11400000, guid: 692ecf31d9d8de1409ad4977f7b4ea35, type: 2}
+    LineText: Im tired
+  - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
+    LineText: same
