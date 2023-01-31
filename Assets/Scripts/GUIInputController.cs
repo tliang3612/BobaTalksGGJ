@@ -8,6 +8,7 @@ public class GUIInputController : MonoBehaviour
     private PlayerInput _playerInput;
 
     public bool RInputPressed { get; private set; }
+    public bool ClickInputPressed { get; private set; }
 
     private void Awake()
     {
@@ -35,6 +36,23 @@ public class GUIInputController : MonoBehaviour
     }
 
     public void UseRInput() => RInputPressed = false;
+    #endregion
+
+    #region Click
+    public void OnClickInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            ClickInputPressed = true;
+        }
+
+        if (context.canceled)
+        {
+            ClickInputPressed = false;
+        }
+    }
+
+    public void UseClickInput() => ClickInputPressed = false;
     #endregion
 
 }
