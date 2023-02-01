@@ -50,7 +50,10 @@ public class PlayerAirborneState : PlayerState
         _inputX = _playerReference.InputController.NormalizedInputX;
         _dashInput = _playerReference.InputController.DashInputPressed;
 
-        if(_isOnJumpable && !_isRising)
+        _playerReference.Anim.SetFloat("VelocityX", Mathf.Abs(_playerReference.CurrentVelocity.x));
+        _playerReference.Anim.SetFloat("VelocityY", _playerReference.CurrentVelocity.y);
+        
+        if (_isOnJumpable && !_isRising)
         {
             _stateMachine.TransitionState(_playerReference.JumpState);
         }
@@ -77,8 +80,7 @@ public class PlayerAirborneState : PlayerState
             _playerReference.HandleFlip(_inputX);
             _playerReference.SetVelocityX(_playerData.MovementVelocity * _inputX);
 
-            _playerReference.Anim.SetFloat("VelocityY", _playerReference.CurrentVelocity.y);
-            _playerReference.Anim.SetFloat("VelocityX", _playerReference.CurrentVelocity.x);
+            
         }
     }         
 

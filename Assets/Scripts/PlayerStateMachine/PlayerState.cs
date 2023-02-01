@@ -27,7 +27,7 @@ public abstract class PlayerState
     {
         _startTime = Time.time;
         _playerReference.Anim.SetBool(_animBoolKey, true);
-        Debug.Log(_animBoolKey);
+        //Debug.Log(_animBoolKey);
         _isAnimationFinished = false;
         _isExitingState = false;
 

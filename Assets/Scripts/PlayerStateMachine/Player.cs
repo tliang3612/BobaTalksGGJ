@@ -43,7 +43,12 @@ public class Player : MonoBehaviour
     #endregion
 
     #region MovementVariables
-    public Vector2 CurrentVelocity { get; private set; }
+    public Vector2 CurrentVelocity
+    {
+        get { return Rb.velocity; }
+        private set { }
+    }
+
     public bool IsFacingRight { get; private set; }
     public int FacingDirection
     {
@@ -119,20 +124,12 @@ public class Player : MonoBehaviour
     #region Setters
     public void SetVelocityX(float velocityX)
     {
-        Vector2 newVelocity = new Vector2();
-
-        newVelocity.Set(velocityX, CurrentVelocity.y);
-        Rb.velocity = newVelocity;
-        CurrentVelocity = newVelocity;
+        Rb.velocity = new Vector2(velocityX, Rb.velocity.y);
     }
 
     public void SetVelocityY(float velocityY)
     {
-        Vector2 newVelocity = new Vector2();
-
-        newVelocity.Set(CurrentVelocity.x, velocityY);
-        Rb.velocity = newVelocity;
-        CurrentVelocity = newVelocity;
+        Rb.velocity = new Vector2(Rb.velocity.x, velocityY);
     }
 
     public void SetVelocityToZero()
@@ -271,6 +268,6 @@ public class Player : MonoBehaviour
     {
         Gizmos.DrawWireSphere(_groundDetector.position, _playerData.GroundDetectionRadius);
         Gizmos.DrawWireSphere(transform.position, _playerData.InteractDetectionRadius);
-        Gizmos.DrawRay(_wallDetector.position, Vector2.right * _playerData.WallDetectionDistance);
+        Gizmos.DrawRay(_wallDetector.position, Vector2.right * FacingDirection * _playerData.WallDetectionDistance);
     }
 }

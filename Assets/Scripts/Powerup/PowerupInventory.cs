@@ -14,7 +14,7 @@ public static class PowerupInventory
 {
     private static Dictionary<PowerupType, bool> _powerupInventory = new Dictionary<PowerupType, bool>()
     {
-        {PowerupType.Crescendo, false },
+        {PowerupType.Crescendo, true },
         {PowerupType.DoubleJump, false },
         {PowerupType.Vase, false },
         {PowerupType.LuckyCoin, false }

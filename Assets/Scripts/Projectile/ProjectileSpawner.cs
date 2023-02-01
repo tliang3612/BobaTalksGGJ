@@ -10,6 +10,8 @@ public class ProjectileSpawner : MonoBehaviour
     [SerializeField] private Vector2 _projectileSpawnRange;
     [SerializeField] private GameObject _projectileToSpawn;
     [SerializeField] private float _projectileSpawnDelay;
+    [SerializeField] private float _projectileDuration;
+    [SerializeField] private bool _isGroundBased;
     [SerializeField] private AudioClip _audioToPlay;
 
     private AudioManager _audioManager;
@@ -19,6 +21,7 @@ public class ProjectileSpawner : MonoBehaviour
     private float _lastProjectileSpawnTime;
     private List<Projectile> _projectileList;
 
+   
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -54,20 +57,25 @@ public class ProjectileSpawner : MonoBehaviour
         
         _lastProjectileSpawnTime = Time.time;
         var projectile = Instantiate(_projectileToSpawn, spawnPoint, Quaternion.identity, transform).GetComponent<Projectile>();
-        projectile.FireProjectile(_projectileDirection, spawnPoint, _projectileSpeed);
+        projectile.FireProjectile(_projectileDirection, _projectileDuration, _projectileSpeed,  _isGroundBased);
+        //projectile.ProjectileDestroyedEvent += OnProjectileDestroyed;
 
         return projectile;
     }
+
+    /*public void OnProjectileDestroyed(Projectile projectile)
+    {
+        //_projectileList.Remove(projectile);
+    }*/
 
     public void StopSpawn()
     {
         _canSpawn = false;
 
-        foreach (var projectile in _projectileList)
+        foreach (var projectile in GetComponentsInChildren<Projectile>())
         {
-            projectile.gameObject.SetActive(false);
-            
-        }        
+            projectile.DestroyProjectile();          
+        }
     }
 
     private void OnDrawGizmos()

@@ -21,8 +21,6 @@ MonoBehaviour:
   NumJumps: 2
   AirborneGracePeriod: 0.3
   WallSlideVelocity: 1
-  StartOffset: {x: 0.61, y: 1.1}
-  StopOffset: {x: 0.39, y: 0.5}
   DashTime: 0.2
   DashVelocity: 25
   AirDrag: 10
@@ -31,7 +29,7 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 256
-  WallDetectionDistance: 0.47
+  WallDetectionDistance: 0.62
   InteractDetectionRadius: 2
   InteractLayer:
     serializedVersion: 2

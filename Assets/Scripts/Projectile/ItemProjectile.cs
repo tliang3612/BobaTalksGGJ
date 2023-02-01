@@ -24,7 +24,6 @@ public class ItemProjectile : Projectile
         }
         else if(playerHit)
         {
-            Debug.Log("true");
             ItemCollectedEvent?.Invoke();
             Destroy(gameObject);
         }

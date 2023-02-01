@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,20 @@ using UnityEngine;
 public class Projectile : MonoBehaviour, IJumpable
 {
     protected float _speed;
+    protected float _duration;
+    protected bool _isDurationBased;
+    protected bool _isGroundBased;
+    protected Vector2 _directionToShoot;
     protected Rigidbody2D _rb;
+
+    protected float _startTime;
 
     [SerializeField] protected float _detectionRadius;
     [SerializeField] protected float _detectionXOffset;
     [SerializeField] protected LayerMask _groundLayer;
     [SerializeField] protected LayerMask _playerLayer;
+
+    //public Action<Projectile> ProjectileDestroyedEvent;
 
     private void FixedUpdate()
     {
@@ -27,19 +36,40 @@ public class Projectile : MonoBehaviour, IJumpable
             Destroy(gameObject);
         }
 
-        if (groundHit)
+        if(groundHit)
         {
-            _rb.velocity = Vector2.zero;
-            Destroy(gameObject);
+            if(_isGroundBased)
+                Destroy(gameObject);
         }
+
+        if(_isDurationBased)
+        {
+            if(Time.time > _startTime + _duration)
+            {
+                Destroy(gameObject);
+            }
+        }
+        
     }
 
-    public void FireProjectile(Vector2 directionToShoot, Vector2 startPos, float speed)
+    public void FireProjectile(Vector2 directionToShoot, float duration, float speed, bool isGroundBased)
     {
         _rb = GetComponent<Rigidbody2D>();
 
+        _isDurationBased = duration > 0;
+        _isGroundBased = isGroundBased;
+        _duration = duration;
+        _directionToShoot = directionToShoot;
         _speed = speed;
+        _startTime = Time.time;
+
         _rb.velocity = directionToShoot * _speed;
+        _rb.bodyType = RigidbodyType2D.Dynamic;
+    }
+
+    public void DestroyProjectile()
+    {
+        Destroy(gameObject);
     }
 
     protected void OnDrawGizmos()
