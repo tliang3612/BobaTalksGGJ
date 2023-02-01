@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour, IJumpable, IKnockbackable
         Collider2D playerDamageHit = Physics2D.OverlapCircle(transform.position, _damageRadius, _playerLayer);
         Collider2D groundHit = Physics2D.OverlapCircle(transform.position, _damageRadius, _groundLayer);
 
-        if (playerDamageHit)
+        if (playerDamageHit && playerDamageHit.GetComponent<Player>().CanInteractWithCollideables)
         {
             playerDamageHit.GetComponent<Player>().TakeDamage();
             Destroy(gameObject);

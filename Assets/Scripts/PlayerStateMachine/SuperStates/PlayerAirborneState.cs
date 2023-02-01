@@ -19,7 +19,7 @@ public class PlayerAirborneState : PlayerState
     
     
 
-    public PlayerAirborneState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioClip audioToPlay) : base(player, stateMachine, playerData, animKey, audioToPlay)
+    public PlayerAirborneState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey) : base(player, stateMachine, playerData, animKey)
     {
     }
 

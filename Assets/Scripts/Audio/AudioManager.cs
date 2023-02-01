@@ -9,22 +9,46 @@ public enum TrackType
     Sfx
 }
 
+public class AudioData
+{
+	public AudioData(AudioClip clip, AudioSource source, AudioManager manager)
+    {
+		AudioClip = clip;
+		AudioSource = source;
+		AudioManager = manager;
+    }
+
+	public AudioClip AudioClip;
+	public AudioSource AudioSource;
+	public AudioManager AudioManager;
+}
+
 public class AudioManager : MonoBehaviour
 {  
-	public AudioSettings AudioSettings;
+	public AudioSettings AudioSetting;
 
-	public void PlaySound(AudioClip audioClip, AudioSource audioSource, TrackType trackType, bool shouldLoop)
+    private void Start()
+    {
+		AudioSetting.SetTrackVolume(TrackType.Master, AudioSetting.MasterVolume);
+		AudioSetting.SetTrackVolume(TrackType.Sfx, AudioSetting.SfxVolume);
+		AudioSetting.SetTrackVolume(TrackType.Music, AudioSetting.MusicVolume);
+	}
+
+    public void PlaySound(AudioClip audioClip, AudioSource audioSource, TrackType trackType, bool shouldLoop)
     {
 		audioSource.clip = audioClip;
-
+		
 		switch (trackType)
 		{
 			case TrackType.Music:
-				audioSource.outputAudioMixerGroup = AudioSettings.MusicAudioMixerGroup;
+				if (audioSource.isPlaying)
+					return;
+
+				audioSource.outputAudioMixerGroup = AudioSetting.MusicAudioMixerGroup;
 				audioSource.Play();
 				break;
 			case TrackType.Sfx:
-				audioSource.outputAudioMixerGroup = AudioSettings.SfxAudioMixerGroup;
+				audioSource.outputAudioMixerGroup = AudioSetting.SfxAudioMixerGroup;
 				audioSource.PlayOneShot(audioClip);
 				break;
 		}

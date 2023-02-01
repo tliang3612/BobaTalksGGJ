@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
@@ -22,25 +23,23 @@ public class Player : MonoBehaviour
     public PlayerInteractState InteractState { get; private set; }
     #endregion
 
-    #region AudioClips
-    public AudioClip JumpAudioClip;
-    public AudioClip RunAudioClip;
-    public AudioClip DeathAudioClip;
-
-    #endregion
-
     #region Reference Variables
+    [SerializeField] private PlayerData _playerData;
+
     public PlayerInputController InputController { get; private set; }
     public Animator Anim { get; private set; }
     public Rigidbody2D Rb { get; private set; }
     public SpriteRenderer PlayerSprite { get; private set; }
-    [SerializeField] private PlayerData _playerData;
+    public Collider2D PlayerCollider { get; private set; }
+    public bool CanInteractWithCollideables { get; set; }
+    
+    private AudioSource _audioSource;
+    private AudioManager _audioManager;
     #endregion
 
     #region Components
     [SerializeField] private Transform _groundDetector;
     [SerializeField] private Transform _wallDetector;
-
     #endregion
 
     #region MovementVariables
@@ -54,7 +53,7 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Events
-    public Action PlayerDeathEvent;
+    public Action<Player> PlayerDeathEvent;
     public Action<int> PlayerHealthChangedEvent;
 
     #endregion
@@ -63,9 +62,12 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         StateMachine = new PlayerStateMachine();
-        //DeathAudioClip = resources.load(blah);
+
+        _audioSource = GetComponent<AudioSource>();
+        _audioManager = FindObjectOfType<AudioManager>();
 
         PlayerSprite = GetComponent<SpriteRenderer>();
+        PlayerCollider = GetComponent<Collider2D>();
         InputController = GetComponent<PlayerInputController>();
         Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody2D>();
@@ -76,32 +78,36 @@ public class Player : MonoBehaviour
     }
     private void Start()
     {
+        PlayerSprite.color = Color.white;
         IsFacingRight = true;
         StateMachine.Initialize(IdleState);
-        _currentPlayerHealth = _maxPlayerHealth;      
+        _currentPlayerHealth = _maxPlayerHealth;
+        CanInteractWithCollideables = true;
     }
 
     private void InitializeStates()
     {
-        IdleState = new PlayerIdleState(this, StateMachine, _playerData, "Idle", null);
-        MoveState = new PlayerMoveState(this, StateMachine, _playerData, "Move", null);
-        JumpState = new PlayerJumpState(this, StateMachine, _playerData, "Airborne", null); //JumpState would just call airborne animation
-        AirborneState = new PlayerAirborneState(this, StateMachine, _playerData, "Airborne", null);
-        LandState = new PlayerLandState(this, StateMachine, _playerData, "Land", null);
-        WallSlideState = new PlayerWallSlideState(this, StateMachine, _playerData, "WallSlide", null);
-        DashState = new PlayerDashState(this, StateMachine, _playerData, "Dash", null);
-        InteractState = new PlayerInteractState(this, StateMachine, _playerData, "Idle", null);
+        IdleState = new PlayerIdleState(this, StateMachine, _playerData, "Idle");
+        MoveState = new PlayerMoveState(this, StateMachine, _playerData, "Move");
+        JumpState = new PlayerJumpState(this, StateMachine, _playerData, "Airborne", new AudioData(_playerData.JumpAudio, _audioSource, _audioManager)); //JumpState would just call airborne animation
+        AirborneState = new PlayerAirborneState(this, StateMachine, _playerData, "Airborne");
+        LandState = new PlayerLandState(this, StateMachine, _playerData, "Land");
+        WallSlideState = new PlayerWallSlideState(this, StateMachine, _playerData, "WallSlide");
+        DashState = new PlayerDashState(this, StateMachine, _playerData, "Dash");
+        InteractState = new PlayerInteractState(this, StateMachine, _playerData, "Idle");
     }
 
     private void Update()
     {
         CurrentVelocity = Rb.velocity;
-        StateMachine.CurrentState.LogicUpdate();
+        if (StateMachine != null)
+            StateMachine.CurrentState.LogicUpdate();
     }
 
     private void FixedUpdate()
     {
-        StateMachine.CurrentState.PhysicsUpdate();
+        if(StateMachine != null)
+            StateMachine.CurrentState.PhysicsUpdate();
     }
     #endregion
 
@@ -144,6 +150,11 @@ public class Player : MonoBehaviour
     public void SetPosition(Vector2 position)
     {
         transform.position = position;
+    }
+
+    public void FadePlayerOut()
+    {
+        PlayerSprite.DOFade(0, _playerData.FadeDuration);
     }
 
     #endregion
@@ -227,7 +238,17 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        PlayerDeathEvent?.Invoke();
+        StateMachine.CurrentState.OnStateExit();
+        StateMachine = null;
+        CanInteractWithCollideables = false;
+        PlayerDeathEvent?.Invoke(this);
+    }
+
+    public IEnumerator PlayDeathAnimation()
+    {
+        FadePlayerOut();
+        
+        yield return new WaitForSeconds(_playerData.FadeDuration);
     }
 
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();

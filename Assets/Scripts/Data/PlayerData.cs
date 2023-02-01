@@ -7,6 +7,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CreatePlayerData", menuName = "PlayerData/BaseData")]
 public class PlayerData : ScriptableObject
 {
+
+    [Header("Audio Clips")]
+    public AudioClip DeathAudio;
+    public AudioClip JumpAudio;
+
+    [Header("Other Data")]
+    public float FadeDuration = 1.5f;
+
     [Header("Move State")]
     public float MovementVelocity = 10;
 
@@ -18,10 +26,6 @@ public class PlayerData : ScriptableObject
 
     [Header("Wall Slide State")]
     public float WallSlideVelocity;
-
-    [Header("Ledge Climb State")]
-    public Vector2 StartOffset;
-    public Vector2 StopOffset;
 
     [Header("Dash State")]
     public float DashTime;

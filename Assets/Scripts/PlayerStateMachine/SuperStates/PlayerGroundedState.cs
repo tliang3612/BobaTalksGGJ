@@ -15,7 +15,7 @@ public class PlayerGroundedState : PlayerState
     private bool _interactInput;
     private IInteractable _currentInteractable;
 
-    public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioClip audioToPlay) : base(player, stateMachine, playerData, animKey, audioToPlay)
+    public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioData audioData = null) : base(player, stateMachine, playerData, animKey, audioData)
     {
 
     }

@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,31 +6,45 @@ using UnityEngine;
 public class PianoGameManager : MonoBehaviour
 {
     [SerializeField] private List<int> _correctKeyOrder;
+    [SerializeField] private PianoKey[] _pianoKeys;
+    [SerializeField] private AudioClip[] _noteAudioClips;
+    [SerializeField] private AudioClip _incorrectKeyClip;
+    [SerializeField] private ProjectileSpawner _projectileSpawner;
+    [SerializeField] private GameObject _victoryDoor;
+
     [field: SerializeField]
     private List<int> _currentKeyOrder;
     [field: SerializeField]
     private int _nextValidKeyIndex;
 
-    [SerializeField] private PianoKey[] _pianoKeys;
-    [SerializeField] private ProjectileSpawner _projectileSpawner;
+    private AudioManager _audioManager;
+    private AudioSource _audioSource;
+    private BGM _bgm;
 
-    
+    private void Awake()
+    {
+        _audioManager = FindObjectOfType<AudioManager>();
+        _audioSource = GetComponent<AudioSource>();
+        _bgm = FindObjectOfType<BGM>();
+    }
 
     private void Start()
     {
         _nextValidKeyIndex = 0;
         _currentKeyOrder = new List<int>();
 
-        for(int i=0; i < _pianoKeys.Length; i++)
+
+        for (int i = 0; i < _pianoKeys.Length; i++)
         {
-            _pianoKeys[i].SetKeyNum(i);
+            _pianoKeys[i].SetKey(i, _noteAudioClips[i]);
             _pianoKeys[i].PianoKeyPressedEvent += OnPianoKeyPressed;
         }
     }
 
-    private void OnPianoKeyPressed(int keyNum)
+    private void OnPianoKeyPressed(int keyNum, AudioClip clip)
     {
         _currentKeyOrder.Add(keyNum);
+        _audioManager.PlaySound(clip, _audioSource, TrackType.Sfx, false);
         HandleValidOrder();
     }
 
@@ -40,9 +54,11 @@ public class PianoGameManager : MonoBehaviour
         {
             OnIncorrectKey();
         }
-        else if(_currentKeyOrder.Count == _correctKeyOrder.Count)
+        else if (_currentKeyOrder.Count == _correctKeyOrder.Count)
         {
             _projectileSpawner.CanSpawn = false;
+            _bgm.StopMusic();
+            _victoryDoor.SetActive(true);
             Debug.Log("You Win!");
         }
         else
@@ -53,12 +69,13 @@ public class PianoGameManager : MonoBehaviour
 
     private void OnIncorrectKey()
     {
+        _audioManager.PlaySound(_incorrectKeyClip, _audioSource, TrackType.Sfx, false);
         _nextValidKeyIndex = 0;
         _currentKeyOrder.Clear();
         Debug.Log("Wrong Key Pressed");
     }
 
-    
+
 
 
 

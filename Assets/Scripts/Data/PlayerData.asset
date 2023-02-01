@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f5d73eb7806744aac6714de68af4ad, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
+  DeathAudio: {fileID: 0}
+  JumpAudio: {fileID: 8300000, guid: 279b02ecceb9ffd408bdae6e60f5d592, type: 3}
+  FadeDuration: 1.5
   MovementVelocity: 7
   JumpVelocity: 12
   HeldJumpHeightMultiplier: 0.9

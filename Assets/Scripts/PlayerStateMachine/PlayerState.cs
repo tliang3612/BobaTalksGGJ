@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class PlayerState
@@ -13,15 +11,16 @@ public abstract class PlayerState
     protected bool _isExitingState;
 
     private string _animBoolKey;
-    private AudioClip _audioClipToPlay;
 
-    public PlayerState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioClip audioToPlay)
+    private AudioData _audioData;
+
+    public PlayerState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioData audioData = null)
     {
         _playerReference = player;
         _stateMachine = stateMachine;
         _playerData = playerData;
         _animBoolKey = animKey;
-        _audioClipToPlay = audioToPlay;
+        _audioData = audioData;
     }
 
     public virtual void OnStateEnter()
@@ -31,6 +30,9 @@ public abstract class PlayerState
         Debug.Log(_animBoolKey);
         _isAnimationFinished = false;
         _isExitingState = false;
+
+        if(_audioData != null)
+            _audioData.AudioManager.PlaySound(_audioData.AudioClip, _audioData.AudioSource, TrackType.Sfx, false);
     }
 
     public virtual void OnStateExit()

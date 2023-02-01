@@ -7,8 +7,9 @@ public class PianoKey : MonoBehaviour
 {
     private SpriteRenderer _sprite;
 
-    public Action<int> PianoKeyPressedEvent;
+    public Action<int, AudioClip> PianoKeyPressedEvent;
     private int _keyNum;
+    private AudioClip _audioClip;
 
     private void Awake()
     {
@@ -43,16 +44,17 @@ public class PianoKey : MonoBehaviour
         _sprite.color = Color.white;
     }*/
 
-    public void SetKeyNum(int keyNum)
+    public void SetKey(int keyNum, AudioClip clip)
     {
         _keyNum = keyNum;
+        _audioClip = clip;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.GetComponent<Player>() != null)
+        if(collision.GetComponent<Player>() != null && collision.GetComponent<Player>().CanInteractWithCollideables)
         {
-            PianoKeyPressedEvent?.Invoke(_keyNum);
+            PianoKeyPressedEvent?.Invoke(_keyNum, _audioClip);
             _sprite.color = Color.blue;
         }
     }

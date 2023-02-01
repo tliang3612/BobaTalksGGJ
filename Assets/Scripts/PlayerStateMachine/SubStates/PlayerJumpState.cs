@@ -7,7 +7,7 @@ public class PlayerJumpState : PlayerAbilityState
     private int _jumpsLeft;
     public float JumpVelocityModifer { get; set; }
 
-    public PlayerJumpState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioClip audioToPlay) : base(player, stateMachine, playerData, animKey, audioToPlay)
+    public PlayerJumpState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioData audioData = null) : base(player, stateMachine, playerData, animKey, audioData)
     {
         _jumpsLeft = _playerData.NumJumps;
     }
@@ -20,7 +20,6 @@ public class PlayerJumpState : PlayerAbilityState
         UseJump();
         _playerReference.SetVelocityY(_playerData.JumpVelocity);
         _isAbilityDone = true;
-        //_playerReference.AirborneState.SetIsRisingTrue();
     }
 
     public override void OnStateExit()

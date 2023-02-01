@@ -16,8 +16,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {       
-        _camera.m_Follow = FindObjectOfType<Player>().transform;
-        FindObjectOfType<Player>().PlayerDeathEvent += Respawn;
+        _camera.m_Follow = FindObjectOfType<Player>().transform;      
     }
 
     public void Update()
