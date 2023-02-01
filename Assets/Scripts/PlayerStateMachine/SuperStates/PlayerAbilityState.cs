@@ -18,9 +18,9 @@ public class PlayerAbilityState : PlayerState
         _isGrounded = _playerReference.CheckIfGrounded();
     }
 
-    public override void LogicUpdate()
+    public override void StateUpdate()
     {
-        base.LogicUpdate();
+        base.StateUpdate();
 
         if (_isAbilityDone)
         {
@@ -43,8 +43,4 @@ public class PlayerAbilityState : PlayerState
         base.OnStateExit();
     }
 
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
-    }
 }

@@ -15,7 +15,6 @@ public class Projectile : MonoBehaviour, IJumpable
     protected float _startTime;
 
     [SerializeField] protected float _detectionRadius;
-    [SerializeField] protected float _detectionXOffset;
     [SerializeField] protected LayerMask _groundLayer;
     [SerializeField] protected LayerMask _playerLayer;
 
@@ -32,7 +31,8 @@ public class Projectile : MonoBehaviour, IJumpable
 
         if (playerDamageHit && playerDamageHit.GetComponent<Player>().CanInteractWithCollideables)
         {
-            playerDamageHit.GetComponent<Player>().TakeDamage();
+            float direction = playerDamageHit.GetComponent<Player>().transform.position.x - transform.position.x;
+            playerDamageHit.GetComponent<Player>().TakeDamage(direction > 0 ? 1 : -1);
             Destroy(gameObject);
         }
 
@@ -64,7 +64,6 @@ public class Projectile : MonoBehaviour, IJumpable
         _startTime = Time.time;
 
         _rb.velocity = directionToShoot * _speed;
-        _rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
     public void DestroyProjectile()
@@ -74,6 +73,6 @@ public class Projectile : MonoBehaviour, IJumpable
 
     protected void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position + new Vector3(_detectionXOffset, 0, 0) , _detectionRadius);
+        Gizmos.DrawWireSphere(transform.position , _detectionRadius);
     }
 }

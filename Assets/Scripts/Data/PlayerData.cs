@@ -15,6 +15,11 @@ public class PlayerData : ScriptableObject
     [Header("Other Data")]
     public float FadeDuration = 1.5f;
 
+    [Header("Hurt State")]
+    public float HurtDuration = 1.5f;
+    public float KnockbackVelocityX = 3f;
+    public float KnockbackVelocityY = 3f;
+
     [Header("Move State")]
     public float MovementVelocity = 10;
 

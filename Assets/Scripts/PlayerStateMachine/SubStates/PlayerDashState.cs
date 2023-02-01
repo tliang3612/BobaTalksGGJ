@@ -9,7 +9,6 @@ public class PlayerDashState : PlayerAbilityState
     private bool _dashInputStop;
     private bool _isTouchingWall;
 
-
     private Vector2 _dashDirection;
 
     public PlayerDashState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey) : base(player, stateMachine, playerData, animKey)
@@ -26,9 +25,9 @@ public class PlayerDashState : PlayerAbilityState
         base.DoChecks();
     }
 
-    public override void LogicUpdate()
+    public override void StateUpdate()
     {
-        base.LogicUpdate();
+        base.StateUpdate();
 
         if (_isExitingState)
             return;
@@ -37,8 +36,10 @@ public class PlayerDashState : PlayerAbilityState
         _dashDirection = _playerReference.InputController.RawMovementInput.normalized;
 
         if (_isTouchingWall)
+        {
             _dashDirection = Vector2.zero;
-        else if (_dashDirection == Vector2.zero)     
+        }
+        else if (_dashDirection == Vector2.zero)
             _dashDirection = Vector2.right * _playerReference.FacingDirection;
         
         HandleDash(_dashDirection);
@@ -67,12 +68,6 @@ public class PlayerDashState : PlayerAbilityState
         _playerReference.Rb.gravityScale = 3;
         _playerReference.SetVelocityY(_playerReference.CurrentVelocity.y * _playerData.DashEndMultipler);
         CanDash = false;
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
-
     }
 
     public void HandleDash(Vector2 dir)

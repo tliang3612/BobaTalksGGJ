@@ -13,9 +13,9 @@ public class PlayerMoveState : PlayerGroundedState
         base.DoChecks();
     }
 
-    public override void LogicUpdate()
+    public override void StateUpdate()
     {
-        base.LogicUpdate();
+        base.StateUpdate();
 
         _playerReference.HandleFlip(_inputX);
         _playerReference.SetVelocityX(_playerData.MovementVelocity * _inputX);
@@ -34,10 +34,5 @@ public class PlayerMoveState : PlayerGroundedState
     public override void OnStateExit()
     {
         base.OnStateExit();
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
     }
 }

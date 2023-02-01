@@ -21,9 +21,9 @@ public class PlayerWallContactState : PlayerState
         _isTouchingWall = _playerReference.CheckIfTouchingWall();
     }
 
-    public override void LogicUpdate()
+    public override void StateUpdate()
     {
-        base.LogicUpdate();
+        base.StateUpdate();
 
         _inputX = _playerReference.InputController.NormalizedInputX;
 
@@ -49,10 +49,5 @@ public class PlayerWallContactState : PlayerState
     public override void OnStateExit()
     {
         base.OnStateExit();
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
     }
 }

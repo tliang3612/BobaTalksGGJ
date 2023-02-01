@@ -22,7 +22,7 @@ MonoBehaviour:
   MixerValuesMultiplier: 30
   MasterVolume: 0.4
   MasterOn: 1
-  MusicVolume: 0.2
+  MusicVolume: 0.1
   MusicOn: 1
-  SfxVolume: 0.2
+  SfxVolume: 0.3
   SfxOn: 1

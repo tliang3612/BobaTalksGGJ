@@ -47,11 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d96ddacb7c08c47824866b46908b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _detectionRadius: 0.56
-  _detectionXOffset: 0
+  _detectionRadius: 0.6
   _groundLayer:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 256
   _playerLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -115,14 +114,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2361626826625171715}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 1.5
   m_Material: {fileID: 6200000, guid: 4d01b6caebb089844a527b87f46006ea, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -143,4 +142,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.0011343956, y: 0}
   serializedVersion: 2
-  m_Radius: 0.105550766
+  m_Radius: 0.11

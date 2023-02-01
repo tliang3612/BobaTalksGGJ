@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d96ddacb7c08c47824866b46908b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageRadius: 0.5
+  _detectionRadius: 0.59
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -120,8 +120,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0.2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -140,7 +140,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00042554736, y: 0.07068231}
+  m_Offset: {x: -0.00042554736, y: 0.09454524}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -151,5 +151,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.222307, y: 0.110453025}
+  m_Size: {x: 0.222307, y: 0.11176281}
   m_EdgeRadius: 0

@@ -14,12 +14,13 @@ public class GUIManager : MonoBehaviour
 
     private void Awake()
     {
-        FindObjectOfType<Player>().PlayerHealthChangedEvent += UpdateHearts;
+        
     }
 
     public void Start()
     {
         UpdateHearts(3);
+        FindObjectOfType<Player>().PlayerHealthChangedEvent += UpdateHearts;
     }
     
 

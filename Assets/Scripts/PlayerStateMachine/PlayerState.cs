@@ -41,14 +41,9 @@ public abstract class PlayerState
         _isExitingState = true;
     }
 
-    public virtual void LogicUpdate()
+    public virtual void StateUpdate()
     {
         DoChecks();
-    }
-
-    public virtual void PhysicsUpdate()
-    {
-
     }
 
     public virtual void DoChecks()

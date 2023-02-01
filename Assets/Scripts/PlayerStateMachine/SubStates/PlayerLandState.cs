@@ -13,9 +13,9 @@ public class PlayerLandState : PlayerGroundedState
         base.DoChecks();
     }
 
-    public override void LogicUpdate()
+    public override void StateUpdate()
     {
-        base.LogicUpdate();
+        base.StateUpdate();
 
         if (_isExitingState)
             return;
@@ -40,10 +40,5 @@ public class PlayerLandState : PlayerGroundedState
     {
         base.OnStateExit();
         _playerReference.SetVelocityToZero();
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
     }
 }

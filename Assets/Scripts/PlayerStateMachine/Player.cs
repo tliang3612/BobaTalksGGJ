@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
 
     private int _maxPlayerHealth = 3;
     private int _currentPlayerHealth;
+    private bool _isCurrentlyHurt;
 
     #region PlayerState Variables  
     public PlayerIdleState IdleState { get; private set; }
@@ -21,10 +22,13 @@ public class Player : MonoBehaviour
     public PlayerWallSlideState WallSlideState { get; private set; }
     public PlayerDashState DashState { get; private set; }
     public PlayerInteractState InteractState { get; private set; }
+    public PlayerHurtState HurtState { get; private set; }
     #endregion
 
     #region Reference Variables
     [SerializeField] private PlayerData _playerData;
+    private AudioSource _audioSource;
+    private AudioManager _audioManager;
 
     public PlayerInputController InputController { get; private set; }
     public Animator Anim { get; private set; }
@@ -32,9 +36,7 @@ public class Player : MonoBehaviour
     public SpriteRenderer PlayerSprite { get; private set; }
     public Collider2D PlayerCollider { get; private set; }
     public bool CanInteractWithCollideables { get; set; }
-    
-    private AudioSource _audioSource;
-    private AudioManager _audioManager;
+ 
     #endregion
 
     #region Components
@@ -101,20 +103,16 @@ public class Player : MonoBehaviour
         WallSlideState = new PlayerWallSlideState(this, StateMachine, _playerData, "WallSlide");
         DashState = new PlayerDashState(this, StateMachine, _playerData, "Dash");
         InteractState = new PlayerInteractState(this, StateMachine, _playerData, "Idle");
+        HurtState = new PlayerHurtState(this, StateMachine, _playerData, "Hurt");
     }
 
     private void Update()
     {
         CurrentVelocity = Rb.velocity;
         if (StateMachine != null)
-            StateMachine.CurrentState.LogicUpdate();
+            StateMachine.CurrentState.StateUpdate();
     }
 
-    private void FixedUpdate()
-    {
-        if(StateMachine != null)
-            StateMachine.CurrentState.PhysicsUpdate();
-    }
     #endregion
 
     #region Getters
@@ -138,11 +136,10 @@ public class Player : MonoBehaviour
         CurrentVelocity = Vector2.zero;
     }
 
-    public void SetVelocity(float velocity, Vector2 direction)
+    public void AddVelocity(float velocity, Vector2 direction)
     {
         Vector2 newVelocity = direction.normalized * velocity;
         Rb.velocity += newVelocity;
-        CurrentVelocity += newVelocity;
     }
 
     public void SetPosition(Vector2 position)
@@ -182,8 +179,12 @@ public class Player : MonoBehaviour
             return true;
         }
 
-        return false;
-        
+        return false;       
+    }
+
+    public bool CheckIfHurt()
+    {
+        return _isCurrentlyHurt;
     }
 
     /// <summary>
@@ -218,13 +219,32 @@ public class Player : MonoBehaviour
         PlayerSprite.flipX = !IsFacingRight;
     }   
 
-    public void TakeDamage()
+    public void TakeDamage(int directionX)
     {
-        _currentPlayerHealth--;
+        //_currentPlayerHealth--;
         PlayerHealthChangedEvent?.Invoke(_currentPlayerHealth);
 
         if (_currentPlayerHealth <= 0)
             Die();
+        else
+            StartCoroutine(TakeDamageCoroutine(directionX));
+    }
+
+    public IEnumerator TakeDamageCoroutine(int directionX)
+    {
+        Rb.velocity = new Vector2(directionX * _playerData.KnockbackVelocityX, _playerData.KnockbackVelocityY);
+        HandleDamaged(true);
+
+        yield return new WaitForSeconds(_playerData.HurtDuration);
+
+        HandleDamaged(false);
+    }
+
+    private void HandleDamaged(bool isDamaged)
+    {
+        CanInteractWithCollideables = !isDamaged;
+        _isCurrentlyHurt = isDamaged;
+        PlayerSprite.color = isDamaged ? Color.gray : Color.white;
     }
 
     public void IncreaseHealth()

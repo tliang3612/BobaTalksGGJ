@@ -33,9 +33,9 @@ public class PlayerGroundedState : PlayerState
         base.OnStateExit();
     }
 
-    public override void LogicUpdate()
+    public override void StateUpdate()
     {
-        base.LogicUpdate();
+        base.StateUpdate();
 
         _inputX = _playerReference.InputController.NormalizedInputX;
         _jumpInput = _playerReference.InputController.JumpInputPressed;
@@ -66,11 +66,6 @@ public class PlayerGroundedState : PlayerState
         }
 
 
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
     }
 
     public override void DoChecks()

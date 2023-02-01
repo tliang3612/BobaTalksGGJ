@@ -13,9 +13,9 @@ public class PlayerInteractState : PlayerAbilityState
     {
     }
 
-    public override void LogicUpdate()
+    public override void StateUpdate()
     {
-        base.LogicUpdate();
+        base.StateUpdate();
 
         _interactStateFinished = Interactable.CheckInteractFinished();
 

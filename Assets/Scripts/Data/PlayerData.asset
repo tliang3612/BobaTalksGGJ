@@ -15,6 +15,9 @@ MonoBehaviour:
   DeathAudio: {fileID: 0}
   JumpAudio: {fileID: 8300000, guid: 279b02ecceb9ffd408bdae6e60f5d592, type: 3}
   FadeDuration: 1.5
+  HurtDuration: 0.7
+  KnockbackVelocityX: 3
+  KnockbackVelocityY: 6
   MovementVelocity: 7
   JumpVelocity: 12
   HeldJumpHeightMultiplier: 0.9

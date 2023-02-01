@@ -14,9 +14,9 @@ public class PlayerIdleState : PlayerGroundedState
         base.DoChecks();
     }
 
-    public override void LogicUpdate()
+    public override void StateUpdate()
     {
-        base.LogicUpdate();
+        base.StateUpdate();
 
         if(_inputX != 0 && !_isExitingState)
         {
@@ -32,10 +32,5 @@ public class PlayerIdleState : PlayerGroundedState
     public override void OnStateExit()
     {
         base.OnStateExit();
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
     }
 }

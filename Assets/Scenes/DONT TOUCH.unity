@@ -369,18 +369,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 921165126996362527, guid: c8cef8eb68260f84797a8a5ecc343523, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: -0.36983156
-      objectReference: {fileID: 0}
-    - target: {fileID: 921165126996362527, guid: c8cef8eb68260f84797a8a5ecc343523, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].x
-      value: 0.2523365
-      objectReference: {fileID: 0}
-    - target: {fileID: 921165126996362527, guid: c8cef8eb68260f84797a8a5ecc343523, type: 3}
-      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
-      value: -0.62996054
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8cef8eb68260f84797a8a5ecc343523, type: 3}
 --- !u!4 &392553560 stripped
@@ -1720,12 +1708,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileSpawnPoint: {fileID: 1475900987}
-  _projectileSpeed: 5
+  _projectileSpeed: 7
   _projectileDirection: {x: -1, y: 0}
   _projectileSpawnRange: {x: 0, y: 5}
   _projectileToSpawn: {fileID: 2361626826625171715, guid: 8b832c20f74735a43995e07913ae93b5, type: 3}
   _projectileSpawnDelay: 2
-  _projectileDuration: 6
+  _projectileDuration: 5
   _isGroundBased: 0
   _audioToPlay: {fileID: 0}
 --- !u!1 &1503822466

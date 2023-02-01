@@ -13,7 +13,8 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        FindObjectOfType<Player>().PlayerDeathEvent += (player)=> StartCoroutine(Respawn(player));
+        InstantiatePlayer();
+        
         _fader = FindObjectOfType<Fader>();
         _camera = Camera.main;
     }
@@ -21,7 +22,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         _fader.FadeOut();
-        InstantiatePlayer();
+        FindObjectOfType<Player>().PlayerDeathEvent += (player) => StartCoroutine(Respawn(player));
     }
 
     public IEnumerator Respawn(Player player)

@@ -8,6 +8,7 @@ public class PlayerAirborneState : PlayerState
     private bool _isTouchingWall;
     private bool _isRising;
     private bool _isOnJumpable;
+    private bool _isHurt;
 
     private bool _jumpInput;
     private bool _jumpInputStopped;
@@ -31,17 +32,12 @@ public class PlayerAirborneState : PlayerState
         _isRising = _playerReference.CheckIfRising();
         _isTouchingWall = _playerReference.CheckIfTouchingWall();
         _isOnJumpable = _playerReference.CheckIfOnJumpable();
-
+        _isHurt = _playerReference.CheckIfHurt();
     }
 
-    public override void PhysicsUpdate()
+    public override void StateUpdate()
     {
-        base.PhysicsUpdate();
-    }
-
-    public override void LogicUpdate()
-    {
-        base.LogicUpdate();
+        base.StateUpdate();
 
         HandleGracePeriod();
 
@@ -50,10 +46,13 @@ public class PlayerAirborneState : PlayerState
         _inputX = _playerReference.InputController.NormalizedInputX;
         _dashInput = _playerReference.InputController.DashInputPressed;
 
-        _playerReference.Anim.SetFloat("VelocityX", Mathf.Abs(_playerReference.CurrentVelocity.x));
         _playerReference.Anim.SetFloat("VelocityY", _playerReference.CurrentVelocity.y);
         
-        if (_isOnJumpable && !_isRising)
+        if(_isHurt)
+        {
+            _stateMachine.TransitionState(_playerReference.HurtState);
+        }
+        else if (_isOnJumpable && !_isRising)
         {
             _stateMachine.TransitionState(_playerReference.JumpState);
         }
@@ -79,7 +78,6 @@ public class PlayerAirborneState : PlayerState
         {
             _playerReference.HandleFlip(_inputX);
             _playerReference.SetVelocityX(_playerData.MovementVelocity * _inputX);
-
             
         }
     }         

@@ -13,9 +13,9 @@ public class PlayerWallSlideState : PlayerWallContactState
         base.DoChecks();
     }
 
-    public override void LogicUpdate()
+    public override void StateUpdate()
     {
-        base.LogicUpdate();
+        base.StateUpdate();
 
         _playerReference.SetVelocityY(-_playerData.WallSlideVelocity);
     }
