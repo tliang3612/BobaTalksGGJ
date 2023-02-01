@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     //State Machine
     public PlayerStateMachine StateMachine { get; private set; }
 
-    [SerializeField] private int _maxPlayerHealth;
+    private int _maxPlayerHealth = 3;
     private int _currentPlayerHealth;
 
     #region PlayerState Variables  
@@ -74,7 +74,8 @@ public class Player : MonoBehaviour
 
         InitializeStates();
 
-        FindObjectOfType<DialogueManager>().PowerupReceivedEvent += OnPowerupReceived;
+        if(FindObjectOfType<DialogueManager>())
+            FindObjectOfType<DialogueManager>().PowerupReceivedEvent += OnPowerupReceived;
     }
     private void Start()
     {
@@ -239,6 +240,7 @@ public class Player : MonoBehaviour
     public void Die()
     {
         StateMachine.CurrentState.OnStateExit();
+        SetVelocityToZero();
         StateMachine = null;
         CanInteractWithCollideables = false;
         PlayerDeathEvent?.Invoke(this);

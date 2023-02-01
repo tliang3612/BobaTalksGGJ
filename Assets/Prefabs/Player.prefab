@@ -136,10 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca4046854f776d4cb7f9fcd06cf5df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxPlayerHealth: 0
-  JumpAudioClip: {fileID: 0}
-  RunAudioClip: {fileID: 0}
-  DeathAudioClip: {fileID: 0}
+  _maxPlayerHealth: 3
   _playerData: {fileID: 11400000, guid: 155b99f841de6594f966028577f7edbe, type: 2}
   _groundDetector: {fileID: 921165126244413708}
   _wallDetector: {fileID: 921165127176812267}

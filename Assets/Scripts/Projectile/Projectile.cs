@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour, IJumpable, IKnockbackable
+public class Projectile : MonoBehaviour, IJumpable
 {
-    //private AttackDetails attackDetails;
-    private float _speed;
+    protected float _speed;
+    protected Rigidbody2D _rb;
 
-    private Rigidbody2D _rb;
-
-    [SerializeField] private float _damageRadius;
-    [SerializeField] private LayerMask _groundLayer;
-    [SerializeField] private LayerMask _playerLayer;
+    [SerializeField] protected float _detectionRadius;
+    [SerializeField] protected float _detectionXOffset;
+    [SerializeField] protected LayerMask _groundLayer;
+    [SerializeField] protected LayerMask _playerLayer;
 
     private void FixedUpdate()
     {
-        Collider2D playerDamageHit = Physics2D.OverlapCircle(transform.position, _damageRadius, _playerLayer);
-        Collider2D groundHit = Physics2D.OverlapCircle(transform.position, _damageRadius, _groundLayer);
+        HandleCollision();
+    }
+    public virtual void HandleCollision()
+    {
+        Collider2D playerDamageHit = Physics2D.OverlapCircle(transform.position, _detectionRadius, _playerLayer);
+        Collider2D groundHit = Physics2D.OverlapCircle(transform.position, _detectionRadius, _groundLayer);
 
         if (playerDamageHit && playerDamageHit.GetComponent<Player>().CanInteractWithCollideables)
         {
@@ -29,8 +32,8 @@ public class Projectile : MonoBehaviour, IJumpable, IKnockbackable
             _rb.velocity = Vector2.zero;
             Destroy(gameObject);
         }
-        
     }
+
     public void FireProjectile(Vector2 directionToShoot, Vector2 startPos, float speed)
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -39,13 +42,8 @@ public class Projectile : MonoBehaviour, IJumpable, IKnockbackable
         _rb.velocity = directionToShoot * _speed;
     }
 
-    private void OnDrawGizmos()
+    protected void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, _damageRadius);
-    }
-
-    public void Knockback(Vector2 angle, float strength, int direction)
-    {
-        
+        Gizmos.DrawWireSphere(transform.position + new Vector3(_detectionXOffset, 0, 0) , _detectionRadius);
     }
 }

@@ -21,18 +21,7 @@ public class GUIManager : MonoBehaviour
     {
         UpdateHearts(3);
     }
-
-    public void SetDeathScreen(bool isActive)
-    {
-        _deathScreen.SetActive(isActive);
-    }
-
-    public void SetPauseScreen(bool isActive)
-    {
-        
-        _pauseScreen.SetActive(isActive);
-        
-    }
+    
 
     public void UpdateHearts(int hp)
     {
@@ -51,5 +40,17 @@ public class GUIManager : MonoBehaviour
         }
 
     }
-    
+
+
+    public void SetDeathScreen(bool isActive)
+    {
+        _deathScreen.SetActive(isActive);
+    }
+
+    public void SetPauseScreen(bool isActive)
+    {
+
+        _pauseScreen.SetActive(isActive);
+
+    }
 }

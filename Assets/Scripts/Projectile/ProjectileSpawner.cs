@@ -7,16 +7,17 @@ public class ProjectileSpawner : MonoBehaviour
     [SerializeField] private Transform _projectileSpawnPoint;
     [SerializeField] private float _projectileSpeed;
     [SerializeField] private Vector2 _projectileDirection;
+    [SerializeField] private Vector2 _projectileSpawnRange;
     [SerializeField] private GameObject _projectileToSpawn;
     [SerializeField] private float _projectileSpawnDelay;
     [SerializeField] private AudioClip _audioToPlay;
 
     private AudioManager _audioManager;
     private AudioSource _audioSource;
+    private bool _canSpawn;
 
     private float _lastProjectileSpawnTime;
-
-    public bool CanSpawn { get; set; }
+    private List<Projectile> _projectileList;
 
     private void Awake()
     {
@@ -26,30 +27,51 @@ public class ProjectileSpawner : MonoBehaviour
 
     public void Start()
     {
+        _projectileList = new List<Projectile>();
         _lastProjectileSpawnTime = 0f;
-        CanSpawn = true;
+        _canSpawn = true;
     }
 
     public void FixedUpdate()
     {
-        if (!CanSpawn)
+        if (!_canSpawn)
             return;
 
-        var positionToSpawn = _projectileSpawnPoint.position + new Vector3(Random.Range(0, 15), 0, 0);
-        
+        var positionToSpawn = _projectileSpawnPoint.position + new Vector3(Random.Range(0, _projectileSpawnRange.x),
+            Random.Range(0, _projectileSpawnRange.y), 0);
+
+
         if (Time.time >= _lastProjectileSpawnTime + _projectileSpawnDelay)
         {
-            SpawnProjectile(positionToSpawn);
+            _projectileList.Add(SpawnProjectile(positionToSpawn));            
         }                       
     }
 
-    public void SpawnProjectile(Vector2 spawnPoint)
+    public Projectile SpawnProjectile(Vector2 spawnPoint)
     {
         if (_audioToPlay)
             _audioManager.PlaySound(_audioToPlay, _audioSource, TrackType.Sfx, false);
         
         _lastProjectileSpawnTime = Time.time;
         var projectile = Instantiate(_projectileToSpawn, spawnPoint, Quaternion.identity, transform).GetComponent<Projectile>();
-        projectile.FireProjectile(_projectileDirection, spawnPoint, _projectileSpeed);       
+        projectile.FireProjectile(_projectileDirection, spawnPoint, _projectileSpeed);
+
+        return projectile;
+    }
+
+    public void StopSpawn()
+    {
+        _canSpawn = false;
+
+        foreach (var projectile in _projectileList)
+        {
+            projectile.gameObject.SetActive(false);
+            
+        }        
+    }
+
+    private void OnDrawGizmos()
+    {
+       Gizmos.DrawLine(transform.position, transform.position + new Vector3(_projectileSpawnRange.x, _projectileSpawnRange.y, 0));
     }
 }

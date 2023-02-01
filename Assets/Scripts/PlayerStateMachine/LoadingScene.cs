@@ -33,7 +33,7 @@ public class LoadingScene : MonoBehaviour
     private void Update()
     {
         Time.timeScale = 1f;
-        _progressBarImage.fillAmount = Mathf.MoveTowards(_progressBarImage.fillAmount, _fillTarget, Time.deltaTime * ProgressBarSpeed);
+        _progressBarImage.fillAmount = Mathf.Lerp(_progressBarImage.fillAmount, _fillTarget, Time.deltaTime * ProgressBarSpeed);
     }
 
     public static void LoadScene(string sceneToLoad)
@@ -64,7 +64,7 @@ public class LoadingScene : MonoBehaviour
 
         _fillTarget = 1f;
 
-        while (_progressBarImage.fillAmount != _fillTarget)
+        while (_fillTarget -  _progressBarImage.fillAmount > 0.05f) 
         {
             yield return null;
         }

@@ -56,7 +56,7 @@ public class PianoGameManager : MonoBehaviour
         }
         else if (_currentKeyOrder.Count == _correctKeyOrder.Count)
         {
-            _projectileSpawner.CanSpawn = false;
+            _projectileSpawner.StopSpawn();
             _bgm.StopMusic();
             _victoryDoor.SetActive(true);
             Debug.Log("You Win!");
@@ -74,9 +74,4 @@ public class PianoGameManager : MonoBehaviour
         _currentKeyOrder.Clear();
         Debug.Log("Wrong Key Pressed");
     }
-
-
-
-
-
 }
