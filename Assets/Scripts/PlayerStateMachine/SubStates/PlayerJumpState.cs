@@ -26,7 +26,7 @@ public class PlayerJumpState : PlayerAbilityState
     {
         base.OnStateExit();
 
-        JumpVelocityModifer = 1;
+        JumpVelocityModifer = 1f;
     }
 
     public bool CanJump()

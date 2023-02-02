@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class CatchGameManager : MonoBehaviour
 {
@@ -21,13 +22,18 @@ public class CatchGameManager : MonoBehaviour
         _collectedItems = 0;
         _meter.fillAmount = 0;
         _fillAmountPerItem = (float)1 / _requiredItems;
-        
+    }
+
+    public void Update()
+    {
+        var newFill = _fillAmountPerItem * _collectedItems;
+        _meter.GetComponent<Image>().fillAmount = Mathf.MoveTowards(_meter.GetComponent<Image>().fillAmount, newFill, .8f * Time.deltaTime);
     }
 
     public void OnItemCollected()
     {
-        _collectedItems++;
-        _meter.fillAmount = _collectedItems * _fillAmountPerItem;
+        _collectedItems++;   
+        //StartCoroutine(SetMeter(_collectedItems));
         HandleVictory();
     }
 
