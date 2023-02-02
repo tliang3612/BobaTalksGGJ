@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Transform _endPoint;
+    [SerializeField] private Transform _startPoint;
+    [SerializeField] private float _friendsNeeded;
+
+    private Collider2D _collider;
+    private Rigidbody2D _rb;
+    private bool _isMoving;
+    private int _friendsDetected;
+
+    private void Awake()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void FixedUpdate()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Start()
     {
         
     }
+
+   
+
 }
