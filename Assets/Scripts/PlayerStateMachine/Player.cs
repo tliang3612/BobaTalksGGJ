@@ -235,7 +235,7 @@ public class Player : MonoBehaviour
 
     public void TakeDamage(int directionX)
     {
-        //_currentPlayerHealth--;
+        _currentPlayerHealth--;
         PlayerHealthChangedEvent?.Invoke(_currentPlayerHealth);
 
         if (_currentPlayerHealth <= 0)
