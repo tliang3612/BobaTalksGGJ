@@ -20,7 +20,7 @@ MonoBehaviour:
   MusicAudioMixerGroup: {fileID: 6053414588138172168, guid: 3af1d1181ef23dc4f9ff703dfd143d47, type: 2}
   SfxAudioMixerGroup: {fileID: 281417865705655583, guid: 3af1d1181ef23dc4f9ff703dfd143d47, type: 2}
   MixerValuesMultiplier: 30
-  MasterVolume: 0.4
+  MasterVolume: 0.21
   MasterOn: 1
   MusicVolume: 0.1
   MusicOn: 1

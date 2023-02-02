@@ -210,11 +210,17 @@ public class Player : MonoBehaviour
     /// <returns></returns>
     public IInteractable DetectInteractable()
     {
-        var collider = Physics2D.OverlapCircle(transform.position, _playerData.InteractDetectionRadius, _playerData.InteractLayer);
+        var colliders = Physics2D.OverlapCircleAll(transform.position, _playerData.InteractDetectionRadius, _playerData.InteractLayer);
 
-        if (collider != null)
+        if (colliders != null)
         {
-            return collider.GetComponent<IInteractable>();
+            foreach(var collider in colliders)
+            {
+                if(!collider.GetComponent<IInteractable>().CheckInteractFinished())
+                {
+                    return collider.GetComponent<IInteractable>();
+                }
+            }            
         }
 
         return null;

@@ -7,12 +7,12 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
     [SerializeField] private Sprite _contextToShow;
     [SerializeField] private GameObject _contextBox;
     [SerializeField] private float _followSpeed;
-    [SerializeField] private float _lerpDuration;
     [SerializeField] private float _distanceOffset;
+    [SerializeField] private float _detectionRadius;
+    [SerializeField] private LayerMask _playerLayer;
 
-    private SpriteRenderer _spriteRenderer;
+    private SpriteRenderer _sprite;
     private bool _isFollowingPlayer;
-    private Player _player;
     private Transform _playerTransform;
     private Animator _anim;
 
@@ -26,14 +26,13 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
         _contextBox.GetComponentInChildren<SpriteRenderer>().sprite = ContextSprite;
         _contextBox.SetActive(false);
         _isFollowingPlayer = false;
-        _spriteRenderer = GetComponent<SpriteRenderer>();
         _anim = GetComponent<Animator>();
+        _sprite = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
     {
-        _playerTransform= FindObjectOfType<Player>().transform;
-        _player = FindObjectOfType<Player>();
+        _playerTransform = FindObjectOfType<Player>().transform;
     }
 
     private void FixedUpdate()
@@ -42,6 +41,11 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
             return;
 
         HandleMove();
+    }
+
+    private void Update()
+    {
+        HandlePlayerDetection();
     }
 
     public void ShowContext()
@@ -54,26 +58,20 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
         _contextBox.SetActive(false);
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void HandlePlayerDetection()
     {
-        if(collision.GetComponent<Player>() != null && !_isFollowingPlayer)
+        if (_isFollowingPlayer)
+            return;
+
+        var hit = Physics2D.OverlapCircle(transform.position, _detectionRadius, _playerLayer);
+        if(hit)
         {
             ShowContext();
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Player>() != null && !_isFollowingPlayer)
+        else
         {
             HideContext();
         }
-    }
-
-    public void Interact()
-    {
-        _isFollowingPlayer = true;
-        HideContext();
     }
 
     public void HandleMove()
@@ -85,17 +83,19 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
         {
             Vector2 startPosition = transform.position;
             if (startPosition.x - targetPosition.x < 0)
-                _spriteRenderer.flipX = false;
+                _sprite.flipX = false;
             else
-                _spriteRenderer.flipX = true;
+                _sprite.flipX = true;
 
             transform.position = Vector2.Lerp(startPosition, targetPosition, _followSpeed * Time.deltaTime);
         }       
     }
 
-    public void HandleJump()
+    public void Interact()
     {
-
+        Debug.Log("Interacted");
+        _isFollowingPlayer = true;
+        HideContext();
     }
 
     public bool CheckInteractFinished()
@@ -103,5 +103,9 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
         return _isFollowingPlayer;
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, _detectionRadius);
+    }
 
 }

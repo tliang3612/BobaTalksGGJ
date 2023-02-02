@@ -33,7 +33,6 @@ public class CatchGameManager : MonoBehaviour
     public void OnItemCollected()
     {
         _collectedItems++;   
-        //StartCoroutine(SetMeter(_collectedItems));
         HandleVictory();
     }
 

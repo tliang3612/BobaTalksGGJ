@@ -17,16 +17,18 @@ public class AudioSettings : ScriptableObject
     public AudioMixerGroup SfxAudioMixerGroup;
 
     public float MixerValuesMultiplier = 20;
+    public float MaxVolume = 5f;
 
-    [Range(0, 10)]
+
+    [Range(0, 5)]
     public float MasterVolume = 1;
     public bool MasterOn = true;
 
-    [Range(0, 10)]
+    [Range(0, 5)]
     public float MusicVolume = 1;
     public bool MusicOn = true;
 
-    [Range(0, 10)]
+    [Range(0, 5)]
     public float SfxVolume = 1;
     public bool SfxOn = true;
 
@@ -34,7 +36,7 @@ public class AudioSettings : ScriptableObject
     {
         if (volume <= 0f)
         {
-            volume = 0;
+            volume = 0.000001f;
         }
 
         switch (trackType)
@@ -56,29 +58,25 @@ public class AudioSettings : ScriptableObject
 
     public float GetTrackVolume(TrackType track)
     {
-        float volume = 1f;
         switch (track)
         {
             case TrackType.Master:
-                TargetAudioMixer.GetFloat(MasterVolumeName, out volume);
-                break;
+                return MasterVolume;
             case TrackType.Music:
-                TargetAudioMixer.GetFloat(MusicVolumeName, out volume);
-                break;
+                return MusicVolume;
             case TrackType.Sfx:
-                TargetAudioMixer.GetFloat(SfxVolumeName, out volume);
-                break;
+                return SfxVolume;
         }
 
-        return MixerVolumeToNormalized(volume);
+        return 1f;
     }
 
-    public virtual float NormalizedToMixerVolume(float normalizedVolume)
+    public float NormalizedToMixerVolume(float normalizedVolume)
     {
         return Mathf.Log10(normalizedVolume) * MixerValuesMultiplier;
     }
 
-    public virtual float MixerVolumeToNormalized(float mixerVolume)
+    public float MixerVolumeToNormalized(float mixerVolume)
     {
         return (float)Math.Pow(10, (mixerVolume / MixerValuesMultiplier));
     }
