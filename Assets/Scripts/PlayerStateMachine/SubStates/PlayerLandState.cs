@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerLandState : PlayerGroundedState
 {
+
     public PlayerLandState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey) : base(player, stateMachine, playerData, animKey)
     {
     }
@@ -24,9 +25,9 @@ public class PlayerLandState : PlayerGroundedState
         {
             _stateMachine.TransitionState(_playerReference.MoveState);
         }
-        else if (_isAnimationFinished)
+        else
         {
-            _stateMachine.TransitionState(_playerReference.IdleState);
+            _playerReference.SetVelocityToZero();
         }
         
     }

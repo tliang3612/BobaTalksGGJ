@@ -24,19 +24,21 @@ MonoBehaviour:
   NumJumps: 2
   AirborneGracePeriod: 0.3
   WallSlideVelocity: 1
+  SlopeSlideVelocity: 3
   DashTime: 0.2
   DashVelocity: 25
   AirDrag: 10
   DashEndMultipler: 0.15
-  GroundDetectionRadius: 0.3
   GroundLayer:
     serializedVersion: 2
     m_Bits: 256
-  WallDetectionDistance: 0.62
-  InteractDetectionRadius: 2
   InteractLayer:
     serializedVersion: 2
     m_Bits: 128
   ProjectileLayer:
     serializedVersion: 2
     m_Bits: 1024
+  GroundDetectionRadius: 0.3
+  WallDetectionDistance: 0.59
+  SlopeDetectionDistance: 0.6
+  InteractDetectionRadius: 2

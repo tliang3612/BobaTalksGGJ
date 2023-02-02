@@ -241,8 +241,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _fullHeartSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  _emptyHeartSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  _fullHeartSprite: {fileID: 21300000, guid: 0dd58905aa209f644bfbdbecb6246b1c, type: 3}
+  _emptyHeartSprite: {fileID: 21300000, guid: aa33aa7966bf8184c8a6676ce8fc85a7, type: 3}
   _deathScreen: {fileID: 0}
   _pauseScreen: {fileID: 0}
 --- !u!114 &2037560288533778385

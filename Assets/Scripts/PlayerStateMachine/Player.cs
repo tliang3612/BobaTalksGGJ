@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public PlayerDashState DashState { get; private set; }
     public PlayerInteractState InteractState { get; private set; }
     public PlayerHurtState HurtState { get; private set; }
+    public PlayerSlideState SlideState { get; private set; }
     #endregion
 
     #region Reference Variables
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
     #region Components
     [SerializeField] private Transform _groundDetector;
     [SerializeField] private Transform _wallDetector;
+    [SerializeField] private Transform _slopeDetector;
     #endregion
 
     #region MovementVariables
@@ -104,6 +106,7 @@ public class Player : MonoBehaviour
         DashState = new PlayerDashState(this, StateMachine, _playerData, "Dash");
         InteractState = new PlayerInteractState(this, StateMachine, _playerData, "Idle");
         HurtState = new PlayerHurtState(this, StateMachine, _playerData, "Hurt");
+        SlideState = new PlayerSlideState(this, StateMachine, _playerData, "Land");
     }
 
     private void Update()
@@ -180,6 +183,17 @@ public class Player : MonoBehaviour
         }
 
         return false;       
+    }
+
+    public bool CheckIfTouchingSlope()
+    {
+        var hitVertical = Physics2D.Raycast(_slopeDetector.position, Vector2.down, _playerData.SlopeDetectionDistance, _playerData.GroundLayer);
+        var hitHoriztonal = Physics2D.Raycast(_slopeDetector.position, Vector2.right, _playerData.SlopeDetectionDistance, _playerData.GroundLayer);
+
+        if (hitVertical && hitHoriztonal)
+            return true;
+
+        return false;
     }
 
     public bool CheckIfHurt()
@@ -288,6 +302,8 @@ public class Player : MonoBehaviour
     {
         Gizmos.DrawWireSphere(_groundDetector.position, _playerData.GroundDetectionRadius);
         Gizmos.DrawWireSphere(transform.position, _playerData.InteractDetectionRadius);
-        Gizmos.DrawRay(_wallDetector.position, Vector2.right * FacingDirection * _playerData.WallDetectionDistance);
+        Gizmos.DrawRay(_wallDetector.position, Vector2.right * _playerData.WallDetectionDistance);
+        Gizmos.DrawRay(_slopeDetector.position, Vector2.down * _playerData.SlopeDetectionDistance);
+        Gizmos.DrawRay(_slopeDetector.position, Vector2.right * _playerData.SlopeDetectionDistance);
     }
 }

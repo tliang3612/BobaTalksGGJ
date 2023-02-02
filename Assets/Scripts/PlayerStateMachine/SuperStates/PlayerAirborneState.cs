@@ -9,6 +9,7 @@ public class PlayerAirborneState : PlayerState
     private bool _isRising;
     private bool _isOnJumpable;
     private bool _isHurt;
+    private bool _isTouchingSlope;
 
     private bool _jumpInput;
     private bool _jumpInputStopped;
@@ -33,6 +34,7 @@ public class PlayerAirborneState : PlayerState
         _isTouchingWall = _playerReference.CheckIfTouchingWall();
         _isOnJumpable = _playerReference.CheckIfOnJumpable();
         _isHurt = _playerReference.CheckIfHurt();
+        _isTouchingSlope = _playerReference.CheckIfTouchingSlope();
     }
 
     public override void StateUpdate()
@@ -51,6 +53,10 @@ public class PlayerAirborneState : PlayerState
         if(_isHurt)
         {
             _stateMachine.TransitionState(_playerReference.HurtState);
+        }
+        else if(_isTouchingSlope)
+        {
+            _stateMachine.TransitionState(_playerReference.SlideState);
         }
         else if (_isOnJumpable && !_isRising)
         {

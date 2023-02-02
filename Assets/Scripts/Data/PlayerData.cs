@@ -32,6 +32,9 @@ public class PlayerData : ScriptableObject
     [Header("Wall Slide State")]
     public float WallSlideVelocity;
 
+    [Header("Slope Slide State")]
+    public float SlopeSlideVelocity;
+
     [Header("Dash State")]
     public float DashTime;
     public float DashVelocity;
@@ -40,10 +43,12 @@ public class PlayerData : ScriptableObject
 
 
     [Header("Detectors")]
-    public float GroundDetectionRadius = 0.3f;
     public LayerMask GroundLayer;
-    public float WallDetectionDistance = 1;
-    public float InteractDetectionRadius;
     public LayerMask InteractLayer;
     public LayerMask ProjectileLayer;
+    public float GroundDetectionRadius = 0.3f;    
+    public float WallDetectionDistance = 1;
+    public float SlopeDetectionDistance = 1;
+    public float InteractDetectionRadius;
+    
 }
