@@ -7,7 +7,6 @@ public class PlayerAirborneState : PlayerState
     private bool _isGrounded;
     private bool _isTouchingWall;
     private bool _isRising;
-    private bool _isOnJumpable;
     private bool _isHurt;
     private bool _isTouchingSlope;
 
@@ -15,6 +14,7 @@ public class PlayerAirborneState : PlayerState
     private bool _jumpInputStopped;
     private bool _dashInput;
     private bool _dashInputStopped;
+    private IJumpable _currentJumpable;
 
     private int _inputX;
     private bool _gracePeriod; //period of time that the player can jump without consuming a jumpsLeft after running off the ground -> airborne 
@@ -32,7 +32,7 @@ public class PlayerAirborneState : PlayerState
         _isGrounded = _playerReference.CheckIfGrounded();
         _isRising = _playerReference.CheckIfRising();
         _isTouchingWall = _playerReference.CheckIfTouchingWall();
-        _isOnJumpable = _playerReference.CheckIfOnJumpable();
+        _currentJumpable = _playerReference.DetectJumpable();
         _isHurt = _playerReference.CheckIfHurt();
         _isTouchingSlope = _playerReference.CheckIfTouchingSlope();
     }
@@ -53,8 +53,8 @@ public class PlayerAirborneState : PlayerState
 
         _playerReference.Anim.SetFloat("VelocityY", _playerReference.CurrentVelocity.y);
 
-        if (_isTouchingSlope)
-            _playerReference.SetVelocityToZero();
+        /*if (_isTouchingSlope)
+            _playerReference.SetVelocityToZero();*/
         
         if(_isHurt)
         {
@@ -64,16 +64,21 @@ public class PlayerAirborneState : PlayerState
         {
             _stateMachine.TransitionState(_playerReference.SlideState);
         }
-        else if (_isOnJumpable && !_isRising)
+        else if(_isTouchingSlope && _isRising)
         {
-            _playerReference.JumpState.JumpVelocityModifer = 1.1f;
+            _playerReference.SetVelocityX(0);
+        }
+        else if (_currentJumpable != null  && !_isRising)
+        {
+            _playerReference.JumpState.JumpVelocityModifer = 1.2f;
+            _currentJumpable.PlayJumpedOnSound();
             _stateMachine.TransitionState(_playerReference.JumpState);
         }
         else if (_isGrounded && !_isRising) // Check for if player landed
         {
             _stateMachine.TransitionState(_playerReference.LandState);
         }  
-        else if(_jumpInput && _playerReference.JumpState.CanJump() && !_isOnJumpable) // Check if can jump in air
+        else if(_jumpInput && _playerReference.JumpState.CanJump() && _currentJumpable == null) // Check if can jump in air
         {
             HandleJumpMultipler();
             _playerReference.InputController.UseJumpInput();
@@ -98,6 +103,7 @@ public class PlayerAirborneState : PlayerState
     public override void OnStateEnter()
     {
         base.OnStateEnter();
+        _currentJumpable = null;
     }
 
     public override void OnStateExit()

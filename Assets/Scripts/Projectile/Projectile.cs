@@ -18,8 +18,6 @@ public class Projectile : MonoBehaviour, IJumpable
     [SerializeField] protected LayerMask _groundLayer;
     [SerializeField] protected LayerMask _playerLayer;
 
-    //public Action<Projectile> ProjectileDestroyedEvent;
-
     private void FixedUpdate()
     {
         HandleCollision();
@@ -77,5 +75,10 @@ public class Projectile : MonoBehaviour, IJumpable
     protected void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position , _detectionRadius);
+    }
+
+    public void PlayJumpedOnSound()
+    {
+        
     }
 }

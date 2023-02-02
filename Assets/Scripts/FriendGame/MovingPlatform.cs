@@ -12,7 +12,7 @@ public class MovingPlatform : MonoBehaviour
     [SerializeField] private float _friendsNeeded;
 
     private int _friendsDetected;
-    private bool _playerDetected;
+    //private bool _playerDetected;
 
     private void Awake()
     {
@@ -21,7 +21,7 @@ public class MovingPlatform : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_friendsDetected == _friendsNeeded && _playerDetected)
+        if (_friendsDetected == _friendsNeeded) //&& _playerDetected)
             HandleMove(true);
         else if(_friendsDetected == 0)
             HandleMove(false);
@@ -40,8 +40,8 @@ public class MovingPlatform : MonoBehaviour
         if(collision.GetComponent<RealFriend>() != null)
             _friendsDetected++;
 
-        if (collision.GetComponent<Player>() != null)
-            _playerDetected = true;
+        /*if (collision.GetComponent<Player>() != null)
+            _playerDetected = true;*/
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -49,8 +49,8 @@ public class MovingPlatform : MonoBehaviour
         if (collision.GetComponent<RealFriend>() != null)
             _friendsDetected--;
 
-        if (collision.GetComponent<Player>() != null)
-            _playerDetected = false;
+        /*if (collision.GetComponent<Player>() != null)
+            _playerDetected = false;*/
     }
 
 

@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class FakeFriend : MonoBehaviour, IJumpable
 {
-    [SerializeField] private AudioClip _onPlayerJumpSound;
+    [SerializeField] private AudioClip _jumpedOnSound;
     [SerializeField] private float _offsetY;
     [SerializeField] private float _detectionRadius;
     [SerializeField] private LayerMask _playerLayer;
 
-    private float _audioDelay = 0.2f;
     private float _startTime;
+    private AudioSource _audioSource;
 
-    private void FixedUpdate()
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
+
+    public AudioClip SoundToPlay
+    {
+        get { return _jumpedOnSound; }
+    }
+
+    /*private void FixedUpdate()
     {
         if (Time.time < _startTime + _audioDelay)
             return;
@@ -25,6 +35,11 @@ public class FakeFriend : MonoBehaviour, IJumpable
             _startTime = Time.time;
             FindObjectOfType<AudioManager>().PlaySound(_onPlayerJumpSound, GetComponent<AudioSource>(), TrackType.Sfx, false);           
         }
+    }*/
+
+    public void PlayJumpedOnSound()
+    {
+        FindObjectOfType<AudioManager>().PlaySound(_jumpedOnSound, _audioSource, TrackType.Sfx, false);
     }
 
     private void OnDrawGizmos()

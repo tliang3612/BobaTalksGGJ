@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
-public interface IJumpable
+public class Door : MonoBehaviour
 {
-    void PlayJumpedOnSound();
+    
 }

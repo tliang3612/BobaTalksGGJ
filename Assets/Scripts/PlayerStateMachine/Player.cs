@@ -174,15 +174,15 @@ public class Player : MonoBehaviour
         return Physics2D.Raycast(_wallDetector.position, Vector2.right * FacingDirection, _playerData.WallDetectionDistance, _playerData.GroundLayer);
     }
 
-    public bool CheckIfOnJumpable()
+    public IJumpable DetectJumpable()
     {
         var hit = Physics2D.OverlapCircle(_groundDetector.position, _playerData.GroundDetectionRadius, _playerData.ProjectileLayer);
         if(hit && hit.GetComponent<IJumpable>() != null)
         {
-            return true;
+            return hit.GetComponent<IJumpable>();
         }
 
-        return false;       
+        return null;       
     }
 
     public bool CheckIfTouchingSlope()
@@ -292,10 +292,6 @@ public class Player : MonoBehaviour
         
         yield return new WaitForSeconds(_playerData.FadeDuration);
     }
-
-    private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
-    private void AnimationFinishedTrigger() => StateMachine.CurrentState.AnimationFinishedTrigger();
-
 
     #endregion
 
