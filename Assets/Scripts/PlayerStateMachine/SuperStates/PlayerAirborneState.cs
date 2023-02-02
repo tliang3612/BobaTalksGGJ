@@ -41,6 +41,9 @@ public class PlayerAirborneState : PlayerState
     {
         base.StateUpdate();
 
+        if (_isExitingState)
+            return;
+
         HandleGracePeriod();
 
         _jumpInput = _playerReference.InputController.JumpInputPressed;
@@ -49,12 +52,15 @@ public class PlayerAirborneState : PlayerState
         _dashInput = _playerReference.InputController.DashInputPressed;
 
         _playerReference.Anim.SetFloat("VelocityY", _playerReference.CurrentVelocity.y);
+
+        if (_isTouchingSlope)
+            _playerReference.SetVelocityToZero();
         
         if(_isHurt)
         {
             _stateMachine.TransitionState(_playerReference.HurtState);
         }
-        else if(_isTouchingSlope)
+        else if(_isTouchingSlope && !_isRising)
         {
             _stateMachine.TransitionState(_playerReference.SlideState);
         }
