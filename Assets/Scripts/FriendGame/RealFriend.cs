@@ -7,12 +7,14 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
     [SerializeField] private Sprite _contextToShow;
     [SerializeField] private GameObject _contextBox;
     [SerializeField] private float _followSpeed;
+    [SerializeField] private float _lerpDuration;
     [SerializeField] private float _distanceOffset;
 
-    private Rigidbody2D _rb;
+    private SpriteRenderer _spriteRenderer;
     private bool _isFollowingPlayer;
     private Player _player;
     private Transform _playerTransform;
+    private Animator _anim;
 
     public Sprite ContextSprite
     {
@@ -23,8 +25,9 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
     {
         _contextBox.GetComponentInChildren<SpriteRenderer>().sprite = ContextSprite;
         _contextBox.SetActive(false);
-        _rb = GetComponent<Rigidbody2D>();
         _isFollowingPlayer = false;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -33,7 +36,7 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
         _player = FindObjectOfType<Player>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!_isFollowingPlayer)
             return;
@@ -75,57 +78,25 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
 
     public void HandleMove()
     {
-        /*targetPosition = new Vector2(player.transform.position.x, player.transform.position.y + 1f);
+        var targetPosition = new Vector2(_playerTransform.position.x, transform.position.y);
+        float distance = transform.position.x - _playerTransform.position.x;
 
-        StartCoroutine(LerpPosition(targetPosition, .1f));
-        if (shouldFlip)
+        if (Mathf.Abs(distance) > _distanceOffset)
         {
-            transform.rotation = Quaternion.Euler(0, 180f, 0);
-        }
-        else
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }*/
+            Vector2 startPosition = transform.position;
+            if (startPosition.x - targetPosition.x < 0)
+                _spriteRenderer.flipX = false;
+            else
+                _spriteRenderer.flipX = true;
 
-        var deltaX = _playerTransform.position.x - transform.position.x;
-        if (Mathf.Abs(deltaX) >= _distanceOffset)
-        {
-            float followDirection = deltaX > 0 ? 1 : -1;
-            transform.position = Vector2.Lerp(transform.position, _playerTransform.position, Time.deltaTime * _followSpeed);        
+            transform.position = Vector2.Lerp(startPosition, targetPosition, _followSpeed * Time.deltaTime);
         }       
-        else
-        {
-            //_rb.velocity = Vector2.zero;
-        }
     }
 
     public void HandleJump()
     {
 
     }
-
-    /*private IEnumerator LerpPosition(Vector2 targetPosition, float duration)
-    {
-        float time = 0;
-        Vector2 startPosition = transform.position;
-        if (startPosition.x - targetPosition.x < 0)
-        {
-            shouldFlip = true;
-        }
-        else
-        {
-            shouldFlip = false;
-        }
-
-        while (time < duration)
-        {
-            transform.position = Vector2.Lerp(startPosition, targetPosition, time / duration);
-            time += Time.deltaTime;
-            yield return null;
-        }
-        transform.position = targetPosition;
-    }*/
-
 
     public bool CheckInteractFinished()
     {
