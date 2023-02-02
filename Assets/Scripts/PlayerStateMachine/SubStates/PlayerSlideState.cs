@@ -22,9 +22,11 @@ public class PlayerSlideState : PlayerState
     {
         base.StateUpdate();
 
+        if (_isExitingState)
+            return;
+
         _playerReference.SetVelocityY(-_playerData.SlopeSlideVelocity);
         
-
         if(!_isSliding)
         {
             _stateMachine.TransitionState(_playerReference.LandState);
@@ -35,13 +37,13 @@ public class PlayerSlideState : PlayerState
     {
         base.OnStateEnter();
         _playerReference.SetVelocityToZero();
-        _playerReference.transform.rotation = Quaternion.Euler(0, 0, 36);
+        _playerReference.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     public override void OnStateExit()
     {
         base.OnStateExit();
-        _playerReference.transform.rotation = new Quaternion(0, 0, 0, 0);
+        _playerReference.transform.rotation = new Quaternion(0, 0, 0, 0);        
     }
 
     

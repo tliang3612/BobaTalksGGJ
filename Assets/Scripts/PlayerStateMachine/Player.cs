@@ -187,6 +187,9 @@ public class Player : MonoBehaviour
 
     public bool CheckIfTouchingSlope()
     {
+        if (CheckIfGrounded())
+            return false;
+
         var hitVertical = Physics2D.Raycast(_slopeDetector.position, Vector2.down, _playerData.SlopeDetectionDistance, _playerData.GroundLayer);
         var hitHoriztonal = Physics2D.Raycast(_slopeDetector.position, Vector2.right, _playerData.SlopeDetectionDistance, _playerData.GroundLayer);
 

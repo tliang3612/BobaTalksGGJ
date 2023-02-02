@@ -17,16 +17,19 @@ public class PlayerIdleState : PlayerGroundedState
     public override void StateUpdate()
     {
         base.StateUpdate();
+        
 
-        if(_inputX != 0 && !_isExitingState)
+        if (_inputX != 0 && !_isExitingState)
         {
             _stateMachine.TransitionState(_playerReference.MoveState);
         }
+        
     }
 
     public override void OnStateEnter()
     {
         base.OnStateEnter();
+        _playerReference.SetVelocityToZero();
     }
 
     public override void OnStateExit()
