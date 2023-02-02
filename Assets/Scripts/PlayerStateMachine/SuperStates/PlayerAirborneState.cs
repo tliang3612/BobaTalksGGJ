@@ -72,7 +72,7 @@ public class PlayerAirborneState : PlayerState
             _playerReference.InputController.UseJumpInput();
             _stateMachine.TransitionState(_playerReference.JumpState);
         }
-        else if(_isTouchingWall && _inputX == _playerReference.FacingDirection)
+        else if(_isTouchingWall && _inputX == _playerReference.FacingDirection && !_isRising)
         {
             _stateMachine.TransitionState(_playerReference.WallSlideState);
         }
