@@ -60,6 +60,7 @@ public class PlayerAirborneState : PlayerState
         }
         else if (_isOnJumpable && !_isRising)
         {
+            _playerReference.JumpState.JumpVelocityModifer = 1.1f;
             _stateMachine.TransitionState(_playerReference.JumpState);
         }
         else if (_isGrounded && !_isRising) // Check for if player landed
