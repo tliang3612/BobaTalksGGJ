@@ -16,7 +16,8 @@ public class BGM : MonoBehaviour
 
     private void Start()
     {
-        _audioManager.PlaySound(_musicClip, _audioSource, TrackType.Music, ShouldLoop);
+        if(_musicClip)
+            _audioManager.PlaySound(_musicClip, _audioSource, TrackType.Music, ShouldLoop);
     }
 
     public void StopMusic()

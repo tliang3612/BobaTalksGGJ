@@ -11,6 +11,7 @@ public class PlayerGroundedState : PlayerState
     private bool _dashInput;
 
     private bool _isGrounded;
+    protected bool _isTouchingSlope;
 
     private bool _interactInput;
     private IInteractable _currentInteractable;
@@ -54,10 +55,11 @@ public class PlayerGroundedState : PlayerState
         {
             _playerReference.InputController.UseJumpInput();
             _stateMachine.TransitionState(_playerReference.JumpState);
+
         }
-        else if (!_isGrounded)
+        else if (!_isGrounded && !_isTouchingSlope)
         {
-            _playerReference.AirborneState.StartGracePeriod();
+            //_playerReference.AirborneState.StartGracePeriod();
             _stateMachine.TransitionState(_playerReference.AirborneState);
         }
         else if (_dashInput && _playerReference.DashState.CheckIfCanDash())
@@ -72,5 +74,6 @@ public class PlayerGroundedState : PlayerState
     {
         base.DoChecks();
         _isGrounded = _playerReference.CheckIfGrounded();
+        _isTouchingSlope = _playerReference.CheckIfTouchingSlope();
     }
 }

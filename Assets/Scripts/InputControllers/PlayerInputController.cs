@@ -21,7 +21,10 @@ public class PlayerInputController : MonoBehaviour
     public bool InteractInputPressed { get; private set; }
     public bool InteractInputStopped { get; private set; }
 
+    public bool EscapeInputPressed { get; private set; }
+
     public Vector2 RawDashDirectionInput { get; private set; }
+    public bool IsActive { get; set; }
 
     [SerializeField] private float _inputHoldTime = 0.2f;
 
@@ -35,6 +38,11 @@ public class PlayerInputController : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        
+    }
+
     private void Update()
     {
         CheckJumpInputHoldTime();
@@ -43,6 +51,9 @@ public class PlayerInputController : MonoBehaviour
     #region Movement
     public void OnMoveInput(InputAction.CallbackContext context)
     {
+        if (!IsActive)
+            return;
+
         RawMovementInput = context.ReadValue<Vector2>();
 
         if (Mathf.Abs(RawMovementInput.x) > 0.5f)
@@ -62,6 +73,9 @@ public class PlayerInputController : MonoBehaviour
     #region Jump
     public void OnJumpInput(InputAction.CallbackContext context)
     {
+        if (!IsActive)
+            return;
+
         if (context.started)
         {
             JumpInputPressed = true;
@@ -90,6 +104,9 @@ public class PlayerInputController : MonoBehaviour
     #region Dash
     public void OnDashInput(InputAction.CallbackContext context)
     {
+        if (!IsActive)
+            return;
+
         if (context.started)
         {
             DashInputPressed = true;
@@ -110,6 +127,9 @@ public class PlayerInputController : MonoBehaviour
 
     public void OnInteractInput(InputAction.CallbackContext context)
     {
+        if (!IsActive)
+            return;
+
         if (context.started)
         {
             InteractInputPressed = true;

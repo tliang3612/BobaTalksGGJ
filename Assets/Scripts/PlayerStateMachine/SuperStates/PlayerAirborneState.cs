@@ -9,6 +9,7 @@ public class PlayerAirborneState : PlayerState
     private bool _isRising;
     private bool _isOnJumpable;
     private bool _isHurt;
+    private bool _isTouchingSlope;
 
     private bool _jumpInput;
     private bool _jumpInputStopped;
@@ -33,11 +34,15 @@ public class PlayerAirborneState : PlayerState
         _isTouchingWall = _playerReference.CheckIfTouchingWall();
         _isOnJumpable = _playerReference.CheckIfOnJumpable();
         _isHurt = _playerReference.CheckIfHurt();
+        _isTouchingSlope = _playerReference.CheckIfTouchingSlope();
     }
 
     public override void StateUpdate()
     {
         base.StateUpdate();
+
+        if (_isExitingState)
+            return;
 
         HandleGracePeriod();
 
@@ -47,13 +52,21 @@ public class PlayerAirborneState : PlayerState
         _dashInput = _playerReference.InputController.DashInputPressed;
 
         _playerReference.Anim.SetFloat("VelocityY", _playerReference.CurrentVelocity.y);
+
+        if (_isTouchingSlope)
+            _playerReference.SetVelocityToZero();
         
         if(_isHurt)
         {
             _stateMachine.TransitionState(_playerReference.HurtState);
         }
+        else if(_isTouchingSlope && !_isRising)
+        {
+            _stateMachine.TransitionState(_playerReference.SlideState);
+        }
         else if (_isOnJumpable && !_isRising)
         {
+            _playerReference.JumpState.JumpVelocityModifer = 1.1f;
             _stateMachine.TransitionState(_playerReference.JumpState);
         }
         else if (_isGrounded && !_isRising) // Check for if player landed
@@ -66,7 +79,7 @@ public class PlayerAirborneState : PlayerState
             _playerReference.InputController.UseJumpInput();
             _stateMachine.TransitionState(_playerReference.JumpState);
         }
-        else if(_isTouchingWall && _inputX == _playerReference.FacingDirection)
+        else if(_isTouchingWall && _inputX == _playerReference.FacingDirection && !_isRising)
         {
             _stateMachine.TransitionState(_playerReference.WallSlideState);
         }

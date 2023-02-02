@@ -20,13 +20,17 @@ public class PlayerLandState : PlayerGroundedState
         if (_isExitingState)
             return;
 
-        if (_inputX != 0)
+        if (_inputX != 0 )
         {
             _stateMachine.TransitionState(_playerReference.MoveState);
         }
-        else if (_isAnimationFinished)
+        else if(_isTouchingSlope && _inputX > 0)
         {
-            _stateMachine.TransitionState(_playerReference.IdleState);
+            return;
+        }
+        else
+        {
+            _playerReference.SetVelocityToZero();
         }
         
     }

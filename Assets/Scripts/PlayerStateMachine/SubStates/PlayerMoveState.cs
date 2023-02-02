@@ -17,13 +17,18 @@ public class PlayerMoveState : PlayerGroundedState
     {
         base.StateUpdate();
 
-        _playerReference.HandleFlip(_inputX);
-        _playerReference.SetVelocityX(_playerData.MovementVelocity * _inputX);
-        
-        if(_inputX == 0 && !_isExitingState)
+        if (_isTouchingSlope)
+        {
+            return;
+        }
+        else if (_inputX == 0 && !_isExitingState && !_isTouchingSlope)
         {
             _stateMachine.TransitionState(_playerReference.IdleState);
         }
+        
+
+        _playerReference.HandleFlip(_inputX);
+        _playerReference.SetVelocityX(_playerData.MovementVelocity * _inputX);
     }
 
     public override void OnStateEnter()
