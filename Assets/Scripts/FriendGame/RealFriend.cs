@@ -11,6 +11,7 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
 
     private Rigidbody2D _rb;
     private bool _isFollowingPlayer;
+    private Player _player;
     private Transform _playerTransform;
 
     public Sprite ContextSprite
@@ -29,6 +30,7 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
     private void Start()
     {
         _playerTransform= FindObjectOfType<Player>().transform;
+        _player = FindObjectOfType<Player>();
     }
 
     private void Update()
@@ -73,15 +75,27 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
 
     public void HandleMove()
     {
-        if(Vector2.Distance(transform.position, _playerTransform.position) >= _distanceOffset)
+        /*targetPosition = new Vector2(player.transform.position.x, player.transform.position.y + 1f);
+
+        StartCoroutine(LerpPosition(targetPosition, .1f));
+        if (shouldFlip)
         {
-            float followDirection = (_playerTransform.position.x - transform.position.x) > 0 ? 1 : -1;
-            _rb.velocity = new Vector2(followDirection * _followSpeed, 0);
-            
+            transform.rotation = Quaternion.Euler(0, 180f, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }*/
+
+        var deltaX = _playerTransform.position.x - transform.position.x;
+        if (Mathf.Abs(deltaX) >= _distanceOffset)
+        {
+            float followDirection = deltaX > 0 ? 1 : -1;
+            transform.position = Vector2.Lerp(transform.position, _playerTransform.position, Time.deltaTime * _followSpeed);        
         }       
         else
         {
-            _rb.velocity = Vector2.zero;
+            //_rb.velocity = Vector2.zero;
         }
     }
 
@@ -89,6 +103,29 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
     {
 
     }
+
+    /*private IEnumerator LerpPosition(Vector2 targetPosition, float duration)
+    {
+        float time = 0;
+        Vector2 startPosition = transform.position;
+        if (startPosition.x - targetPosition.x < 0)
+        {
+            shouldFlip = true;
+        }
+        else
+        {
+            shouldFlip = false;
+        }
+
+        while (time < duration)
+        {
+            transform.position = Vector2.Lerp(startPosition, targetPosition, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = targetPosition;
+    }*/
+
 
     public bool CheckInteractFinished()
     {

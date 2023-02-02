@@ -417,7 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _contextToShow: {fileID: 21300000, guid: 0779fa57e67bb094faf66784a8b09f09, type: 3}
   _contextBox: {fileID: 1568498555}
-  _followSpeed: 4
+  _followSpeed: 0
   _distanceOffset: 2
 --- !u!61 &383018239
 BoxCollider2D:
@@ -432,7 +432,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.030849338, y: -0.008745909}
+  m_Offset: {x: 0.013578534, y: 0.26417017}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -443,7 +443,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.3799145, y: 1.6996274}
+  m_Size: {x: 2.7480347, y: 2.2454596}
   m_EdgeRadius: 0
 --- !u!212 &383018241
 SpriteRenderer:
@@ -533,7 +533,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!114 &461773706
 MonoBehaviour:
   m_ObjectHideFlags: 0
