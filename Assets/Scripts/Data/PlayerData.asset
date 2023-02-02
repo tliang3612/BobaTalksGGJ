@@ -39,6 +39,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   GroundDetectionRadius: 0.3
-  WallDetectionDistance: 0.59
+  WallDetectionDistance: 0.49
   SlopeDetectionDistance: 0.6
   InteractDetectionRadius: 2
