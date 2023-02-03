@@ -11,16 +11,18 @@ public enum TrackType
 
 public class AudioData
 {
-	public AudioData(AudioClip clip, AudioSource source, AudioManager manager)
+	public AudioData(AudioClip clip, AudioSource source, AudioManager manager, bool shouldLoop)
     {
 		AudioClip = clip;
 		AudioSource = source;
 		AudioManager = manager;
+		ShouldLoop = shouldLoop;
     }
 
 	public AudioClip AudioClip;
 	public AudioSource AudioSource;
 	public AudioManager AudioManager;
+	public bool ShouldLoop;
 }
 
 public class AudioManager : MonoBehaviour
@@ -37,13 +39,13 @@ public class AudioManager : MonoBehaviour
     public void PlaySound(AudioClip audioClip, AudioSource audioSource, TrackType trackType, bool shouldLoop)
     {
 		audioSource.clip = audioClip;
-		
+
+		if (audioSource.isPlaying)
+			return;
+
 		switch (trackType)
 		{
 			case TrackType.Music:
-				if (audioSource.isPlaying)
-					return;
-
 				audioSource.outputAudioMixerGroup = AudioSetting.MusicAudioMixerGroup;
 				audioSource.Play();
 				break;
