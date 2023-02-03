@@ -15,11 +15,10 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private GameObject _pauseScreen;
 
     [SerializeField] private GameObject _tempDialogue;
-    [SerializeField] private float _tempDialogueDuration;
 
     private PlayerInputController _playerInput;
 
-    private bool _isPaused;
+    public bool IsPaused { get; private set; }
 
     private void Awake()
     {
@@ -65,7 +64,7 @@ public class GUIManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            SetPauseScreen(!_isPaused);
+            SetPauseScreen(!IsPaused);
         }
     }
 
@@ -119,7 +118,7 @@ public class GUIManager : MonoBehaviour
 
         AudioListener.pause = isActive;
         Time.timeScale = isActive ? 0 : 1;
-        _isPaused = isActive;
+        IsPaused = isActive;
 
     }
 }

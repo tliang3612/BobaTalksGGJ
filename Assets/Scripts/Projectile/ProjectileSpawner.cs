@@ -11,7 +11,7 @@ public class ProjectileSpawner : MonoBehaviour
     [SerializeField] private GameObject _projectileToSpawn;
     [SerializeField] private float _projectileSpawnDelay;
     [SerializeField] private float _projectileDuration;
-    [SerializeField] private bool _isGroundBased;
+    [SerializeField] private bool _destroyOnGroundContact;
     [SerializeField] private AudioClip _audioToPlay;
 
     private AudioManager _audioManager;
@@ -57,7 +57,7 @@ public class ProjectileSpawner : MonoBehaviour
         
         _lastProjectileSpawnTime = Time.time;
         var projectile = Instantiate(_projectileToSpawn, spawnPoint, Quaternion.identity, transform).GetComponent<Projectile>();
-        projectile.FireProjectile(_projectileDirection, _projectileDuration, _projectileSpeed,  _isGroundBased);
+        projectile.FireProjectile(_projectileDirection, _projectileDuration, _projectileSpeed,  _destroyOnGroundContact);
         return projectile;
     }
 
