@@ -16,8 +16,7 @@ public class FinishLevel : MonoBehaviour
     {
 		if (collision.GetComponent<Player>() != null)
         {
-			var player = collision.GetComponent<Player>();
-			FindObjectOfType<LevelManager>().GoToLevel(player, _levelToGoTo);
+			FindObjectOfType<LevelManager>().GoToLevel(_levelToGoTo);
 		}
 			
 	}

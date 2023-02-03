@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: 
   Lines:
-  - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
-    LineText: Hi this is player speaking
   - CharacterSpeaking: {fileID: 11400000, guid: 692ecf31d9d8de1409ad4977f7b4ea35, type: 2}
-    LineText: Hi this is npc speaking
-  - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
-    LineText: player speaking again
+    LineText: Will you choose the left
+  - CharacterSpeaking: {fileID: 11400000, guid: b366efca71dc69c499fffb3afbbca435, type: 2}
+    LineText: or the right ancestor
   - CharacterSpeaking: {fileID: 11400000, guid: 692ecf31d9d8de1409ad4977f7b4ea35, type: 2}
-    LineText: Im tired
-  - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
-    LineText: same
+    LineText: HMMMM
+  - CharacterSpeaking: {fileID: 11400000, guid: b366efca71dc69c499fffb3afbbca435, type: 2}
+    LineText: CHOOSE WISELY
+  - CharacterSpeaking: {fileID: 11400000, guid: 692ecf31d9d8de1409ad4977f7b4ea35, type: 2}
+    LineText: ok dialgoue end

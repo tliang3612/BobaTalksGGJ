@@ -5,13 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Working Scene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Loading Scene.unity
     guid: 9ab7805de81531342907e220eeb0dcdb
   - enabled: 1
     path: Assets/Scenes/DONT TOUCH #2.unity
     guid: dbd8fe033d3b9b64882e7d6c6873da79
+  - enabled: 1
+    path: Assets/Scenes/DONT TOUCH #4.unity
+    guid: 39b3009aba9dede4c92ff5b0023cf4a3
+  - enabled: 1
+    path: Assets/Scenes/DONT TOUCH #3.unity
+    guid: 2c3c09b504d3b1f47afea5899bbf157b
+  - enabled: 1
+    path: Assets/Scenes/DONT TOUCH.unity
+    guid: 2a6dd4f95d0b81244aa9679085da6392
   m_configObjects: {}
