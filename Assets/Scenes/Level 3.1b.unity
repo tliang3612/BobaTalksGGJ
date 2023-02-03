@@ -311,6 +311,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6194597047266502996, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
+      propertyPath: _disappearDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6194597047266502999, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
       propertyPath: m_Name
       value: Jumpable Clock (3)
@@ -373,6 +377,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6194597047266502996, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
+      propertyPath: _disappearDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6194597047266502999, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
       propertyPath: m_Name
       value: Jumpable Clock (1)
@@ -487,6 +495,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6194597047266502996, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
+      propertyPath: _disappearDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6194597047266502999, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
       propertyPath: m_Name
       value: Jumpable Clock (2)
@@ -655,6 +667,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6194597047266502996, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
+      propertyPath: _disappearDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6194597047266502999, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
       propertyPath: m_Name
       value: Jumpable Clock (7)
@@ -1513,6 +1529,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6194597047266502996, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
+      propertyPath: _disappearDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6194597047266502999, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
       propertyPath: m_Name
       value: Jumpable Clock (8)
@@ -1845,6 +1865,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6194597047266502996, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
+      propertyPath: _disappearDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6194597047266502999, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
       propertyPath: m_Name
       value: Jumpable Clock (6)
@@ -2016,6 +2040,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6194597047266502996, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
+      propertyPath: _disappearDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6194597047266502999, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
       propertyPath: m_Name
       value: Jumpable Clock (10)
@@ -2860,6 +2888,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6194597047266502996, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
+      propertyPath: _disappearDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6194597047266502999, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
       propertyPath: m_Name
       value: Jumpable Clock (5)
@@ -9433,6 +9465,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6194597047266502996, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
+      propertyPath: _disappearDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6194597047266502999, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
       propertyPath: m_Name
       value: Jumpable Clock (12)
@@ -9495,6 +9531,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6194597047266502996, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
+      propertyPath: _disappearDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6194597047266502999, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
       propertyPath: m_Name
       value: Jumpable Clock (4)
@@ -9644,6 +9684,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6194597047266502996, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
+      propertyPath: _disappearDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6194597047266502999, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
       propertyPath: m_Name
       value: Jumpable Clock (9)
@@ -10164,6 +10208,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6194597047266502996, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
+      propertyPath: _disappearDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6194597047266502999, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
       propertyPath: m_Name
       value: Jumpable Clock (11)
@@ -10617,6 +10665,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6194597047266502996, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
+      propertyPath: _disappearDuration
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6194597047266502999, guid: 0a43cd7dfea937842ab23b018083e8a0, type: 3}
       propertyPath: m_Name
       value: Jumpable Clock (13)
