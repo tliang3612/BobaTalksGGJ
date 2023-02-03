@@ -31,7 +31,7 @@ public class AncestorSelectGUI : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            if(!_isDialogueFinished)
+            if(!_isDialogueFinished & !FindObjectOfType<GUIManager>().IsPaused)
                 FindObjectOfType<DialogueManager>().OnEnterDialogue(_dialogue);
         }
     }

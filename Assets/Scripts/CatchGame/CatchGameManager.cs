@@ -11,7 +11,8 @@ public class CatchGameManager : MonoBehaviour
     [SerializeField] private int _requiredItems;
 
     [SerializeField] private ProjectileSpawner _itemSpawner;
-    [SerializeField] private ProjectileSpawner _projectileSpawner;
+    [SerializeField] private ProjectileSpawner _projectileSpawnerRight;
+    [SerializeField] private ProjectileSpawner _projectileSpawnerLeft;
     [SerializeField] private GameObject _victoryDoor;
 
     private float _collectedItems;
@@ -42,7 +43,8 @@ public class CatchGameManager : MonoBehaviour
         {
             _victoryDoor.SetActive(true);
             _itemSpawner.StopSpawn();
-            _projectileSpawner.StopSpawn();
+            _projectileSpawnerRight.StopSpawn();
+            _projectileSpawnerLeft.StopSpawn();
             Debug.Log("You Win!");
         }
     }
