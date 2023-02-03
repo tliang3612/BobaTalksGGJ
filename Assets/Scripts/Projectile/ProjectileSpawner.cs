@@ -58,19 +58,15 @@ public class ProjectileSpawner : MonoBehaviour
         _lastProjectileSpawnTime = Time.time;
         var projectile = Instantiate(_projectileToSpawn, spawnPoint, Quaternion.identity, transform).GetComponent<Projectile>();
         projectile.FireProjectile(_projectileDirection, _projectileDuration, _projectileSpeed,  _isGroundBased);
-        //projectile.ProjectileDestroyedEvent += OnProjectileDestroyed;
-
         return projectile;
     }
-
-    /*public void OnProjectileDestroyed(Projectile projectile)
-    {
-        //_projectileList.Remove(projectile);
-    }*/
 
     public void StopSpawn()
     {
         _canSpawn = false;
+
+        if (_audioToPlay)
+            _audioManager.StopSound(_audioSource);
 
         foreach (var projectile in GetComponentsInChildren<Projectile>())
         {

@@ -31,7 +31,8 @@ public class Projectile : MonoBehaviour, IJumpable
         if (playerDamageHit && playerDamageHit.GetComponent<Player>().CanInteractWithCollideables)
         {
             float direction = playerDamageHit.GetComponent<Player>().transform.position.x - transform.position.x;
-            playerDamageHit.GetComponent<Player>().TakeDamage(direction > 0 ? 1 : -1);           
+            playerDamageHit.GetComponent<Player>().TakeDamage(direction > 0 ? 1 : -1);
+            Destroy(gameObject);
         }
         else if(playerDamageHit && !playerDamageHit.GetComponent<Player>().CanInteractWithCollideables)
         {

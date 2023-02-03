@@ -117,6 +117,7 @@ public class GUIManager : MonoBehaviour
         if(_playerInput)
             _playerInput.IsActive = !isActive;
 
+        AudioListener.pause = isActive;
         Time.timeScale = isActive ? 0 : 1;
         _isPaused = isActive;
 
