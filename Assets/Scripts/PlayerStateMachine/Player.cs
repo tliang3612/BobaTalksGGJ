@@ -283,6 +283,7 @@ public class Player : MonoBehaviour
         SetVelocityToZero();
         StateMachine = null;
         CanInteractWithCollideables = false;
+        _audioManager.PlaySound(_playerData.HurtAudio, _audioSource, TrackType.Sfx, false);
         PlayerDeathEvent?.Invoke(this);
     }
 

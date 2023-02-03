@@ -32,7 +32,8 @@ public class GUIManager : MonoBehaviour
         {
             for (int i = 0; i < 3; i++)
             {
-                _hearts[i] = GameObject.Find("HealthPanel").GetComponentsInChildren<Image>()[i];
+                if(GameObject.Find("HealthPanel") != null)
+                    _hearts[i] = GameObject.Find("HealthPanel").GetComponentsInChildren<Image>()[i];
             }
         }
     }
@@ -89,7 +90,8 @@ public class GUIManager : MonoBehaviour
 
     public void UpdateHearts(int hp)
     {
-        Debug.Log("Health updated");
+        if (GameObject.Find("HealthPanel") == null)
+            return;
 
         for (int i = 0; i < _hearts.Length; i++)
         {
