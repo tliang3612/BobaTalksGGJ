@@ -2005,7 +2005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelToGoTo: 'DONT TOUCH '
-  _hasCondition: 1
+  _hasCondition: 0
 --- !u!1001 &1300955437
 PrefabInstance:
   m_ObjectHideFlags: 0
