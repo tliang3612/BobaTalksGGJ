@@ -5444,26 +5444,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 4, y: 22, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 6
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 5, y: 22, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 6
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 21, y: 22, z: 0}
     second:
       serializedVersion: 2
@@ -6888,7 +6868,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 503
+  - m_RefCount: 501
     m_Data: {fileID: 11400000, guid: 08d80a04723fbea4db285ccb36809324, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -6903,10 +6883,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 503
+  - m_RefCount: 501
     m_Data: {fileID: 7482667652216324306, guid: 16eda955ade2bbc4783417d0725d84ed, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 508
+  - m_RefCount: 506
     m_Data:
       e00: 1
       e01: 0
@@ -6937,7 +6917,7 @@ Tilemap:
     m_Data: {r: 4.0828e-41, g: 4.0828e-41, b: 4.0828e-41, a: 4.0828e-41}
   - m_RefCount: 0
     m_Data: {r: 4.0828e-41, g: 4.0828e-41, b: 4.0828e-41, a: 4.0828e-41}
-  - m_RefCount: 503
+  - m_RefCount: 501
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -7075,14 +7055,6 @@ CompositeCollider2D:
         Y: 10000000
       - X: 80000000
         Y: 10000000
-    - - X: 60000000
-        Y: 230000000
-      - X: 40000000
-        Y: 230000000
-      - X: 40000000
-        Y: 220000000
-      - X: 60000000
-        Y: 220000000
     - - X: -220000000
         Y: 20000000
       - X: -220000000
@@ -7139,10 +7111,6 @@ CompositeCollider2D:
       - {x: 26.999971, y: 30}
       - {x: -28, y: 29.999971}
       - {x: -27.999971, y: 1}
-    - - {x: 5.999971, y: 22}
-      - {x: 5.999971, y: 23}
-      - {x: 4, y: 22.999971}
-      - {x: 4.000029, y: 22}
     - - {x: -17, y: 2.0000293}
       - {x: -22, y: 2.0000293}
       - {x: -21.999971, y: 3}
