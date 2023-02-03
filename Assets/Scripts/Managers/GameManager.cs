@@ -6,21 +6,5 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private CinemachineVirtualCamera _camera;
-
-    private void Awake()
-    {
-        _camera = FindObjectOfType<CinemachineVirtualCamera>();
-    }
-
-    private void Start()
-    {       
-        _camera.m_Follow = FindObjectOfType<Player>().transform;      
-    }
-
-    public void Respawn()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
+    
 }
