@@ -13,6 +13,7 @@ public class Projectile : MonoBehaviour, IJumpable
     protected Rigidbody2D _rb;
 
     protected float _startTime;
+    public bool CanBeJumpedOn { get { return true; } }
 
     [SerializeField] protected float _detectionRadius;
     [SerializeField] protected LayerMask _groundLayer;
@@ -77,7 +78,7 @@ public class Projectile : MonoBehaviour, IJumpable
         Gizmos.DrawWireSphere(transform.position , _detectionRadius);
     }
 
-    public void PlayJumpedOnSound()
+    public void OnPlayerJumpedOn()
     {
         
     }

@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IJumpable
 {
-    void PlayJumpedOnSound();
+    void OnPlayerJumpedOn();
+    bool CanBeJumpedOn { get; }
 }

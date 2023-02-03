@@ -31,6 +31,12 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void SpawnPlayerAtPoint(Vector3 position)
+    {
+        FindObjectOfType<Player>().transform.position = position;
+    }
+
+
     public void GoToLevel(Player player, string levelName)
     {
         StartCoroutine(StartNextLevelSequence(player, levelName));

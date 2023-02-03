@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
-public class Door : MonoBehaviour
+public class TimerClock : MonoBehaviour
 {
     
 }

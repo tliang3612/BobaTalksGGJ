@@ -288,8 +288,7 @@ public class Player : MonoBehaviour
 
     public IEnumerator PlayDeathAnimation()
     {
-        FadePlayerOut();
-        
+        FadePlayerOut();       
         yield return new WaitForSeconds(_playerData.FadeDuration);
     }
 
