@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _levelToGoTo: DONT TOUCH #2
-  _hasCondition: 1
+  _hasCondition: 0
 --- !u!61 &8032685274856865600
 BoxCollider2D:
   m_ObjectHideFlags: 0

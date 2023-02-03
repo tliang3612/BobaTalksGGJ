@@ -41,18 +41,19 @@ public class LevelManager : MonoBehaviour
     }
 
 
-    public void GoToLevel(Player player, string levelName)
+    public void GoToLevel(string levelName)
     {
-        StartCoroutine(StartNextLevelSequence(player, levelName));
+        StartCoroutine(StartNextLevelSequence(levelName));
     }
 
-    private IEnumerator StartNextLevelSequence(Player player, string levelName)
+    private IEnumerator StartNextLevelSequence(string levelName)
     {
-        player.FadePlayerOut();
+        if(FindObjectOfType<Player>() != null)
+            FindObjectOfType<Player>().FadePlayerOut();
 
         _fader.FadeIn();
         yield return new WaitForSeconds(_fader.FadeDuration);
-        LoadingScene.LoadScene(SceneManager.GetActiveScene().name);
+        LoadingScene.LoadScene(levelName);
     }
 
     private void InstantiatePlayer()

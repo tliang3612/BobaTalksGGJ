@@ -1,5 +1,9 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+using DG.Tweening;
+using TMPro;
 
 public class GUIManager : MonoBehaviour
 {
@@ -10,7 +14,10 @@ public class GUIManager : MonoBehaviour
     [SerializeField] private GameObject _deathScreen;
     [SerializeField] private GameObject _pauseScreen;
 
-    [SerializeField] private PlayerInputController _playerInput;
+    [SerializeField] private GameObject _tempDialogue;
+    [SerializeField] private float _tempDialogueDuration;
+
+    private PlayerInputController _playerInput;
 
     private bool _isPaused;
 
@@ -34,13 +41,23 @@ public class GUIManager : MonoBehaviour
     public void Start()
     {
         UpdateHearts(3);
-        //SetDeathScreen(false);
         if (FindObjectOfType<Player>() != null)
         {
             FindObjectOfType<Player>().PlayerHealthChangedEvent += UpdateHearts;
             _playerInput = FindObjectOfType<PlayerInputController>();
         }
-        
+
+        if (_tempDialogue != null)
+        {
+            var images = _tempDialogue.GetComponentsInChildren<Image>();
+            var text = _tempDialogue.GetComponentInChildren<Text>();
+            foreach (var image in images)
+                image.color = new Color(255,255,255, 0);
+            text.color = new Color(255, 255, 255, 0);
+            StartTempDialogue();
+        }
+            
+
         SetPauseScreen(false);
     }
 
@@ -50,6 +67,25 @@ public class GUIManager : MonoBehaviour
         {
             SetPauseScreen(!_isPaused);
         }
+    }
+
+    public void StartTempDialogue()
+    {
+        var images = _tempDialogue.GetComponentsInChildren<Image>();
+        var text = _tempDialogue.GetComponentInChildren<Text>();
+        foreach (var image in images)
+            image.DOFade(1, 2);
+        text.DOFade(1, 2);        
+    }
+
+    public void EndTempDialogue()
+    {
+        var images = _tempDialogue.GetComponentsInChildren<Image>();
+        var text = _tempDialogue.GetComponentInChildren<Text>();
+
+        foreach (var image in images)
+            image.DOFade(0, 2);
+        text.DOFade(0, 2);
     }
 
     public void UpdateHearts(int hp)

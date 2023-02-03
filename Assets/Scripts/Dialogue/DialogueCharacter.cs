@@ -9,11 +9,5 @@ public class DialogueCharacter : ScriptableObject
     public string CharacterName;
     public Sprite CharacterSprite;
     public AudioClip CharacterVoice;
-
-    //wip
-    public AudioClip GetAudio()
-    {
-        return CharacterVoice;
-    }
 }
 
