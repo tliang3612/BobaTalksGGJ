@@ -68,7 +68,7 @@ public class TimerMeter : MonoBehaviour
         if (_currentTime < 0)
         {
             _startTime = Time.time * 10;
-            StartCoroutine(FindObjectOfType<LevelManager>().Respawn(FindObjectOfType<Player>()));
+            StartCoroutine(FindObjectOfType<LevelManager>().RespawnPlayer(FindObjectOfType<Player>()));
         }
     }
 

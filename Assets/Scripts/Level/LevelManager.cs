@@ -6,33 +6,45 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject _playerPrefab;
-	[SerializeField] private Transform _spawnPosition;
+    [SerializeField] private Transform _spawnPosition;
     [SerializeField] private bool _spawnPlayerOnStart;
 
-    private Fader _fader;   
-    private Camera _camera;
+    private CinemachineVirtualCamera _camera;
+
+    private Fader _fader;
 
     private void Awake()
     {
-        if(_spawnPlayerOnStart)
+        if (_spawnPlayerOnStart)
             InstantiatePlayer();
-        
+
+        if (FindObjectOfType<CinemachineVirtualCamera>() != null)
+            _camera = FindObjectOfType<CinemachineVirtualCamera>();
+
         _fader = FindObjectOfType<Fader>();
-        _camera = Camera.main;
     }
 
     private void Start()
     {
         _fader.FadeOut();
 
-        if(FindObjectOfType<Player>() != null)
-            FindObjectOfType<Player>().PlayerDeathEvent += (player) => StartCoroutine(Respawn(player));
+        if (FindObjectOfType<Player>() != null)
+        {
+            _camera.m_Follow = FindObjectOfType<Player>().transform;
+            FindObjectOfType<Player>().PlayerDeathEvent += (player) => StartCoroutine(RespawnPlayer(player));
+        }
+
     }
 
-    public IEnumerator Respawn(Player player)
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public IEnumerator RespawnPlayer(Player player)
     {
         yield return player.PlayDeathAnimation();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        ReloadScene();
     }
 
     public void SpawnPlayerAtPoint(Vector3 position)
@@ -42,13 +54,13 @@ public class LevelManager : MonoBehaviour
 
 
     public void GoToLevel(string levelName)
-    {
-        StartCoroutine(StartNextLevelSequence(levelName));
+    {        
+        StartCoroutine(StartNextLevelSequence(levelName.TrimEnd()));
     }
 
     private IEnumerator StartNextLevelSequence(string levelName)
     {
-        if(FindObjectOfType<Player>() != null)
+        if (FindObjectOfType<Player>() != null)
             FindObjectOfType<Player>().FadePlayerOut();
 
         _fader.FadeIn();
@@ -61,7 +73,7 @@ public class LevelManager : MonoBehaviour
         if (_playerPrefab == null || FindObjectOfType<Player>() != null)
             return;
 
-		GameObject playerObject = Instantiate(_playerPrefab, _spawnPosition.position, Quaternion.identity);
+        GameObject playerObject = Instantiate(_playerPrefab, _spawnPosition.position, Quaternion.identity);
     }
 
 }
