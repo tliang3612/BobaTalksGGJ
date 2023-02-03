@@ -35,14 +35,18 @@ public class GUIManager : MonoBehaviour
     {
         UpdateHearts(3);
         //SetDeathScreen(false);
-        FindObjectOfType<Player>().PlayerHealthChangedEvent += UpdateHearts;
-        _playerInput = FindObjectOfType<PlayerInputController>();
+        if (FindObjectOfType<Player>() != null)
+        {
+            FindObjectOfType<Player>().PlayerHealthChangedEvent += UpdateHearts;
+            _playerInput = FindObjectOfType<PlayerInputController>();
+        }
+        
         SetPauseScreen(false);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             SetPauseScreen(!_isPaused);
         }
@@ -68,14 +72,15 @@ public class GUIManager : MonoBehaviour
     public void SetDeathScreen(bool isActive)
     {
         _deathScreen.SetActive(isActive);
-        _playerInput.IsActive = !isActive;
         Time.timeScale = isActive ? 0 : 1;
     }
 
     public void SetPauseScreen(bool isActive)
     {
         _pauseScreen.SetActive(isActive);
-        _playerInput.IsActive = !isActive;
+        if(_playerInput)
+            _playerInput.IsActive = !isActive;
+
         Time.timeScale = isActive ? 0 : 1;
         _isPaused = isActive;
 

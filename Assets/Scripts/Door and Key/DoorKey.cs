@@ -13,7 +13,8 @@ public class DoorKey : MonoBehaviour
     [SerializeField] private LayerMask _playerLayer;
     [SerializeField] private bool _triggersEvent;
     [SerializeField] private AudioClip _keyCollectedClip;
-    
+    [SerializeField] private AudioClip _doorUnlockedClip;
+
     private int _keysObtained;
     private AudioSource _audioSource;
     private Dictionary<GameObject, bool> _keyCollectedDict;
@@ -68,6 +69,7 @@ public class DoorKey : MonoBehaviour
         if(_triggersEvent)
             AllKeysCollectedEvent?.Invoke();
 
+        FindObjectOfType<AudioManager>().PlaySound(_doorUnlockedClip, _audioSource, TrackType.Sfx, false);
         _door.GetComponent<SpriteRenderer>().DOFade(0, _fadeSpeed).OnComplete(() => _door.SetActive(false));
     }
 

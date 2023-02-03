@@ -31,12 +31,15 @@ public abstract class PlayerState
         _isAnimationFinished = false;
         _isExitingState = false;
 
-        if(_audioData != null)
+        if (_audioData != null && _audioData.ShouldLoop == false)
             _audioData.AudioManager.PlaySound(_audioData.AudioClip, _audioData.AudioSource, TrackType.Sfx, false);
     }
 
     public virtual void OnStateExit()
     {
+        if (_audioData != null && _audioData.ShouldLoop)
+            _audioData.AudioManager.StopSound(_audioData.AudioSource);
+
         _playerReference.Anim.SetBool(_animBoolKey, false);
         _isExitingState = true;
     }
@@ -44,6 +47,9 @@ public abstract class PlayerState
     public virtual void StateUpdate()
     {
         DoChecks();
+
+        if(_audioData != null && _audioData.ShouldLoop)
+            _audioData.AudioManager.PlaySound(_audioData.AudioClip, _audioData.AudioSource, TrackType.Sfx, false);
     }
 
     public virtual void DoChecks()

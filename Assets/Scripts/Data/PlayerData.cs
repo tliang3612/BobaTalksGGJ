@@ -11,6 +11,8 @@ public class PlayerData : ScriptableObject
     [Header("Audio Clips")]
     public AudioClip DeathAudio;
     public AudioClip JumpAudio;
+    public AudioClip HurtAudio;
+    public AudioClip WalkAudio;
 
     [Header("Other Data")]
     public float FadeDuration = 1.5f;

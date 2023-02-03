@@ -7,13 +7,15 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject _playerPrefab;
 	[SerializeField] private Transform _spawnPosition;
+    [SerializeField] private bool _spawnPlayerOnStart;
 
     private Fader _fader;   
     private Camera _camera;
 
     private void Awake()
     {
-        InstantiatePlayer();
+        if(_spawnPlayerOnStart)
+            InstantiatePlayer();
         
         _fader = FindObjectOfType<Fader>();
         _camera = Camera.main;
@@ -22,7 +24,9 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         _fader.FadeOut();
-        FindObjectOfType<Player>().PlayerDeathEvent += (player) => StartCoroutine(Respawn(player));
+
+        if(FindObjectOfType<Player>() != null)
+            FindObjectOfType<Player>().PlayerDeathEvent += (player) => StartCoroutine(Respawn(player));
     }
 
     public IEnumerator Respawn(Player player)

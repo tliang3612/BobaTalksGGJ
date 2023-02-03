@@ -30,7 +30,6 @@ public class DialogueTrigger : MonoBehaviour, IInteractable
 
     public bool CheckInteractFinished()
     {
-        Debug.Log(_dialogueFinished);
         return _dialogueFinished;
     }
 }
