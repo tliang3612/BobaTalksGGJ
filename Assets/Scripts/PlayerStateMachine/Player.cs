@@ -187,7 +187,7 @@ public class Player : MonoBehaviour
 
     public bool CheckIfTouchingSlope()
     {
-        if (CheckIfGrounded())
+        if (CheckIfGrounded() || _slopeDetector == null)
             return false;
 
         var hitVertical = Physics2D.Raycast(_slopeDetector.position, Vector2.down, _playerData.SlopeDetectionDistance, _playerData.GroundLayer);
@@ -308,6 +308,9 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(_groundDetector.position, _playerData.GroundDetectionRadius);
         Gizmos.DrawWireSphere(transform.position, _playerData.InteractDetectionRadius);
         Gizmos.DrawRay(_wallDetector.position, Vector2.right * _playerData.WallDetectionDistance);
+
+        if (_slopeDetector == null) return;
+             
         Gizmos.DrawRay(_slopeDetector.position, Vector2.down * _playerData.SlopeDetectionDistance);
         Gizmos.DrawRay(_slopeDetector.position, Vector2.right * _playerData.SlopeDetectionDistance);
     }

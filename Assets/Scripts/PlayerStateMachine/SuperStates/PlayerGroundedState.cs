@@ -66,6 +66,8 @@ public class PlayerGroundedState : PlayerState
         {
             _stateMachine.TransitionState(_playerReference.DashState);
         }
+        else if(_jumpInput && _inputX == 0)
+            _playerReference.SetVelocityToZero();
 
 
     }
