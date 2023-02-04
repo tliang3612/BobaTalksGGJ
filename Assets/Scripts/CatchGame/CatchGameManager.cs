@@ -43,7 +43,10 @@ public class CatchGameManager : MonoBehaviour
         {
             _victoryDoor.SetActive(true);
             _itemSpawner.StopSpawn();
-            _projectileSpawnerRight.StopSpawn();
+            if(_projectileSpawnerRight)
+                _projectileSpawnerRight.StopSpawn();
+
+            if(_projectileSpawnerLeft)
             _projectileSpawnerLeft.StopSpawn();
             Debug.Log("You Win!");
         }
