@@ -23,7 +23,7 @@ MonoBehaviour:
   MaxVolume: 5
   MasterVolume: 0.43
   MasterOn: 1
-  MusicVolume: 0.1
+  MusicVolume: 3
   MusicOn: 1
-  SfxVolume: 0.14
+  SfxVolume: 1.3381993
   SfxOn: 1

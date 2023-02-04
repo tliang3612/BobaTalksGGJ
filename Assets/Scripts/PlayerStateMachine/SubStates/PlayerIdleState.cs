@@ -17,7 +17,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void StateUpdate()
     {
         base.StateUpdate();
-        
+
 
         if (_inputX != 0 && !_isExitingState)
         {
