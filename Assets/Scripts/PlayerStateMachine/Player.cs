@@ -98,10 +98,10 @@ public class Player : MonoBehaviour
     private void InitializeStates()
     {
         IdleState = new PlayerIdleState(this, StateMachine, _playerData, "Idle");
-        MoveState = new PlayerMoveState(this, StateMachine, _playerData, "Move", new AudioData(_playerData.WalkAudio, _audioSource, _audioManager, true));
+        MoveState = new PlayerMoveState(this, StateMachine, _playerData, "Move");
         JumpState = new PlayerJumpState(this, StateMachine, _playerData, "Airborne", new AudioData(_playerData.JumpAudio, _audioSource, _audioManager, false)); //JumpState would just call airborne animation
         AirborneState = new PlayerAirborneState(this, StateMachine, _playerData, "Airborne");
-        LandState = new PlayerLandState(this, StateMachine, _playerData, "Land");
+        LandState = new PlayerLandState(this, StateMachine, _playerData, "Land", new AudioData(_playerData.LandAudio, _audioSource, _audioManager, false));
         WallSlideState = new PlayerWallSlideState(this, StateMachine, _playerData, "WallSlide");
         DashState = new PlayerDashState(this, StateMachine, _playerData, "Dash");
         InteractState = new PlayerInteractState(this, StateMachine, _playerData, "Idle");

@@ -16,6 +16,7 @@ MonoBehaviour:
   JumpAudio: {fileID: 8300000, guid: 279b02ecceb9ffd408bdae6e60f5d592, type: 3}
   HurtAudio: {fileID: 8300000, guid: b5a7c5ba55d349f429bc4ad0744fa89c, type: 3}
   WalkAudio: {fileID: 8300000, guid: 29c2f79db80de6b4790e4c61551556b1, type: 3}
+  LandAudio: {fileID: 8300000, guid: 71367d751806e7641b98b89166a47902, type: 3}
   FadeDuration: 1.5
   HurtDuration: 0.7
   KnockbackVelocityX: 3

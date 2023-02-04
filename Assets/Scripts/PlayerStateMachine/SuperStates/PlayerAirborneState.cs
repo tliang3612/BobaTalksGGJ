@@ -74,10 +74,14 @@ public class PlayerAirborneState : PlayerState
             _currentJumpable.OnPlayerJumpedOn();
             _stateMachine.TransitionState(_playerReference.JumpState);
         }
-        else if (_isGrounded && !_isRising) // Check for if player landed
+        else if (_isGrounded && !_isRising && _inputX == 0) // Check for if player landed
         {
             _stateMachine.TransitionState(_playerReference.LandState);
         }  
+        else if(_isGrounded && !_isRising && _inputX != 0)
+        {
+            _stateMachine.TransitionState(_playerReference.MoveState);
+        }
         else if(_jumpInput && _playerReference.JumpState.CanJump() && _currentJumpable == null) // Check if can jump in air
         {
             HandleJumpMultipler();

@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
     {
 		audioSource.clip = audioClip;
 
-		if (audioSource.isPlaying)
+		if (audioSource.isPlaying && shouldLoop)
 			return;
 
 		switch (trackType)
