@@ -29,4 +29,4 @@ MonoBehaviour:
   - CharacterSpeaking: {fileID: 11400000, guid: 8a5023ff331054b49b38c0481390fea4, type: 2}
     LineText: That fool over there overworked to death, do you want to spend your
       life so cheaply? Take my path and enjoy your life sedately.
-  PowerupToReceive: 0
+  PowerupToReceive: 1

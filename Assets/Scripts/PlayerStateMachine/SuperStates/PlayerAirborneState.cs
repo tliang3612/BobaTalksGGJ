@@ -93,10 +93,10 @@ public class PlayerAirborneState : PlayerState
         {
             _stateMachine.TransitionState(_playerReference.WallSlideState);
         }
-        else if(_dashInput && _playerReference.DashState.CheckIfCanDash())
+        /*else if(_dashInput && _playerReference.DashState.CheckIfCanDash())
         {
             _stateMachine.TransitionState(_playerReference.DashState);
-        }
+        }*/
         else // Check for airborne movement
         {
             _playerReference.HandleFlip(_inputX);

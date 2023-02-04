@@ -31,11 +31,11 @@ public class ProjectileSpawner : MonoBehaviour
     public void Start()
     {
         _projectileList = new List<Projectile>();
-        _lastProjectileSpawnTime = 0f;
+        _lastProjectileSpawnTime = Time.time;
         _canSpawn = true;
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
         if (!_canSpawn)
             return;
@@ -53,7 +53,7 @@ public class ProjectileSpawner : MonoBehaviour
     public Projectile SpawnProjectile(Vector2 spawnPoint)
     {
         if (_audioToPlay)
-            _audioManager.PlaySound(_audioToPlay, _audioSource, TrackType.Sfx, false);
+            _audioManager.PlaySound(_audioToPlay, _audioSource, TrackType.Sfx, true);
         
         _lastProjectileSpawnTime = Time.time;
         var projectile = Instantiate(_projectileToSpawn, spawnPoint, Quaternion.identity, transform).GetComponent<Projectile>();

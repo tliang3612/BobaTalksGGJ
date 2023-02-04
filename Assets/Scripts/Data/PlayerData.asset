@@ -25,9 +25,9 @@ MonoBehaviour:
   JumpVelocity: 12
   HeldJumpHeightMultiplier: 0.9
   NumJumps: 2
-  AirborneGracePeriod: 0.3
-  WallSlideVelocity: 2
-  SlopeSlideVelocity: 3
+  AirborneGracePeriod: 0.5
+  WallSlideVelocity: 1.5
+  SlopeSlideVelocity: 3.5
   DashTime: 0.2
   DashVelocity: 25
   AirDrag: 10

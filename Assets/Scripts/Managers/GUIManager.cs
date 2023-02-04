@@ -1,9 +1,6 @@
-using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Linq;
-using DG.Tweening;
-using TMPro;
 
 public class GUIManager : MonoBehaviour
 {
@@ -24,16 +21,22 @@ public class GUIManager : MonoBehaviour
     {
         if (_pauseScreen == null)
         {
-            Debug.Log(true);
             _pauseScreen = GameObject.Find("PauseScreen");
         }
+
+        if (_tempDialogue == null)
+        {
+            _tempDialogue = GameObject.Find("TempDialogue");
+        }
+
+        if (GameObject.Find("HealthPanel") == null) return;
 
         if (_hearts.Length <= 0)
         {
             for (int i = 0; i < 3; i++)
             {
-                if(GameObject.Find("HealthPanel") != null)
-                    _hearts[i] = GameObject.Find("HealthPanel").GetComponentsInChildren<Image>()[i];
+
+                _hearts[i] = GameObject.Find("HealthPanel").GetComponentsInChildren<Image>()[i];
             }
         }
     }
@@ -52,11 +55,11 @@ public class GUIManager : MonoBehaviour
             var images = _tempDialogue.GetComponentsInChildren<Image>();
             var text = _tempDialogue.GetComponentInChildren<Text>();
             foreach (var image in images)
-                image.color = new Color(255,255,255, 0);
+                image.color = new Color(255, 255, 255, 0);
             text.color = new Color(255, 255, 255, 0);
             StartTempDialogue();
         }
-            
+
 
         SetPauseScreen(false);
     }
@@ -75,7 +78,7 @@ public class GUIManager : MonoBehaviour
         var text = _tempDialogue.GetComponentInChildren<Text>();
         foreach (var image in images)
             image.DOFade(1, 2);
-        text.DOFade(1, 2);        
+        text.DOFade(1, 2);
     }
 
     public void EndTempDialogue()
@@ -115,7 +118,7 @@ public class GUIManager : MonoBehaviour
     public void SetPauseScreen(bool isActive)
     {
         _pauseScreen.SetActive(isActive);
-        if(_playerInput)
+        if (_playerInput)
             _playerInput.IsActive = !isActive;
 
         AudioListener.pause = isActive;

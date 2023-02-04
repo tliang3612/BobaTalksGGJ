@@ -54,7 +54,8 @@ public class LevelManager : MonoBehaviour
 
 
     public void GoToLevel(string levelName)
-    {        
+    {
+        Time.timeScale = 1f;
         StartCoroutine(StartNextLevelSequence(levelName.TrimEnd()));
     }
 

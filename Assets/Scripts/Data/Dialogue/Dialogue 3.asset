@@ -13,8 +13,20 @@ MonoBehaviour:
   m_Name: Dialogue 3
   m_EditorClassIdentifier: 
   Lines:
-  - CharacterSpeaking: {fileID: 11400000, guid: 692ecf31d9d8de1409ad4977f7b4ea35, type: 2}
-    LineText: Here have this powerup!
-  - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
-    LineText: Thanks!
+  - CharacterSpeaking: {fileID: 11400000, guid: 9d0fed415d0d08246b4c912158dc5de9, type: 2}
+    LineText: Once, I had a lover, perhaps the love of my life, but that was merely
+      a folly of youth.
+  - CharacterSpeaking: {fileID: 11400000, guid: 9d0fed415d0d08246b4c912158dc5de9, type: 2}
+    LineText: And, my mother was ill and my father bed-ridden, so how could I have
+      possibly left?
+  - CharacterSpeaking: {fileID: 11400000, guid: 9d0fed415d0d08246b4c912158dc5de9, type: 2}
+    LineText: Family is happiness and family is love; child, choose family and a
+      tradition that has lasted until you.
+  - CharacterSpeaking: {fileID: 11400000, guid: 08ca88499d09e2d4a8176b4c836bd057, type: 2}
+    LineText: It is not selfish to choose yourself, child.
+  - CharacterSpeaking: {fileID: 11400000, guid: 08ca88499d09e2d4a8176b4c836bd057, type: 2}
+    LineText: If the family disapproves, like they did of my partner, let them disapprove.
+      Sometimes, I miss my sisters, but they can always visit.
+  - CharacterSpeaking: {fileID: 11400000, guid: 08ca88499d09e2d4a8176b4c836bd057, type: 2}
+    LineText: Do not be afraid to eschew tradition to make your own path.
   PowerupToReceive: 0

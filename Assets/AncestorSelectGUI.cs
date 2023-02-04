@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class AncestorSelectGUI : MonoBehaviour
 {
-    [SerializeField] private GameObject _leftPanel;
-    [SerializeField] private GameObject _rightPanel;
-
     [SerializeField] private string _leftLevel;
     [SerializeField] private string _rightLevel;
 

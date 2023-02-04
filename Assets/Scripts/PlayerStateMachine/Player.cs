@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     //State Machine
     public PlayerStateMachine StateMachine { get; private set; }
 
-    private int _maxPlayerHealth = 3;
+    private readonly int _maxPlayerHealth = 3;
     private int _currentPlayerHealth;
     private bool _isCurrentlyHurt;
 
@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     public PlayerAirborneState AirborneState { get; private set; }
     public PlayerLandState LandState { get; private set; }
     public PlayerWallSlideState WallSlideState { get; private set; }
-    public PlayerDashState DashState { get; private set; }
+    //public PlayerDashState DashState { get; private set; }
     public PlayerInteractState InteractState { get; private set; }
     public PlayerHurtState HurtState { get; private set; }
     public PlayerSlideState SlideState { get; private set; }
@@ -82,9 +82,6 @@ public class Player : MonoBehaviour
         Rb = GetComponent<Rigidbody2D>();
 
         InitializeStates();
-
-        if(FindObjectOfType<DialogueManager>())
-            FindObjectOfType<DialogueManager>().PowerupReceivedEvent += OnPowerupReceived;
     }
     private void Start()
     {
@@ -103,10 +100,10 @@ public class Player : MonoBehaviour
         AirborneState = new PlayerAirborneState(this, StateMachine, _playerData, "Airborne");
         LandState = new PlayerLandState(this, StateMachine, _playerData, "Land", new AudioData(_playerData.LandAudio, _audioSource, _audioManager, false));
         WallSlideState = new PlayerWallSlideState(this, StateMachine, _playerData, "WallSlide");
-        DashState = new PlayerDashState(this, StateMachine, _playerData, "Dash");
+        //DashState = new PlayerDashState(this, StateMachine, _playerData, "Dash");
         InteractState = new PlayerInteractState(this, StateMachine, _playerData, "Idle");
         HurtState = new PlayerHurtState(this, StateMachine, _playerData, "Hurt", new AudioData(_playerData.HurtAudio, _audioSource, _audioManager, false));
-        SlideState = new PlayerSlideState(this, StateMachine, _playerData, "Land");
+        SlideState = new PlayerSlideState(this, StateMachine, _playerData, "Land", new AudioData(_playerData.LandAudio, _audioSource, _audioManager, false));
     }
 
     private void Update()
@@ -296,10 +293,10 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Callbacks
-    private void OnPowerupReceived(PowerupType powerup)
+/*    private void OnPowerupReceived(PowerupType powerup)
     {
         PowerupInventory.AddPowerup(powerup);
-    }
+    }*/
 
     #endregion
 

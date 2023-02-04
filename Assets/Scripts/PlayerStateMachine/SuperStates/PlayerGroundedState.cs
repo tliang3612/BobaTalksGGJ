@@ -26,7 +26,7 @@ public class PlayerGroundedState : PlayerState
         base.OnStateEnter();
 
         _playerReference.JumpState.ResetJumps();
-        _playerReference.DashState.CanDash = true;
+        //_playerReference.DashState.CanDash = true;
     }
 
     public override void OnStateExit()
@@ -51,7 +51,7 @@ public class PlayerGroundedState : PlayerState
             _playerReference.InteractState.Interactable = _currentInteractable;
             _stateMachine.TransitionState(_playerReference.InteractState);
         }
-        else if (_jumpInput && _playerReference.JumpState.CanJump())
+        else if (_jumpInput && _playerReference.JumpState.CanJump() && !_playerReference.CheckIfHurt())
         {
             _playerReference.InputController.UseJumpInput();
             _stateMachine.TransitionState(_playerReference.JumpState);
@@ -62,10 +62,10 @@ public class PlayerGroundedState : PlayerState
             _playerReference.AirborneState.StartGracePeriod();
             _stateMachine.TransitionState(_playerReference.AirborneState);
         }
-        else if (_dashInput && _playerReference.DashState.CheckIfCanDash())
+        /*else if (_dashInput && _playerReference.DashState.CheckIfCanDash())
         {
             _stateMachine.TransitionState(_playerReference.DashState);
-        }
+        }*/
         else if(_jumpInput && _inputX == 0)
             _playerReference.SetVelocityToZero();
 

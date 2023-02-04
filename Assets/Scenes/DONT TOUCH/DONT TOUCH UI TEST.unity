@@ -258,22 +258,6 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4278190080
       objectReference: {fileID: 0}
-    - target: {fileID: 3325293929944530462, guid: 9fe26a13206fa164d9ec1ffd1043a4c3, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 80.4844
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325293929944530462, guid: 9fe26a13206fa164d9ec1ffd1043a4c3, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 24.9566
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325293929944530462, guid: 9fe26a13206fa164d9ec1ffd1043a4c3, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3325293929944530462, guid: 9fe26a13206fa164d9ec1ffd1043a4c3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -111
-      objectReference: {fileID: 0}
     - target: {fileID: 4671363473808052471, guid: 9fe26a13206fa164d9ec1ffd1043a4c3, type: 3}
       propertyPath: m_fontSize
       value: 8
@@ -445,10 +429,6 @@ PrefabInstance:
     - target: {fileID: 7647901761023970798, guid: 9fe26a13206fa164d9ec1ffd1043a4c3, type: 3}
       propertyPath: m_fontSizeBase
       value: 2.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 8372959281396238374, guid: 9fe26a13206fa164d9ec1ffd1043a4c3, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 9105282857903016365, guid: 9fe26a13206fa164d9ec1ffd1043a4c3, type: 3}
       propertyPath: m_SizeDelta.x

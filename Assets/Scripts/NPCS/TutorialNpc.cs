@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class TutorialNpc : MonoBehaviour, IContextable
 {
@@ -11,7 +12,6 @@ public class TutorialNpc : MonoBehaviour, IContextable
 
     private SpriteRenderer _sprite;
     private Transform _playerTransform;
-    //private Animator _anim;
 
     public Sprite ContextSprite
     {
@@ -21,9 +21,8 @@ public class TutorialNpc : MonoBehaviour, IContextable
     private void Awake()
     {
         _contextBox.GetComponentInChildren<SpriteRenderer>().sprite = ContextSprite;
-        _contextBox.SetActive(false);
+        _contextBox.GetComponentInChildren<SpriteRenderer>().color = new Color(255, 255, 255, 0);
         _sprite = GetComponent<SpriteRenderer>();
-        //_anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -42,12 +41,12 @@ public class TutorialNpc : MonoBehaviour, IContextable
 
     public void ShowContext()
     {
-        _contextBox.SetActive(true);
+        _contextBox.GetComponent<SpriteRenderer>().DOFade(1, 1);  
     }
 
     public void HideContext()
     {
-        _contextBox.SetActive(false);
+        _contextBox.GetComponent<SpriteRenderer>().DOFade(0, .7f);
     }
 
     public void HandlePlayerDetection()
