@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1794e77d3003f49b7e544354e4893b, type: 3}
+  m_Name: Dialogue 1
+  m_EditorClassIdentifier: 
+  Lines:
+  - CharacterSpeaking: {fileID: 11400000, guid: 692ecf31d9d8de1409ad4977f7b4ea35, type: 2}
+    LineText: My parents raised me well into their old age, and I trusted their sage
+      guidance for my future.
+  - CharacterSpeaking: {fileID: 11400000, guid: 692ecf31d9d8de1409ad4977f7b4ea35, type: 2}
+    LineText: ' A cellist path could not sustain me. What would I have done if I
+      were injured?'
+  - CharacterSpeaking: {fileID: 11400000, guid: 692ecf31d9d8de1409ad4977f7b4ea35, type: 2}
+    LineText: My fingers may itch to play, but I channeled it all into my expertise
+      as a doctor. Come, child, choose stability.
+  - CharacterSpeaking: {fileID: 11400000, guid: b366efca71dc69c499fffb3afbbca435, type: 2}
+    LineText: "Come, youngster, pick my way! I can see the sparks of your dream within
+      you, don\u2019t shut it out."
+  - CharacterSpeaking: {fileID: 11400000, guid: b366efca71dc69c499fffb3afbbca435, type: 2}
+    LineText: "My parents told me that I couldn\u2019t make it, but look at where
+      I ended up. "
+  - CharacterSpeaking: {fileID: 11400000, guid: b366efca71dc69c499fffb3afbbca435, type: 2}
+    LineText: Your dream is your reason to live; come child, choose your dream, choose
+      to live.

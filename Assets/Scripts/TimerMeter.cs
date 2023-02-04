@@ -63,7 +63,7 @@ public class TimerMeter : MonoBehaviour
         _currentTime -= Time.deltaTime;
         var newFill = 1 / _maxTime * _currentTime;
         _meter.fillAmount = Mathf.MoveTowards(_meter.fillAmount, newFill, Time.deltaTime);
-        FindObjectOfType<AudioManager>().PlaySound(_clockTickAudio, _audioSource, TrackType.Music, true);
+        FindObjectOfType<AudioManager>().PlaySound(_clockTickAudio, _audioSource, TrackType.Music, false);
 
         if (_currentTime < 0)
         {

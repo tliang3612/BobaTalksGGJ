@@ -23,7 +23,6 @@ public class DialogueManager : MonoBehaviour
 
     [Header("UI Elements")]
     [SerializeField] private GameObject _dialoguePanel;
-    [SerializeField] private TextMeshProUGUI _nameText;
     [SerializeField] private TextMeshProUGUI _dialogueText;
     [SerializeField] private Image _portrait;
     [SerializeField] private GameObject _continueIcon;
@@ -139,7 +138,6 @@ public class DialogueManager : MonoBehaviour
     {
         _portrait.color = Color.white;
         _portrait.sprite = lineInfo.CharacterSpeaking.CharacterSprite;
-        _nameText.text = lineInfo.CharacterSpeaking.name;
     }
 
 
@@ -148,7 +146,6 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     private void ClearDialogueBox()
     {
-        _nameText.text = "???";
         _portrait.sprite = null;
         _portrait.color = Color.clear; //make the portrait invisible
         _dialogueText.text = "";
