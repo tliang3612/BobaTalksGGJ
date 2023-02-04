@@ -108,6 +108,7 @@ MonoBehaviour:
     m_Bits: 512
   _triggersEvent: 0
   _keyCollectedClip: {fileID: 8300000, guid: 7b3a8f0d2508caa4b82b7fe28c51ab4c, type: 3}
+  _doorUnlockedClip: {fileID: 8300000, guid: 2b461feeaa1e53b4abfd23dd59a68c92, type: 3}
 --- !u!61 &5189599905962536803
 BoxCollider2D:
   m_ObjectHideFlags: 0

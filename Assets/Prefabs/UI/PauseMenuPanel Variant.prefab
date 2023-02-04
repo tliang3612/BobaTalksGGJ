@@ -27,15 +27,15 @@ RectTransform:
   m_GameObject: {fileID: 630361540317177650}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7159710599641548256}
-  m_RootOrder: 3
+  m_Father: {fileID: 3054808522028297610}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.9, y: 17.4}
+  m_AnchoredPosition: {x: 194.99991, y: -13.000198}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8404849868685212221
@@ -162,15 +162,15 @@ RectTransform:
   m_GameObject: {fileID: 7423879944949375185}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7566543486711604728}
-  m_RootOrder: 3
+  m_Father: {fileID: 6660275965578697601}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.9, y: 17.5}
+  m_AnchoredPosition: {x: 194.99994, y: -12.5}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4142438091191752361
@@ -621,6 +621,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f922e2c4e3b67eb478e43f877fd070b3, type: 3}
+--- !u!224 &6660275965578697601 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8131792110212647533, guid: f922e2c4e3b67eb478e43f877fd070b3, type: 3}
+  m_PrefabInstance: {fileID: 3222290782516892140}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3846261566560862503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -730,6 +735,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4145c505aec98d44a768d5748c56faa, type: 3}
+--- !u!224 &3054808522028297610 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2235041806260382893, guid: e4145c505aec98d44a768d5748c56faa, type: 3}
+  m_PrefabInstance: {fileID: 3846261566560862503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3903161654946738656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1128,11 +1138,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 746935552381728114, guid: d4f5bed52a91c964b81ae886464e81c4, type: 3}
   m_PrefabInstance: {fileID: 7159710599843980265}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &7566543486711604728 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 746935552295634449, guid: d4f5bed52a91c964b81ae886464e81c4, type: 3}
-  m_PrefabInstance: {fileID: 7159710599843980265}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7566543486711604729 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 746935552295634448, guid: d4f5bed52a91c964b81ae886464e81c4, type: 3}
@@ -1154,6 +1159,9 @@ MonoBehaviour:
   _text: {fileID: 3172960453977183356}
   _audioSettings: {fileID: 11400000, guid: 2e94e0d510aabe240bb8f36a5963a5cf, type: 2}
   _trackType: 2
+  _volumeHandle: {fileID: 7566543486368725519}
+  _mutedSprite: {fileID: 21300000, guid: eec7adb43e4329f46b8a3fa22f8ef769, type: 3}
+  _unMutedSprite: {fileID: 21300000, guid: b349ad91b14356b42a7dbf895884a5e4, type: 3}
 --- !u!114 &7822104794619200597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1366,11 +1374,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4f5bed52a91c964b81ae886464e81c4, type: 3}
---- !u!224 &7159710599641548256 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 746935552295634449, guid: d4f5bed52a91c964b81ae886464e81c4, type: 3}
-  m_PrefabInstance: {fileID: 7566543486234313713}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7159710599641548257 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 746935552295634448, guid: d4f5bed52a91c964b81ae886464e81c4, type: 3}
@@ -1392,6 +1395,9 @@ MonoBehaviour:
   _text: {fileID: 5235630643090112239}
   _audioSettings: {fileID: 11400000, guid: 2e94e0d510aabe240bb8f36a5963a5cf, type: 2}
   _trackType: 1
+  _volumeHandle: {fileID: 0}
+  _mutedSprite: {fileID: 0}
+  _unMutedSprite: {fileID: 0}
 --- !u!114 &5614980065006853951
 MonoBehaviour:
   m_ObjectHideFlags: 0
