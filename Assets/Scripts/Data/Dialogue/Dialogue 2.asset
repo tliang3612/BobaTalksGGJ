@@ -27,6 +27,8 @@ MonoBehaviour:
     LineText: 'Opportunities may come and go, but there may never be another moment
       to enjoy what you have now. '
   - CharacterSpeaking: {fileID: 11400000, guid: 8a5023ff331054b49b38c0481390fea4, type: 2}
-    LineText: That fool over there overworked to death, do you want to spend your
-      life so cheaply? Take my path and enjoy your life sedately.
+    LineText: 'That fool over there overworked to death, do you want to spend your
+      life so cheaply? '
+  - CharacterSpeaking: {fileID: 11400000, guid: 8a5023ff331054b49b38c0481390fea4, type: 2}
+    LineText: Take my path and enjoy your life sedately.
   PowerupToReceive: 1
