@@ -123,17 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &65266519 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2037560286915888946, guid: 52f4f946354d1784f81b358025c04e71, type: 3}
-  m_PrefabInstance: {fileID: 1280563977}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87d1c0fa881f8894395b9fa02ff44578, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &69896558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,7 +1342,7 @@ PrefabInstance:
     - target: {fileID: 2037560288533778384, guid: 52f4f946354d1784f81b358025c04e71, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 65266519}
+      objectReference: {fileID: 0}
     - target: {fileID: 2037560288533778384, guid: 52f4f946354d1784f81b358025c04e71, type: 3}
       propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Respawn
@@ -1934,7 +1923,7 @@ MonoBehaviour:
   _projectileDirection: {x: -1, y: 0}
   _projectileSpawnRange: {x: 0, y: 10}
   _projectileToSpawn: {fileID: 2361626826625171715, guid: 8b832c20f74735a43995e07913ae93b5, type: 3}
-  _projectileSpawnDelay: 1.5
+  _projectileSpawnDelay: 3
   _projectileDuration: 5
   _destroyOnGroundContact: 0
   _audioToPlay: {fileID: 8300000, guid: 395956e2bca9ac646a0335f08749aab0, type: 3}
@@ -18913,7 +18902,7 @@ MonoBehaviour:
   _projectileDirection: {x: 1, y: 0}
   _projectileSpawnRange: {x: 0, y: 10}
   _projectileToSpawn: {fileID: 2361626826625171715, guid: 8b832c20f74735a43995e07913ae93b5, type: 3}
-  _projectileSpawnDelay: 1.5
+  _projectileSpawnDelay: 3
   _projectileDuration: 5
   _destroyOnGroundContact: 0
   _audioToPlay: {fileID: 8300000, guid: 395956e2bca9ac646a0335f08749aab0, type: 3}
