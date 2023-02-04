@@ -59,7 +59,7 @@ public class PlayerGroundedState : PlayerState
         }
         else if (!_isGrounded && !_isTouchingSlope)
         {
-            //_playerReference.AirborneState.StartGracePeriod();
+            _playerReference.AirborneState.StartGracePeriod();
             _stateMachine.TransitionState(_playerReference.AirborneState);
         }
         else if (_dashInput && _playerReference.DashState.CheckIfCanDash())
