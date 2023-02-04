@@ -8796,7 +8796,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690113458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.89, y: 17.22, z: 0}
+  m_LocalPosition: {x: -14.7, y: 17.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8818,11 +8818,11 @@ MonoBehaviour:
   _projectileSpawnPoint: {fileID: 1690113459}
   _projectileSpeed: 2
   _projectileDirection: {x: 0, y: -1}
-  _projectileSpawnRange: {x: 15, y: 0}
+  _projectileSpawnRange: {x: 17.8, y: 0}
   _projectileToSpawn: {fileID: 2361626826625171715, guid: e376b14f3b3b98c4e8acaa68d104dae2, type: 3}
-  _projectileSpawnDelay: 0.8
+  _projectileSpawnDelay: 0.6
   _projectileDuration: 0
-  _destroyOnGroundContact: 0
+  _destroyOnGroundContact: 1
   _audioToPlay: {fileID: 0}
 --- !u!114 &1779705011 stripped
 MonoBehaviour:

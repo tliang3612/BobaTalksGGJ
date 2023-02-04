@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
         //DashState = new PlayerDashState(this, StateMachine, _playerData, "Dash");
         InteractState = new PlayerInteractState(this, StateMachine, _playerData, "Idle");
         HurtState = new PlayerHurtState(this, StateMachine, _playerData, "Hurt", new AudioData(_playerData.HurtAudio, _audioSource, _audioManager, false));
-        SlideState = new PlayerSlideState(this, StateMachine, _playerData, "Land", new AudioData(_playerData.LandAudio, _audioSource, _audioManager, false));
+        SlideState = new PlayerSlideState(this, StateMachine, _playerData, "Land");
     }
 
     private void Update()
