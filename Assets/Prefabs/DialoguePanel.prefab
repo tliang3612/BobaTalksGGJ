@@ -106,8 +106,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 6202839058680174183}
     m_Modifications:
     - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
+      propertyPath: m_fontSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5306490903151233309, guid: 3c70de21702113447b41eef533698c51, type: 3}
       propertyPath: m_PreserveAspect
