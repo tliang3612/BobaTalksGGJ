@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Loading Scene.unity
     guid: 9ab7805de81531342907e220eeb0dcdb
   - enabled: 0
-    path: Assets/Scenes/DONT TOUCH/DONT TOUCH #2.unity
+    path: Assets/Scenes/DONT TOUCH/End Credits.unity
     guid: dbd8fe033d3b9b64882e7d6c6873da79
   - enabled: 0
     path: Assets/Scenes/DONT TOUCH/DONT TOUCH #4.unity
