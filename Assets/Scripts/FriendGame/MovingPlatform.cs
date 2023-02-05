@@ -21,7 +21,7 @@ public class MovingPlatform : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_friendsDetected == _friendsNeeded) //&& _playerDetected)
+        if (_friendsDetected >= _friendsNeeded) //&& _playerDetected)
             HandleMove(true);
         else if(_friendsDetected == 0)
             HandleMove(false);

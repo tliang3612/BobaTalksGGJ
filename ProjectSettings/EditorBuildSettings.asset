@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Title Screen.unity
     guid: a9bd34500e372ef45959ec16e6036817
@@ -33,23 +30,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 3b.unity
     guid: b3cd2849229bca246a471847b332c261
   - enabled: 1
-    path: Assets/Scenes/Level 2A.unity
+    path: Assets/Scenes/Level 2a.unity
     guid: 6f04e329a6aec884e8444675baf498da
   - enabled: 1
-    path: Assets/Scenes/Level 2B.unity
+    path: Assets/Scenes/Level 2b.unity
     guid: ec75da4bb3eee46458fbcd34cf49fe10
   - enabled: 1
-    path: Assets/Scenes/Level 1A.unity
+    path: Assets/Scenes/Level 1a.unity
     guid: bd66cfcfc48b05840b3bf887900b4fa7
   - enabled: 1
     path: Assets/Scenes/Level Tutorial.unity
     guid: 22f76b63d6378e1458453edca3316d2c
-  - enabled: 1
-    path: Assets/Scenes/AncestorSelect Level 1A-B.unity
-    guid: f2ad08625db80ae48946e15125de5b70
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Ancestor Select Level 2A-B.unity
     guid: 39f4cd7233316bf439e5ad048c3e2535
@@ -57,6 +48,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Ancestor Select Level 1A-B.unity
     guid: f27e87c11b8adff47afb9c7bda0d5118
   - enabled: 1
-    path: Assets/Scenes/Level 1B.unity
+    path: Assets/Scenes/Level 1b.unity
     guid: b863fb97b9f3e6145808655ae906c711
   m_configObjects: {}
