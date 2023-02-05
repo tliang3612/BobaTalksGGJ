@@ -447,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4690377872759005999, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 85.2838
+      value: 68.4475
       objectReference: {fileID: 0}
     - target: {fileID: 4690377872759005999, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -455,12 +455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4690377872759005999, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000019073
+      value: -4.9743
       objectReference: {fileID: 0}
     - target: {fileID: 4690377872759006000, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
       propertyPath: m_Text
-      value: I lived and dreamt the art of medicine, how could I have done anything
-        else?
+      value: "Injuries heal, let your happiness come first. \r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4690377872759006000, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
       propertyPath: m_FontData.m_MinSize
@@ -1630,8 +1629,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292694795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.02, y: 7.09, z: -1}
-  m_LocalScale: {x: 0.1, y: 0.10000001, z: 0.1}
+  m_LocalPosition: {x: -1.02, y: 8.11, z: -1}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1617083866}
@@ -1678,9 +1677,9 @@ SpriteRenderer:
   m_SortingLayerID: -628297191
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cf34e140ea4ab8346829da64e379daae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 85aacc41835f5f245a72b70140be36fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 0.16}
@@ -1702,18 +1701,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.004526645, y: -0.0028856657}
+  m_Offset: {x: -1.1979494, y: 0.052754402}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 14.03, y: 18.48}
+    oldSize: {x: 24.860987, y: 28.13}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17256904, y: 0.16564968}
+  m_Size: {x: 17.319822, y: 21.723295}
   m_EdgeRadius: 0
 --- !u!114 &1292694799
 MonoBehaviour:
@@ -19355,7 +19354,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -160.1, y: -16.1}
+  m_AnchoredPosition: {x: -160.09998, y: -16.099976}
   m_SizeDelta: {x: 220.7793, y: 42.247894}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &5015480707180875379

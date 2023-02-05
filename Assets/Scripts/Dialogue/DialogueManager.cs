@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _dialogueText;
     [SerializeField] private Image _portrait;
     [SerializeField] private GameObject _continueIcon;
+    [SerializeField] private AudioClip _blipToPlay;
 
     private bool _isCurrentlyTyping;
     private string _completeText;
@@ -33,6 +34,7 @@ public class DialogueManager : MonoBehaviour
     private Queue<Dialogue.DialogueLine> _dialogueQueue;
     private Dialogue _currentDialogue;
     private bool _inDialogue;
+    private AudioSource _audioSource;
 
     public Action DialogueExitedEvent;
     public Action<PowerupType> PowerupReceivedEvent;
@@ -42,6 +44,7 @@ public class DialogueManager : MonoBehaviour
         _inDialogue = false;
         _dialoguePanel.SetActive(false);
         _dialogueQueue = new Queue<Dialogue.DialogueLine>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
 
@@ -128,10 +131,7 @@ public class DialogueManager : MonoBehaviour
 
         SetUIContents(lineInfo);
 
-        //TODO
-        //AudioManager.instance.PlayClip(voice); 
-
-        StartCoroutine(TypeWriterEffect(_completeText));
+        StartCoroutine(TypeWriterEffect(_completeText, lineInfo));
     }
 
     private void SetUIContents(Dialogue.DialogueLine lineInfo)
@@ -169,7 +169,7 @@ public class DialogueManager : MonoBehaviour
         _dialoguePanel.SetActive(false);
     }
 
-    private IEnumerator TypeWriterEffect(string text)
+    private IEnumerator TypeWriterEffect(string text, Dialogue.DialogueLine lineInfo)
     {
         _continueIcon.SetActive(false);
 
@@ -179,13 +179,19 @@ public class DialogueManager : MonoBehaviour
 
         foreach (char c in text.ToCharArray())
         {
+            if (_audioSource && _blipToPlay != null)
+                FindObjectOfType<AudioManager>().PlaySound(_blipToPlay, _audioSource, TrackType.Sfx, false);
+
             yield return new WaitForSeconds(_typeWriterDelay);
+
             _dialogueText.maxVisibleCharacters++;
 
             if (DELAYED_PUNCTUATION.Contains(c))
             {
                 yield return new WaitForSeconds(_punctuationDelay);
             }
+
+            
         }
         CompleteLine();
     }

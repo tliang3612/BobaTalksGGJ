@@ -16,19 +16,13 @@ MonoBehaviour:
   - CharacterSpeaking: {fileID: 11400000, guid: 180036039b595814fb0de1f516f72c4d, type: 2}
     LineText: 'Sometimes, you just have to go for it. '
   - CharacterSpeaking: {fileID: 11400000, guid: 180036039b595814fb0de1f516f72c4d, type: 2}
-    LineText: Look at me. I accomplished everything young because I chased every
-      opportunity I had.
+    LineText: 'Look at me, descendant. I chased every opportunity I had. '
   - CharacterSpeaking: {fileID: 11400000, guid: 180036039b595814fb0de1f516f72c4d, type: 2}
-    LineText: ' Choose my path, child, and cast aside your burdens to meet your goals.'
+    LineText: Choose my path and be swift to accomplish great things.
   - CharacterSpeaking: {fileID: 11400000, guid: 8a5023ff331054b49b38c0481390fea4, type: 2}
-    LineText: "Child, life may be short, but doesn\u2019t that mean we should savor
-      it more? "
+    LineText: Young one, don't listen to that fool.
   - CharacterSpeaking: {fileID: 11400000, guid: 8a5023ff331054b49b38c0481390fea4, type: 2}
-    LineText: 'Opportunities may come and go, but there may never be another moment
-      to enjoy what you have now. '
+    LineText: There are countless opportunities and only one now.
   - CharacterSpeaking: {fileID: 11400000, guid: 8a5023ff331054b49b38c0481390fea4, type: 2}
-    LineText: 'That fool over there overworked to death, do you want to spend your
-      life so cheaply? '
-  - CharacterSpeaking: {fileID: 11400000, guid: 8a5023ff331054b49b38c0481390fea4, type: 2}
-    LineText: Take my path and enjoy your life sedately.
+    LineText: Cherish your friends and take your time.
   PowerupToReceive: 1

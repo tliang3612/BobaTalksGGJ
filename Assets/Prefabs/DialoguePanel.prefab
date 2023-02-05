@@ -105,30 +105,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6202839058680174183}
     m_Modifications:
-    - target: {fileID: 3388610753219868460, guid: 3c70de21702113447b41eef533698c51, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
-      propertyPath: m_fontSize
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
-      propertyPath: m_fontColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
-      propertyPath: m_fontColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
-      propertyPath: m_fontColor.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295

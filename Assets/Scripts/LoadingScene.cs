@@ -12,15 +12,18 @@ public class LoadingScene : MonoBehaviour
 
     public Image LoadingProgressBar;
 
-    public float ProgressBarSpeed = 2f;
-    public float LoadCompleteDelay = 0.5f;
+    public float _progressBarSpeed = 2f;
+    public float _loadCompleteDelay = 0.5f;
+    public float _audioAmountToLower = 0.5f;
 
     private AsyncOperation _asyncOperation;
     private static string _sceneToLoad = "";
     private float _fillTarget = 0f;
     private string _loadingTextValue;
     private Image _progressBarImage;
-    private Fader _fader;   
+    private Fader _fader;
+    private AudioManager _audioManager;
+    private float _savedAudioVolume;
 
     private void Start()
     {
@@ -28,12 +31,16 @@ public class LoadingScene : MonoBehaviour
         _progressBarImage = LoadingProgressBar.GetComponent<Image>();
         _loadingTextValue = LoadingText.text;
         StartCoroutine(LoadAsynchronously());
+
+        _audioManager = GetComponent<AudioManager>();
+        _savedAudioVolume = _audioManager.AudioSetting.GetTrackVolume(TrackType.Music);
+        _audioManager.AudioSetting.SetTrackVolume(TrackType.Music, _savedAudioVolume * _audioAmountToLower);
     }
 
     private void Update()
     {
         Time.timeScale = 1f;
-        _progressBarImage.fillAmount = Mathf.Lerp(_progressBarImage.fillAmount, _fillTarget, Time.deltaTime * ProgressBarSpeed);
+        _progressBarImage.fillAmount = Mathf.Lerp(_progressBarImage.fillAmount, _fillTarget, Time.deltaTime * _progressBarSpeed);
     }
 
     public static void LoadScene(string sceneToLoad)
@@ -68,12 +75,13 @@ public class LoadingScene : MonoBehaviour
         {
             yield return null;
         }
-        yield return new WaitForSeconds(LoadCompleteDelay);
+        yield return new WaitForSeconds(_loadCompleteDelay);
 
         _fader.FadeIn();
         yield return new WaitForSeconds(_fader.FadeDuration);
 
         _asyncOperation.allowSceneActivation = true;
+        _audioManager.AudioSetting.SetTrackVolume(TrackType.Music, _savedAudioVolume);
         SceneManager.LoadScene(_sceneToLoad);
     }
     private void LoadingSetup()

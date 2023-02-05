@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lines:
   - CharacterSpeaking: {fileID: 11400000, guid: 9d0fed415d0d08246b4c912158dc5de9, type: 2}
-    LineText: Once, I had a lover, perhaps the love of my life, but that was merely
-      a folly of youth.
+    LineText: Remember your blood ties, child of my blood.
   - CharacterSpeaking: {fileID: 11400000, guid: 9d0fed415d0d08246b4c912158dc5de9, type: 2}
-    LineText: And, my mother was ill and my father bed-ridden, so how could I have
-      possibly left?
+    LineText: Once, I was love struck and wanted to leave.
   - CharacterSpeaking: {fileID: 11400000, guid: 9d0fed415d0d08246b4c912158dc5de9, type: 2}
-    LineText: Family is happiness and family is love; child, choose family and a
-      tradition that has lasted until you.
+    LineText: But I was not selfish. Family always came first.
+  - CharacterSpeaking: {fileID: 11400000, guid: 9d0fed415d0d08246b4c912158dc5de9, type: 2}
+    LineText: Choose family or the family might end with you.
   - CharacterSpeaking: {fileID: 11400000, guid: 08ca88499d09e2d4a8176b4c836bd057, type: 2}
-    LineText: It is not selfish to choose yourself, child.
+    LineText: It is not selfish to choose yourself, little one.
   - CharacterSpeaking: {fileID: 11400000, guid: 08ca88499d09e2d4a8176b4c836bd057, type: 2}
-    LineText: If the family disapproves, like they did of my partner, let them disapprove.
-      Sometimes, I miss my sisters, but they can always visit.
+    LineText: If the family disapproves, like they did of my partner, let them.
   - CharacterSpeaking: {fileID: 11400000, guid: 08ca88499d09e2d4a8176b4c836bd057, type: 2}
-    LineText: Do not be afraid to eschew tradition to make your own path.
+    LineText: 'Their love should not be conditional. '
+  - CharacterSpeaking: {fileID: 11400000, guid: 08ca88499d09e2d4a8176b4c836bd057, type: 2}
+    LineText: "If the family ends with you, that\u2019s their fault, no?"
   PowerupToReceive: 0

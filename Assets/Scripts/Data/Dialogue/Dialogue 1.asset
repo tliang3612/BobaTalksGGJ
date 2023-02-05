@@ -14,20 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lines:
   - CharacterSpeaking: {fileID: 11400000, guid: 692ecf31d9d8de1409ad4977f7b4ea35, type: 2}
-    LineText: My parents raised me well into their old age, and I trusted their sage
-      guidance for my future.
+    LineText: I trusted my parents to guide my future.
   - CharacterSpeaking: {fileID: 11400000, guid: 692ecf31d9d8de1409ad4977f7b4ea35, type: 2}
-    LineText: ' A cellist path could not sustain me. What would I have done if I
-      were injured?'
+    LineText: 'While I used to paint extensively, what would I have done if injured? '
   - CharacterSpeaking: {fileID: 11400000, guid: 692ecf31d9d8de1409ad4977f7b4ea35, type: 2}
-    LineText: My fingers may itch to play, but I channeled it all into my expertise
-      as a doctor. Come, child, choose stability.
+    LineText: 'Instead, I became an accomplished surgeon. '
+  - CharacterSpeaking: {fileID: 11400000, guid: 692ecf31d9d8de1409ad4977f7b4ea35, type: 2}
+    LineText: Come, child, choose stability.
   - CharacterSpeaking: {fileID: 11400000, guid: b366efca71dc69c499fffb3afbbca435, type: 2}
-    LineText: "Come, youngster, pick my way! I can see the sparks of your dream within
-      you, don\u2019t shut it out."
+    LineText: 'Come, youngster, pick my way! Your dream burns so brightly. '
   - CharacterSpeaking: {fileID: 11400000, guid: b366efca71dc69c499fffb3afbbca435, type: 2}
-    LineText: "My parents told me that I couldn\u2019t make it, but look at where
-      I ended up. "
+    LineText: 'It reminds me of mine, which my stuffy parents tried to suffocate. '
   - CharacterSpeaking: {fileID: 11400000, guid: b366efca71dc69c499fffb3afbbca435, type: 2}
-    LineText: Your dream is your reason to live; come child, choose your dream, choose
-      to live.
+    LineText: 'But look at my art, I chased my dream to great success! '

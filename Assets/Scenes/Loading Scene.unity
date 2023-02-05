@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.119, y: -200}
+  m_AnchoredPosition: {x: -2.119, y: -210.91382}
   m_SizeDelta: {x: 1162.3838, y: 126.6724}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175556909
@@ -234,7 +234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8, y: -42.086212}
+  m_AnchoredPosition: {x: 8, y: -66}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &186684028
@@ -475,7 +475,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.119, y: -200}
+  m_AnchoredPosition: {x: -2.119, y: -210.91382}
   m_SizeDelta: {x: 1162.3838, y: 126.6724}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &551249934
@@ -526,6 +526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 695956982}
   - component: {fileID: 695956981}
+  - component: {fileID: 695956983}
   m_Layer: 0
   m_Name: LoadingSceneManager
   m_TagString: Untagged
@@ -547,8 +548,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoadingText: {fileID: 186684028}
   LoadingProgressBar: {fileID: 551249934}
-  ProgressBarSpeed: 1.5
-  LoadCompleteDelay: 2
+  _progressBarSpeed: 1.7
+  _loadCompleteDelay: 1.5
+  _audioAmountToLower: 0.5
 --- !u!4 &695956982
 Transform:
   m_ObjectHideFlags: 0
@@ -564,6 +566,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &695956983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695956980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf44ce5f94ac0a64ea1fd83170734ffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSetting: {fileID: 11400000, guid: 2e94e0d510aabe240bb8f36a5963a5cf, type: 2}
 --- !u!1 &736225395
 GameObject:
   m_ObjectHideFlags: 0

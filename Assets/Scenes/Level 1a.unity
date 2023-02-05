@@ -264,9 +264,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileSpawnPoint: {fileID: 224969443}
-  _projectileSpeed: 9
+  _projectileSpeed: 8
   _projectileDirection: {x: -1, y: 0}
-  _projectileSpawnRange: {x: 0, y: 7}
+  _projectileSpawnRange: {x: 0, y: 8}
   _projectileToSpawn: {fileID: 2361626826625171715, guid: 8aaee6a5e02b40745b7f594fa24269ac, type: 3}
   _projectileSpawnDelay: 2
   _projectileDuration: 5
@@ -918,7 +918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4690377872759006000, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
       propertyPath: m_Text
-      value: Let me guarantee your safety
+      value: Study hard and live safely.
       objectReference: {fileID: 0}
     - target: {fileID: 4690377872759006000, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
       propertyPath: m_FontData.m_MinSize
@@ -1566,71 +1566,6 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
---- !u!1001 &1097922739
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3418874621605680992, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
-      propertyPath: m_Name
-      value: BGM
-      objectReference: {fileID: 0}
-    - target: {fileID: 3418874621605680993, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
-      propertyPath: ShouldLoop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3418874621605680993, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
-      propertyPath: _musicClip
-      value: 
-      objectReference: {fileID: 8300000, guid: efcecce8e9334374299d60d92297e56c, type: 3}
-    - target: {fileID: 3418874621605680994, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 3418874621605680994, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -11.7719755
-      objectReference: {fileID: 0}
-    - target: {fileID: 3418874621605680994, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 15.876251
-      objectReference: {fileID: 0}
-    - target: {fileID: 3418874621605680994, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.9931574
-      objectReference: {fileID: 0}
-    - target: {fileID: 3418874621605680994, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3418874621605680994, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3418874621605680994, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3418874621605680994, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3418874621605680994, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3418874621605680994, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3418874621605680994, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
 --- !u!1001 &1280563977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1765,8 +1700,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292694795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.8, y: 6.76, z: -1}
-  m_LocalScale: {x: 0.1, y: 0.10000001, z: 0.1}
+  m_LocalPosition: {x: -4.8, y: 7.97, z: -1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1617083866}
@@ -1813,7 +1748,7 @@ SpriteRenderer:
   m_SortingLayerID: -628297191
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cf34e140ea4ab8346829da64e379daae, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8d6bebce1752ace449b76aca0f6efa16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1837,18 +1772,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.004526645, y: -0.0028856657}
+  m_Offset: {x: -0.03207186, y: -0.008114636}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 14.03, y: 18.48}
+    oldSize: {x: 1.1235352, y: 1.7471526}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17256904, y: 0.16564968}
+  m_Size: {x: 0.93591183, y: 1.5145704}
   m_EdgeRadius: 0
 --- !u!114 &1292694799
 MonoBehaviour:
@@ -2269,9 +2204,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileSpawnPoint: {fileID: 1475900987}
-  _projectileSpeed: 9
+  _projectileSpeed: 8
   _projectileDirection: {x: 1, y: 0}
-  _projectileSpawnRange: {x: 0, y: 7}
+  _projectileSpawnRange: {x: 0, y: 8}
   _projectileToSpawn: {fileID: 2361626826625171715, guid: 8aaee6a5e02b40745b7f594fa24269ac, type: 3}
   _projectileSpawnDelay: 3
   _projectileDuration: 5
@@ -9230,7 +9165,7 @@ MonoBehaviour:
   _projectileDirection: {x: 0, y: -1}
   _projectileSpawnRange: {x: 21.23, y: 0}
   _projectileToSpawn: {fileID: 2361626826625171715, guid: e376b14f3b3b98c4e8acaa68d104dae2, type: 3}
-  _projectileSpawnDelay: 0.6
+  _projectileSpawnDelay: 0.4
   _projectileDuration: 0
   _destroyOnGroundContact: 0
   _audioToPlay: {fileID: 0}

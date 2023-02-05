@@ -12,11 +12,30 @@ public class BGM : MonoBehaviour
     {
         _audioSource = GetComponent<AudioSource>();    
         _audioManager = FindObjectOfType<AudioManager>();
-    }
 
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Bgm");
+
+        if (objs.Length == 3)
+        {
+            Destroy(objs[1]);
+            Destroy(objs[0]);
+            DontDestroyOnLoad(gameObject);
+        }
+        else if(objs.Length == 2)
+        {
+            Destroy(objs[1]);
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+
+        
+    }
     private void Start()
     {
-        if(_musicClip)
+        if (_musicClip)
             _audioManager.PlaySound(_musicClip, _audioSource, TrackType.Music, ShouldLoop);
     }
 
@@ -24,4 +43,5 @@ public class BGM : MonoBehaviour
     {
         _audioManager.StopSound(_audioSource);
     }
+    
 }
