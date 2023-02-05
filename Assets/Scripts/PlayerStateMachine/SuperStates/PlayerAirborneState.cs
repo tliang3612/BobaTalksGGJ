@@ -83,7 +83,7 @@ public class PlayerAirborneState : PlayerState
             _stateMachine.TransitionState(_playerReference.LandState);
         }  
         
-        else if(_jumpInput && _playerReference.JumpState.CanJump() && _currentJumpable == null) // Check if can jump in air
+        else if(_jumpInput && _playerReference.JumpState.CanJump()) // Check if can jump in air
         {
             HandleJumpMultipler();
             _playerReference.InputController.UseJumpInput();
