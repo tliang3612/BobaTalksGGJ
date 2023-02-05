@@ -427,7 +427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 370361890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.43, y: 11.87, z: 0}
+  m_LocalPosition: {x: 3.68, y: 19.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2426,6 +2426,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1917903645}
     m_Modifications:
+    - target: {fileID: 1118222254438088458, guid: c859df9bc73355b498ee0286e6401bf1, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3752269547774654890, guid: c859df9bc73355b498ee0286e6401bf1, type: 3}
       propertyPath: _maxTime
       value: 10
@@ -3200,7 +3204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72001c79601fc154681fd7266c920da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelToGoTo: Level Tutorial
+  _levelToGoTo: End Credits
   _hasCondition: 0
 --- !u!1001 &1309564245
 PrefabInstance:
