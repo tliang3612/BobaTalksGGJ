@@ -113,6 +113,26 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537216582327005924, guid: 3c70de21702113447b41eef533698c51, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 5306490903151233309, guid: 3c70de21702113447b41eef533698c51, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
@@ -121,6 +141,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: b3cb785b18012d94e988c1152a32ed9f, type: 3}
+    - target: {fileID: 6668027485741827338, guid: 3c70de21702113447b41eef533698c51, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 117.92599
+      objectReference: {fileID: 0}
+    - target: {fileID: 6668027485741827338, guid: 3c70de21702113447b41eef533698c51, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.52543
+      objectReference: {fileID: 0}
     - target: {fileID: 6849186726923312897, guid: 3c70de21702113447b41eef533698c51, type: 3}
       propertyPath: m_Name
       value: Dialogue Box
