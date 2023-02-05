@@ -1405,6 +1405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 258170272}
   - component: {fileID: 258170271}
+  - component: {fileID: 258170273}
   m_Layer: 0
   m_Name: AncestorsBackground_2ab
   m_TagString: Untagged
@@ -1453,7 +1454,7 @@ SpriteRenderer:
   m_SortingLayerID: -628297191
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 23cd112962dbe024296ea6a64d5afe18, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 21b4c70600570be4c995ed87f697f194, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1473,12 +1474,32 @@ Transform:
   m_GameObject: {fileID: 258170270}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.3, y: 16.55, z: 0}
-  m_LocalScale: {x: 1.1436604, y: 1.1436604, z: 1.1436604}
+  m_LocalScale: {x: 22.79, y: 22.79, z: 22.79}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &258170273
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258170270}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f1aa3f63c116dd4dab2959305390dff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &288770218 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2906787545298005223, guid: bb030e02ab03d4748882d232f79579ec, type: 3}
