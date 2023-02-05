@@ -902,7 +902,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8032685274856865601, guid: f2695f051f1ee4c46bc31098e95dca3c, type: 3}
       propertyPath: _levelToGoTo
-      value: Ancestor Select Level 3A-B
+      value: Level 3a
       objectReference: {fileID: 0}
     - target: {fileID: 8032685274856865601, guid: f2695f051f1ee4c46bc31098e95dca3c, type: 3}
       propertyPath: _hasCondition
