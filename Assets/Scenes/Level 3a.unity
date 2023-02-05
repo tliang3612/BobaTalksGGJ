@@ -1574,6 +1574,37 @@ Transform:
   m_Father: {fileID: 1617083866}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &952085394 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3796198711714673808, guid: fefeb4efea991cf48a544ab5fab9afa8, type: 3}
+  m_PrefabInstance: {fileID: 1292139487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &952085395
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952085394}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.29640865, y: -4.075683}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 26.259998, y: 20.10531}
+    newSize: {x: 26.259998, y: 20.10531}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 18.553259, y: 11.953942}
+  m_EdgeRadius: 0
 --- !u!1001 &960642455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2775,9 +2806,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2988108404863548809, guid: fefeb4efea991cf48a544ab5fab9afa8, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988108404863548809, guid: fefeb4efea991cf48a544ab5fab9afa8, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1442208223
+      objectReference: {fileID: 0}
     - target: {fileID: 3796198711714673808, guid: fefeb4efea991cf48a544ab5fab9afa8, type: 3}
       propertyPath: m_Name
       value: Chair
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796198711714673808, guid: fefeb4efea991cf48a544ab5fab9afa8, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4660714195047613717, guid: fefeb4efea991cf48a544ab5fab9afa8, type: 3}
       propertyPath: m_RootOrder
