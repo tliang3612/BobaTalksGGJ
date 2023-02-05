@@ -63,7 +63,7 @@ MonoBehaviour:
   _meterGameObject: {fileID: 4699571649887838894}
   _timerClock: {fileID: 0}
   _teleportPosition: {fileID: 0}
-  _maxTime: 10
+  _maxTime: 15
   _startDelay: 1
   _playerLayer:
     serializedVersion: 2

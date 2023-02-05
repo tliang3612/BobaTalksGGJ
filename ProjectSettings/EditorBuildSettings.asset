@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level 1b.unity
     guid: b863fb97b9f3e6145808655ae906c711
+  - enabled: 1
+    path: Assets/Scenes/Ancestor Select Level 3A-B.unity
+    guid: 171f9f389d8f2dd44b368635423025dd
   m_configObjects: {}
