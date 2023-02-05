@@ -32,8 +32,8 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
 		AudioSetting.SetTrackVolume(TrackType.Master, AudioSetting.MasterVolume);
-		AudioSetting.SetTrackVolume(TrackType.Sfx, AudioSetting.SfxVolume);
-		AudioSetting.SetTrackVolume(TrackType.Music, AudioSetting.MusicVolume);
+		AudioSetting.SetTrackVolume(TrackType.Sfx, AudioSetting.GetTrackVolume(TrackType.Sfx));
+		AudioSetting.SetTrackVolume(TrackType.Music, AudioSetting.GetTrackVolume(TrackType.Music));
 	}
 
     public void PlaySound(AudioClip audioClip, AudioSource audioSource, TrackType trackType, bool shouldLoop)

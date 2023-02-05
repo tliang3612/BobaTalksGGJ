@@ -8939,7 +8939,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690113458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.7, y: 17.22, z: 0}
+  m_LocalPosition: {x: -15.54, y: 17.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8961,7 +8961,7 @@ MonoBehaviour:
   _projectileSpawnPoint: {fileID: 1690113459}
   _projectileSpeed: 2
   _projectileDirection: {x: 0, y: -1}
-  _projectileSpawnRange: {x: 17.8, y: 0}
+  _projectileSpawnRange: {x: 22.82, y: 0}
   _projectileToSpawn: {fileID: 2361626826625171715, guid: 2d2eb4f625491cc418e22b5f63edb661, type: 3}
   _projectileSpawnDelay: 0.6
   _projectileDuration: 0
