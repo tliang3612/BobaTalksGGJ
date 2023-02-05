@@ -3375,7 +3375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177549, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.72
+      value: 6.14
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177549, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3411,19 +3411,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177550, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_Size.x
-      value: 13.312045
+      value: 17.73967
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177550, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_Size.y
-      value: 4.482448
+      value: 3.7255087
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177550, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_Offset.x
-      value: 0.013239384
+      value: -0.07286501
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177550, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_Offset.y
-      value: -0.17935348
+      value: -0.5578232
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177550, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_SpriteTilingProperty.border.x
@@ -3443,19 +3443,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177551, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_Size.x
-      value: 13.33852
+      value: 13.6829405
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177551, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_Size.y
-      value: 4.545355
+      value: 4.976737
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177551, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_Offset.x
-      value: 0
+      value: -0.17221022
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177551, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_Offset.y
-      value: -0.13921058
+      value: 0.07648027
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177551, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_SpriteTilingProperty.border.x
