@@ -210,7 +210,7 @@ MonoBehaviour:
   _projectileSpeed: 9
   _projectileDirection: {x: -1, y: 0}
   _projectileSpawnRange: {x: 0, y: 7}
-  _projectileToSpawn: {fileID: 2361626826625171715, guid: 8b832c20f74735a43995e07913ae93b5, type: 3}
+  _projectileToSpawn: {fileID: 2361626826625171715, guid: 8aaee6a5e02b40745b7f594fa24269ac, type: 3}
   _projectileSpawnDelay: 2
   _projectileDuration: 5
   _destroyOnGroundContact: 0
@@ -2150,7 +2150,7 @@ MonoBehaviour:
   _projectileSpeed: 9
   _projectileDirection: {x: 1, y: 0}
   _projectileSpawnRange: {x: 0, y: 7}
-  _projectileToSpawn: {fileID: 2361626826625171715, guid: 8b832c20f74735a43995e07913ae93b5, type: 3}
+  _projectileToSpawn: {fileID: 2361626826625171715, guid: 8aaee6a5e02b40745b7f594fa24269ac, type: 3}
   _projectileSpawnDelay: 3
   _projectileDuration: 5
   _destroyOnGroundContact: 0
