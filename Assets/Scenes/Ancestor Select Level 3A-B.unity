@@ -2012,8 +2012,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddf7fe38fc9329488bbc2106587dda4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftLevel: Level 3B
-  _rightLevel: Level 3A
+  _leftLevel: Level 3A
+  _rightLevel: Level 3B
   _dialogue: {fileID: 11400000, guid: 1c69a8ceb9eb74644a9eac568ff5a717, type: 2}
 --- !u!114 &1333082242 stripped
 MonoBehaviour:

@@ -15569,6 +15569,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1917903645}
     m_Modifications:
+    - target: {fileID: 4690377872759005999, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690377872759006000, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
+      propertyPath: m_Text
+      value: Life is best enjoyed with good company!
+      objectReference: {fileID: 0}
     - target: {fileID: 4690377873958366788, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
       propertyPath: m_Name
       value: TempDialogue
