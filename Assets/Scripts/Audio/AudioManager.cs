@@ -36,11 +36,11 @@ public class AudioManager : MonoBehaviour
 		AudioSetting.SetTrackVolume(TrackType.Music, AudioSetting.GetTrackVolume(TrackType.Music));
 	}
 
-    public void PlaySound(AudioClip audioClip, AudioSource audioSource, TrackType trackType, bool shouldLoop)
+    public void PlaySound(AudioClip audioClip, AudioSource audioSource, TrackType trackType, bool dontPlayOver)
     {
 		audioSource.clip = audioClip;
 
-		if (audioSource.isPlaying && shouldLoop)
+		if (audioSource.isPlaying && dontPlayOver)
 			return;
 
 		switch (trackType)
@@ -55,7 +55,7 @@ public class AudioManager : MonoBehaviour
 				break;
 		}
 
-		audioSource.loop = shouldLoop;
+		audioSource.loop = dontPlayOver;
 
 	}
 

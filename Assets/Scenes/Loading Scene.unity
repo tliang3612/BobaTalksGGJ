@@ -548,8 +548,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoadingText: {fileID: 186684028}
   LoadingProgressBar: {fileID: 551249934}
-  _progressBarSpeed: 1.7
-  _loadCompleteDelay: 1.5
+  _progressBarSpeed: 1.3
+  _loadCompleteDelay: 1.75
   _audioAmountToLower: 0.5
 --- !u!4 &695956982
 Transform:

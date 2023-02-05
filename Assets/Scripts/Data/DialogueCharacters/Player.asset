@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   CharacterName: Player
-  CharacterSprite: {fileID: -1497149490, guid: 6200a7208457c144ba05a81db63418ec, type: 3}
+  CharacterSprite: {fileID: 21300000, guid: e8f61aec26697bc49a9786c51cff4859, type: 3}
   CharacterVoice: {fileID: 0}

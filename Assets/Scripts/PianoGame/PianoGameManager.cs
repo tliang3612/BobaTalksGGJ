@@ -25,7 +25,7 @@ public class PianoGameManager : MonoBehaviour
         _audioManager = FindObjectOfType<AudioManager>();
         _audioSource = GetComponent<AudioSource>();
         var player = FindObjectOfType<Player>();
-        player.LandState = new PlayerLandState(player, player.StateMachine, player.GetPlayerData(), "Land", null);
+        //player.LandState = new PlayerLandState(player, player.StateMachine, player.GetPlayerData(), "Land", null);
     }
 
     private void Start()

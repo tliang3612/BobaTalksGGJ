@@ -29,6 +29,7 @@ public class PlayerHurtState : PlayerAbilityState
     public override void OnStateEnter()
     {
         base.OnStateEnter();
+        _audioData.AudioManager.PlaySound(_audioData.AudioClip, _audioData.AudioSource, TrackType.Sfx, false);
         _playerReference.JumpState.UseJump();
     }
 

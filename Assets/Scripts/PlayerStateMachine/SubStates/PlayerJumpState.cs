@@ -17,6 +17,7 @@ public class PlayerJumpState : PlayerAbilityState
     {
         base.OnStateEnter();
 
+        _audioData.AudioManager.PlaySound(_audioData.AudioClip, _audioData.AudioSource, TrackType.Sfx, false);
         UseJump();
         _playerReference.SetVelocityY(_playerData.JumpVelocity);
         _isAbilityDone = true;

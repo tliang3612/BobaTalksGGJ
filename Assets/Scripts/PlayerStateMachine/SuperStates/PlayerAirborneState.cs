@@ -80,6 +80,7 @@ public class PlayerAirborneState : PlayerState
         }
         else if (_isGrounded && !_isRising && _inputX == 0) // Check for if player landed
         {
+            _playerReference.LandState.StartGracePeriod();
             _stateMachine.TransitionState(_playerReference.LandState);
         }  
         
@@ -134,5 +135,4 @@ public class PlayerAirborneState : PlayerState
     }
 
     public void StartGracePeriod() => _gracePeriod = true;
-    public void SetIsRisingTrue() => _isRising = true;
 }

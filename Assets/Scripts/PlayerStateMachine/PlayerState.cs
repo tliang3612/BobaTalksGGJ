@@ -12,7 +12,7 @@ public abstract class PlayerState
 
     private string _animBoolKey;
 
-    private AudioData _audioData;
+    protected AudioData _audioData;
 
     public PlayerState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioData audioData = null)
     {
@@ -29,10 +29,7 @@ public abstract class PlayerState
         _playerReference.Anim.SetBool(_animBoolKey, true);
         //Debug.Log(_animBoolKey);
         _isAnimationFinished = false;
-        _isExitingState = false;
-
-        if (_audioData != null && _audioData.ShouldLoop == false)
-            _audioData.AudioManager.PlaySound(_audioData.AudioClip, _audioData.AudioSource, TrackType.Sfx, false);
+        _isExitingState = false;           
     }
 
     public virtual void OnStateExit()

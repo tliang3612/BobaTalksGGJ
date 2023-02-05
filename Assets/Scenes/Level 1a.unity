@@ -266,9 +266,9 @@ MonoBehaviour:
   _projectileSpawnPoint: {fileID: 224969443}
   _projectileSpeed: 8
   _projectileDirection: {x: -1, y: 0}
-  _projectileSpawnRange: {x: 0, y: 8}
+  _projectileSpawnRange: {x: 0, y: 9}
   _projectileToSpawn: {fileID: 2361626826625171715, guid: 8aaee6a5e02b40745b7f594fa24269ac, type: 3}
-  _projectileSpawnDelay: 2
+  _projectileSpawnDelay: 3.33
   _projectileDuration: 5
   _destroyOnGroundContact: 0
   _audioToPlay: {fileID: 0}
@@ -2206,9 +2206,9 @@ MonoBehaviour:
   _projectileSpawnPoint: {fileID: 1475900987}
   _projectileSpeed: 8
   _projectileDirection: {x: 1, y: 0}
-  _projectileSpawnRange: {x: 0, y: 8}
+  _projectileSpawnRange: {x: 0, y: 9}
   _projectileToSpawn: {fileID: 2361626826625171715, guid: 8aaee6a5e02b40745b7f594fa24269ac, type: 3}
-  _projectileSpawnDelay: 3
+  _projectileSpawnDelay: 2.33
   _projectileDuration: 5
   _destroyOnGroundContact: 0
   _audioToPlay: {fileID: 0}
@@ -9165,7 +9165,7 @@ MonoBehaviour:
   _projectileDirection: {x: 0, y: -1}
   _projectileSpawnRange: {x: 21.23, y: 0}
   _projectileToSpawn: {fileID: 2361626826625171715, guid: e376b14f3b3b98c4e8acaa68d104dae2, type: 3}
-  _projectileSpawnDelay: 0.4
+  _projectileSpawnDelay: 0.5
   _projectileDuration: 0
   _destroyOnGroundContact: 0
   _audioToPlay: {fileID: 0}

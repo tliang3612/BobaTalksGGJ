@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   DeathAudio: {fileID: 0}
-  JumpAudio: {fileID: 8300000, guid: 279b02ecceb9ffd408bdae6e60f5d592, type: 3}
+  JumpAudio: {fileID: 8300000, guid: 0ee5f5cf3f7f8bc4dbcfe530fa2dccf8, type: 3}
   HurtAudio: {fileID: 8300000, guid: b5a7c5ba55d349f429bc4ad0744fa89c, type: 3}
   WalkAudio: {fileID: 8300000, guid: 29c2f79db80de6b4790e4c61551556b1, type: 3}
   LandAudio: {fileID: 8300000, guid: 4d2395e34baa1c84897233462890b179, type: 3}

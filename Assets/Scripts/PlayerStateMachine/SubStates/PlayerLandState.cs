@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerLandState : PlayerGroundedState
 {
+    private bool _gracePeriod;
+    private bool _audioPlayed;
+
     public PlayerLandState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animKey, AudioData audioData) : base(player, stateMachine, playerData, animKey, audioData)
     {
     }
@@ -17,10 +20,12 @@ public class PlayerLandState : PlayerGroundedState
     {
         base.StateUpdate();
 
-        if (_isExitingState)
-            return;
+        HandleGracePeriod();
 
-        if (_inputX != 0 )
+        if (_isExitingState || (_gracePeriod && _inputX == 0))
+            return;
+     
+        if (_inputX != 0)
         {
             _stateMachine.TransitionState(_playerReference.MoveState);
         }
@@ -30,19 +35,40 @@ public class PlayerLandState : PlayerGroundedState
         }
         else
         {
+            if (!_audioPlayed)
+            {
+                _audioData.AudioManager.PlaySound(_audioData.AudioClip, _audioData.AudioSource, TrackType.Sfx, false);
+                _audioPlayed = true;
+            }
+
             _playerReference.SetVelocityX(0);
         }
         
     }
 
+    private void HandleGracePeriod()
+    {
+        if (_gracePeriod && Time.time > _startTime + 0.065f)
+        {
+            _gracePeriod = false;
+        }
+    }
+
+
+    public void StartGracePeriod()
+    {
+        _gracePeriod = true;
+    }
+
     public override void OnStateEnter()
     {
-        base.OnStateEnter();        
+        base.OnStateEnter();
     }
 
     public override void OnStateExit()
     {
         base.OnStateExit();
         _playerReference.SetVelocityToZero();
+        _audioPlayed = false;
     }
 }
