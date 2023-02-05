@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6194597047266502996}
   - component: {fileID: 6194597047266503005}
   - component: {fileID: 6194597047266502997}
+  - component: {fileID: 16145996907912173}
   m_Layer: 10
   m_Name: Jumpable Clock
   m_TagString: Untagged
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: -1442208223
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9d25a5510abd65143b613fc5f56c8d59, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c2b7458796ef5e4981d78eb8ac93f88, type: 3}
   m_Color: {r: 0.85490197, g: 0.99215686, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -214,3 +215,23 @@ CircleCollider2D:
   m_Offset: {x: -0.15728737, y: 4.49}
   serializedVersion: 2
   m_Radius: 7.65
+--- !u!95 &16145996907912173
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6194597047266502999}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0504305a0b22e80418597644891ce137, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
