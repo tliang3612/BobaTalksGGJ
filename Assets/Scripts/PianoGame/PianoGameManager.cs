@@ -5,34 +5,33 @@ using UnityEngine;
 
 public class PianoGameManager : MonoBehaviour
 {
-    [SerializeField] private List<int> _correctKeyOrder;
+    //[SerializeField] private List<int> _correctKeyOrder;
     [SerializeField] private PianoKey[] _pianoKeys;
     [SerializeField] private AudioClip[] _noteAudioClips;
-    [SerializeField] private AudioClip _incorrectKeyClip;
-    [SerializeField] private ProjectileSpawner _projectileSpawner;
-    [SerializeField] private GameObject _victoryDoor;
+    //[SerializeField] private AudioClip _incorrectKeyClip;
+    /*[SerializeField] private ProjectileSpawner _projectileSpawner;
+    [SerializeField] private GameObject _victoryDoor;*/
 
-    [field: SerializeField]
+    /*[field: SerializeField]
     private List<int> _currentKeyOrder;
     [field: SerializeField]
-    private int _nextValidKeyIndex;
+    private int _nextValidKeyIndex;*/
 
     private AudioManager _audioManager;
     private AudioSource _audioSource;
-    private BGM _bgm;
 
     private void Awake()
     {
         _audioManager = FindObjectOfType<AudioManager>();
         _audioSource = GetComponent<AudioSource>();
-        _bgm = FindObjectOfType<BGM>();
+        var player = FindObjectOfType<Player>();
+        player.LandState = new PlayerLandState(player, player.StateMachine, player.GetPlayerData(), "Land", null);
     }
 
     private void Start()
     {
-        _nextValidKeyIndex = 0;
-        _currentKeyOrder = new List<int>();
-
+        /*_nextValidKeyIndex = 0;
+        _currentKeyOrder = new List<int>();*/
 
         for (int i = 0; i < _pianoKeys.Length; i++)
         {
@@ -43,12 +42,12 @@ public class PianoGameManager : MonoBehaviour
 
     private void OnPianoKeyPressed(int keyNum, AudioClip clip)
     {
-        _currentKeyOrder.Add(keyNum);
+        //_currentKeyOrder.Add(keyNum);
         _audioManager.PlaySound(clip, _audioSource, TrackType.Sfx, false);
-        HandleValidOrder();
+        //HandleValidOrder();
     }
 
-    private void HandleValidOrder()
+    /*private void HandleValidOrder()
     {
         if (_currentKeyOrder.Last() != _correctKeyOrder[_nextValidKeyIndex])
         {
@@ -56,10 +55,10 @@ public class PianoGameManager : MonoBehaviour
         }
         else if (_currentKeyOrder.Count == _correctKeyOrder.Count)
         {
-            _projectileSpawner.StopSpawn();
-            _bgm.StopMusic();
+            if(_projectileSpawner)
+                _projectileSpawner.StopSpawn();
+            //_bgm.StopMusic();
             _victoryDoor.SetActive(true);
-            Debug.Log("You Win!");
         }
         else
         {
@@ -73,5 +72,5 @@ public class PianoGameManager : MonoBehaviour
         _nextValidKeyIndex = 0;
         _currentKeyOrder.Clear();
         Debug.Log("Wrong Key Pressed");
-    }
+    }*/
 }

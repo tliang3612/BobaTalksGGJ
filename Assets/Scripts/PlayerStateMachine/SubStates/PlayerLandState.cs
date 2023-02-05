@@ -30,7 +30,7 @@ public class PlayerLandState : PlayerGroundedState
         }
         else
         {
-            _playerReference.SetVelocityToZero();
+            _playerReference.SetVelocityX(0);
         }
         
     }

@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     public PlayerMoveState MoveState { get; private set; }
     public PlayerJumpState JumpState { get; private set; }
     public PlayerAirborneState AirborneState { get; private set; }
-    public PlayerLandState LandState { get; private set; }
+    public PlayerLandState LandState { get; set; }
     public PlayerWallSlideState WallSlideState { get; private set; }
     //public PlayerDashState DashState { get; private set; }
     public PlayerInteractState InteractState { get; private set; }
@@ -116,6 +116,11 @@ public class Player : MonoBehaviour
     #endregion
 
     #region Getters
+
+    public PlayerData GetPlayerData()
+    {
+        return _playerData;
+    }
 
     #endregion
 
