@@ -900,54 +900,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1917903645}
     m_Modifications:
-    - target: {fileID: 4690377872759005999, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 175
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377872759005999, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377872759005999, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377872759005999, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377872759006000, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_Text
-      value: Study hard and live safely.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377872759006000, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377872759006000, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377873289625513, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377873289625513, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377873289625513, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377873289625513, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377873289625514, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 537fc5884de44d64d9b98ef6e0b26ccd, type: 3}
     - target: {fileID: 4690377873958366788, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
       propertyPath: m_Name
       value: TempDialogue
@@ -987,18 +939,6 @@ PrefabInstance:
     - target: {fileID: 4690377873958366789, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
       propertyPath: m_SizeDelta.y
       value: 122
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377873958366789, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377873958366789, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377873958366789, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.4166667
       objectReference: {fileID: 0}
     - target: {fileID: 4690377873958366789, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1047,10 +987,6 @@ PrefabInstance:
     - target: {fileID: 4690377873958366789, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4690377873958366789, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}

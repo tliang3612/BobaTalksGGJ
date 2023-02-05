@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lines:
   - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
-    LineText: Im just minding my own business uwu
+    LineText: Hidden away behind my ancestral home, is an altar for my ancestors.
   - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
-    LineText: just csually walking around this empty abyss
+    LineText: Whenever I feel troubled, or lost, I find myself here.
   - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
-    LineText: gonna give my grandpa some money
+    LineText: I light incense, set down some small gifts, and pray to them.
   - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
-    LineText: Wait oh no whats Happening??
+    LineText: Today, when I closed my eyes to pray, I felt an utmost strange sensation.
   - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
-    LineText: My ancestors :OOOOOOOOOOOOOO
+    LineText: When I opened my eyes again, I saw my ancestors standing before me.
