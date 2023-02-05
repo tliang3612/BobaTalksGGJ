@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Audio;
 
-[Serializable]
+[System.Serializable]
 [CreateAssetMenu(menuName = "Audio/AudioSettings")]
 public class AudioSettings : ScriptableObject
 {
