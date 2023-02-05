@@ -1951,8 +1951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddf7fe38fc9329488bbc2106587dda4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _leftLevel: Level 1A
-  _rightLevel: Level 1B
+  _leftLevel: Level 1B
+  _rightLevel: Level 1A
   _dialogue: {fileID: 11400000, guid: 199d130018d6e3b41a91ec41b8acab76, type: 2}
 --- !u!1 &1351870618
 GameObject:

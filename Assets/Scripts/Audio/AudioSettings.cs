@@ -48,10 +48,12 @@ public class AudioSettings : ScriptableObject
             case TrackType.Music:
                 TargetAudioMixer.SetFloat(MusicVolumeName, NormalizedToMixerVolume(volume));
                 MusicVolume = volume;
+                PlayerPrefs.SetFloat("Music", volume);
                 break;
             case TrackType.Sfx:
                 TargetAudioMixer.SetFloat(SfxVolumeName, NormalizedToMixerVolume(volume));
                 SfxVolume = volume;
+                PlayerPrefs.SetFloat("Sfx", volume);
                 break;
         }
     }
@@ -60,12 +62,10 @@ public class AudioSettings : ScriptableObject
     {
         switch (track)
         {
-            case TrackType.Master:
-                return MasterVolume;
             case TrackType.Music:
-                return MusicVolume;
+                return PlayerPrefs.GetFloat("Music");
             case TrackType.Sfx:
-                return SfxVolume;
+                return PlayerPrefs.GetFloat("Sfx");
         }
 
         return 1f;
