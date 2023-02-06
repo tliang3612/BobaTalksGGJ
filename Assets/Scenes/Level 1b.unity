@@ -172,7 +172,7 @@ MonoBehaviour:
   _meter: {fileID: 1798427355499995548}
   _projectileSpawnerTop: {fileID: 1690113460}
   _projectileSpawnerRight: {fileID: 1475900988}
-  _maxTime: 20
+  _maxTime: 16
   _startDelay: 1
   _victoryDoor: {fileID: 1292694795}
 --- !u!1001 &204045339
@@ -9084,7 +9084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectileSpawnPoint: {fileID: 1690113459}
-  _projectileSpeed: 2
+  _projectileSpeed: 1.7
   _projectileDirection: {x: 0, y: -1}
   _projectileSpawnRange: {x: 18.29, y: 0}
   _projectileToSpawn: {fileID: 2361626826625171715, guid: 2d2eb4f625491cc418e22b5f63edb661, type: 3}
