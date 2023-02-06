@@ -24,10 +24,10 @@ EditorBuildSettings:
     path: Assets/Scenes/DONT TOUCH/DONT TOUCH.unity
     guid: 2a6dd4f95d0b81244aa9679085da6392
   - enabled: 1
-    path: Assets/Scenes/Level 3a.unity
+    path: Assets/Scenes/Level 3b.unity
     guid: f9e1e63671bde504d97c920b1034fd14
   - enabled: 1
-    path: Assets/Scenes/Level 3b.unity
+    path: Assets/Scenes/Level 3a.unity
     guid: b3cd2849229bca246a471847b332c261
   - enabled: 1
     path: Assets/Scenes/Level 2a.unity
