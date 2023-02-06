@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IntroController : MonoBehaviour
+public class EndingController : MonoBehaviour
 {
     [SerializeField] private Dialogue _dialogue;
     [SerializeField] private Animator _anim;
 
     private bool _isDialogueFinished;
-    
+
 
     private void Start()
     {
@@ -20,14 +20,14 @@ public class IntroController : MonoBehaviour
     public void OnDialogueFinished()
     {
         _isDialogueFinished = true;
-        StartCoroutine(StartAncestorPopUp());
+        StartCoroutine(StartAncestorExit());
     }
 
-    public IEnumerator StartAncestorPopUp()
+    public IEnumerator StartAncestorExit()
     {
         _anim.SetTrigger("PopUp");
         yield return new WaitForSeconds(6f);
-        FindObjectOfType<LevelManager>().GoToLevel("Level Tutorial");
+        FindObjectOfType<LevelManager>().GoToLevel("End Credits");
     }
 
     private void Update()

@@ -3059,7 +3059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72001c79601fc154681fd7266c920da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelToGoTo: End Credits
+  _levelToGoTo: Ending
   _hasCondition: 0
 --- !u!114 &1292694800
 MonoBehaviour:
