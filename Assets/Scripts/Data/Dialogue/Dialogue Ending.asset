@@ -13,13 +13,17 @@ MonoBehaviour:
   m_Name: Dialogue Ending
   m_EditorClassIdentifier: 
   Lines:
-  - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
+  - CharacterSpeaking: {fileID: 11400000, guid: 692ecf31d9d8de1409ad4977f7b4ea35, type: 2}
     LineText: 'One day, you''ll become an ancestor too. '
+  - CharacterSpeaking: {fileID: 11400000, guid: b366efca71dc69c499fffb3afbbca435, type: 2}
+    LineText: Returning to your roots, you'll guard the shrine.
+  - CharacterSpeaking: {fileID: 11400000, guid: 8a5023ff331054b49b38c0481390fea4, type: 2}
+    LineText: Laughing and squabbling, entire lifetimes will go by.
+  - CharacterSpeaking: {fileID: 11400000, guid: 180036039b595814fb0de1f516f72c4d, type: 2}
+    LineText: How many descendants will you guide down new roads?
+  - CharacterSpeaking: {fileID: 11400000, guid: 9d0fed415d0d08246b4c912158dc5de9, type: 2}
+    LineText: But until then, you'll have time.
+  - CharacterSpeaking: {fileID: 11400000, guid: 08ca88499d09e2d4a8176b4c836bd057, type: 2}
+    LineText: "To accumulate wisdom and live as you will. \r\n"
   - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
-    LineText: 'But until then, '
-  - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
-    LineText: You'll have time to accumulate wisdom and live as you will.
-  - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
-    LineText: After experiencing your  roots, the spirits fade back into the altar,
-  - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
-    LineText: As if they were never there...
+    LineText: The spirits then fade away, as if they were never there...
