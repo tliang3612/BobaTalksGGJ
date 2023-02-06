@@ -19,6 +19,8 @@ public class Projectile : MonoBehaviour, IJumpable
     [SerializeField] protected LayerMask _groundLayer;
     [SerializeField] protected LayerMask _playerLayer;
 
+    public Action ProjectileDestroyedOnPlayerEvent;
+
     private void FixedUpdate()
     {
         HandleCollision();
@@ -32,6 +34,7 @@ public class Projectile : MonoBehaviour, IJumpable
         {
             float direction = playerDamageHit.GetComponent<Player>().transform.position.x - transform.position.x;
             playerDamageHit.GetComponent<Player>().TakeDamage(direction > 0 ? 1 : -1);
+            ProjectileDestroyedOnPlayerEvent?.Invoke();
             Destroy(gameObject);
         }
         else if(playerDamageHit && !playerDamageHit.GetComponent<Player>().CanInteractWithCollideables)

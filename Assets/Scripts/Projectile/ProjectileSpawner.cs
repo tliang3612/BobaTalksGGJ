@@ -52,13 +52,18 @@ public class ProjectileSpawner : MonoBehaviour
 
     public Projectile SpawnProjectile(Vector2 spawnPoint)
     {
-        if (_audioToPlay)
-            _audioManager.PlaySound(_audioToPlay, _audioSource, TrackType.Sfx, true);
         
         _lastProjectileSpawnTime = Time.time;
         var projectile = Instantiate(_projectileToSpawn, spawnPoint, Quaternion.identity, transform).GetComponent<Projectile>();
         projectile.FireProjectile(_projectileDirection, _projectileDuration, _projectileSpeed,  _destroyOnGroundContact);
+        projectile.ProjectileDestroyedOnPlayerEvent += PlayProjectileSound;
         return projectile;
+    }
+
+    public void PlayProjectileSound()
+    {
+        if (_audioToPlay)
+            _audioManager.PlaySound(_audioToPlay, _audioSource, TrackType.Sfx, false);
     }
 
     public void StopSpawn()

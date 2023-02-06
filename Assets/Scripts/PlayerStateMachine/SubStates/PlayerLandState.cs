@@ -48,7 +48,7 @@ public class PlayerLandState : PlayerGroundedState
 
     private void HandleGracePeriod()
     {
-        if (_gracePeriod && Time.time > _startTime + 0.065f)
+        if (_gracePeriod && Time.time > _startTime + 0.075f)
         {
             _gracePeriod = false;
         }

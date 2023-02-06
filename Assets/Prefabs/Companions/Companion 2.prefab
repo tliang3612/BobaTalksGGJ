@@ -100,9 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40aba193124f09e44ad4ab597c877ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onPlayerJumpSound: {fileID: 8300000, guid: 71367d751806e7641b98b89166a47902, type: 3}
-  _offsetY: 0.41
-  _detectionRadius: 0.47
+  _jumpedOnSound: {fileID: 0}
   _playerLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -169,7 +167,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
     LineText: Hidden away behind your ancestral home is an altar for your ancestors.
   - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
-    LineText: Whenever you feel trouble or lost, you find yourself there.
+    LineText: Whenever you feel troubled or lost, you find yourself there.
   - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}
     LineText: Lighting incense, you set down some small gifts and pray to them.
   - CharacterSpeaking: {fileID: 11400000, guid: 4c0594cd3d1027046a720a190c4f1c0c, type: 2}

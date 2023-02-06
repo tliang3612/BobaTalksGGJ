@@ -2090,7 +2090,7 @@ GameObject:
   - component: {fileID: 753928790}
   - component: {fileID: 753928789}
   - component: {fileID: 753928788}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Invis aWall L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2106,7 +2106,7 @@ Transform:
   m_GameObject: {fileID: 753928786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.093353, y: 81.7, z: 0}
-  m_LocalScale: {x: 0.027441673, y: 9.587375, z: 1}
+  m_LocalScale: {x: 0.11, y: 9.587375, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 861026322}
@@ -2146,7 +2146,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 3.4352663, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2157,7 +2157,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 21.57, y: 17.894253}
+  m_Size: {x: 2.4048333, y: 17.894253}
   m_EdgeRadius: 0
 --- !u!212 &753928790
 SpriteRenderer:
@@ -2253,6 +2253,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 180112274}
     m_Modifications:
+    - target: {fileID: 1686942805177258635, guid: 5fb2d432e4f874240b3ee173e8a7de5c, type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1686942805177258635, guid: 5fb2d432e4f874240b3ee173e8a7de5c, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1686942805177258636, guid: 5fb2d432e4f874240b3ee173e8a7de5c, type: 3}
       propertyPath: m_Size.x
       value: 11.568003
@@ -2295,11 +2303,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1686942805177258637, guid: 5fb2d432e4f874240b3ee173e8a7de5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.4
+      value: -13.43
       objectReference: {fileID: 0}
     - target: {fileID: 1686942805177258637, guid: 5fb2d432e4f874240b3ee173e8a7de5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.73
+      value: -8.82
       objectReference: {fileID: 0}
     - target: {fileID: 1686942805177258637, guid: 5fb2d432e4f874240b3ee173e8a7de5c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3548,7 +3556,7 @@ GameObject:
   - component: {fileID: 1156467937}
   - component: {fileID: 1156467936}
   - component: {fileID: 1156467935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InvisableWall R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4074,7 +4082,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353651339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.52, y: 5.21, z: 0}
+  m_LocalPosition: {x: -11, y: 3.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4646,9 +4654,21 @@ CompositeCollider2D:
   m_EdgeRadius: 0
   m_ColliderPaths:
   - m_Collider: {fileID: 1503822472}
-    m_ColliderPaths: []
+    m_ColliderPaths:
+    - - X: -320000000
+        Y: 160000000
+      - X: -330000000
+        Y: 160000000
+      - X: -330000000
+        Y: 120000000
+      - X: -320000000
+        Y: 120000000
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: -32.00003, y: 12}
+      - {x: -32.00003, y: 16}
+      - {x: -33, y: 15.999971}
+      - {x: -32.999973, y: 12}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1503822471
@@ -4819,7 +4839,7 @@ PrefabInstance:
       objectReference: {fileID: 365790011}
     - target: {fileID: 3878786036993176627, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: _moveSpeed
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993176627, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: _startPoint
@@ -4927,7 +4947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177551, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_Size.y
-      value: 4.4187875
+      value: 6.3647614
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177551, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_Offset.x
@@ -4935,7 +4955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177551, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_Offset.y
-      value: -0.22099918
+      value: 0.7519878
       objectReference: {fileID: 0}
     - target: {fileID: 3878786036993177551, guid: 9d4178bdb2e7b534da8fb7085e6d6a9a, type: 3}
       propertyPath: m_SpriteTilingProperty.border.x
@@ -16176,7 +16196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 804253807925926078, guid: 77ac9b236272b3e4a8bcd06a4a18b2b1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.04
+      value: -21.39
       objectReference: {fileID: 0}
     - target: {fileID: 804253807925926078, guid: 77ac9b236272b3e4a8bcd06a4a18b2b1, type: 3}
       propertyPath: m_LocalPosition.y

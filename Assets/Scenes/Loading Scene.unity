@@ -550,7 +550,7 @@ MonoBehaviour:
   LoadingProgressBar: {fileID: 551249934}
   _progressBarSpeed: 1.3
   _loadCompleteDelay: 1.75
-  _audioAmountToLower: 0.5
+  _audioAmountToLower: 0.55
 --- !u!4 &695956982
 Transform:
   m_ObjectHideFlags: 0

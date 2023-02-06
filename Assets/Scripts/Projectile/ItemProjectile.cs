@@ -25,6 +25,7 @@ public class ItemProjectile : Projectile
         else if(playerHit)
         {
             ItemCollectedEvent?.Invoke();
+            ProjectileDestroyedOnPlayerEvent?.Invoke();
             Destroy(gameObject);
         }
             

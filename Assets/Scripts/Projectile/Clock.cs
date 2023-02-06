@@ -12,7 +12,7 @@ public class Clock : MonoBehaviour, IJumpable
     private bool _isActive;
     private float _startTime;
     private AudioSource _audioSource;
-    private SpriteRenderer _sprite;
+    private Animator _anim;
 
     public bool CanBeJumpedOn
     {
@@ -22,6 +22,7 @@ public class Clock : MonoBehaviour, IJumpable
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+        _anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -45,9 +46,16 @@ public class Clock : MonoBehaviour, IJumpable
             return;
 
         _isActive = false;
-        _startTime = Time.time;
         FindObjectOfType<AudioManager>().PlaySound(_jumpedOnSound, _audioSource, TrackType.Sfx, false);
-        GetComponent<SpriteRenderer>().DOFade(0, _fadeDuration);     
+        StartCoroutine(PlayBreakAnimation());       
+    }
+
+    public IEnumerator PlayBreakAnimation()
+    {
+        _anim.SetTrigger("Break");
+        _startTime = Time.time;
+        yield return new WaitForSeconds(.6f);
+        GetComponent<SpriteRenderer>().DOFade(0, _fadeDuration);
     }
 
 }

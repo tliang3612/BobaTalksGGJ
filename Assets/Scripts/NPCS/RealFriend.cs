@@ -83,9 +83,9 @@ public class RealFriend : MonoBehaviour, IContextable, IInteractable
         {
             Vector2 startPosition = transform.position;
             if (startPosition.x - targetPosition.x < 0)
-                _sprite.flipX = false;
-            else
                 _sprite.flipX = true;
+            else
+                _sprite.flipX = false;
 
             transform.position = Vector2.Lerp(startPosition, targetPosition, _followSpeed * Time.deltaTime);
         }       

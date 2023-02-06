@@ -868,7 +868,7 @@ PrefabInstance:
     - target: {fileID: 3418874621605680993, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
       propertyPath: _musicClip
       value: 
-      objectReference: {fileID: 8300000, guid: 4259d0c084f0112439c3487cceaa5eec, type: 3}
+      objectReference: {fileID: 8300000, guid: 3da3bc83ef27f7d4ca27e72fdd3945df, type: 3}
     - target: {fileID: 3418874621605680994, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -911,6 +911,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3418874621605680994, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418874621605680995, guid: ddfeb41b13a63ea498f366af2c3273eb, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3710,7 +3714,7 @@ MonoBehaviour:
   _dialogueText: {fileID: 2012957885}
   _portrait: {fileID: 196091163}
   _continueIcon: {fileID: 1223334023}
-  _blipToPlay: {fileID: 8300000, guid: e2253d02c7e5f6d4b8e50e3973000fe1, type: 3}
+  _blipToPlay: {fileID: 8300000, guid: d2ab5fbb2fec458468cb6f66d575d110, type: 3}
 --- !u!82 &1999277847
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3722,8 +3726,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_PlayOnAwake: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0

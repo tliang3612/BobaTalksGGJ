@@ -31,6 +31,12 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+		if(!PlayerPrefs.HasKey("Sfx"))
+			AudioSetting.SetTrackVolume(TrackType.Sfx, 2.5f);
+
+		if (!PlayerPrefs.HasKey("Music"))
+			AudioSetting.SetTrackVolume(TrackType.Music, 2.5f);
+
 		AudioSetting.SetTrackVolume(TrackType.Master, AudioSetting.MasterVolume);
 		AudioSetting.SetTrackVolume(TrackType.Sfx, AudioSetting.GetTrackVolume(TrackType.Sfx));
 		AudioSetting.SetTrackVolume(TrackType.Music, AudioSetting.GetTrackVolume(TrackType.Music));

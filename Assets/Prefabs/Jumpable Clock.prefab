@@ -101,8 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _jumpedOnSound: {fileID: 8300000, guid: a58a445332acbba4e81aaa2692671d58, type: 3}
-  _fadeDuration: 1
-  _disappearDuration: 4
+  _fadeDuration: 0.6
+  _disappearDuration: 2
 --- !u!82 &6194597047266503005
 AudioSource:
   m_ObjectHideFlags: 0
@@ -114,8 +114,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -223,7 +223,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6194597047266502999}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 0504305a0b22e80418597644891ce137, type: 2}
   m_CullingMode: 0
