@@ -56,7 +56,6 @@ public class PlayerDashState : PlayerAbilityState
     public override void OnStateEnter()
     {
         base.OnStateEnter();
-        _playerReference.InputController.UseDashInput();
 
         _startTime = Time.time;
     }

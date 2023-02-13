@@ -192,7 +192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 804253807925926078, guid: 77ac9b236272b3e4a8bcd06a4a18b2b1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.88
+      value: -9.74
       objectReference: {fileID: 0}
     - target: {fileID: 804253807925926078, guid: 77ac9b236272b3e4a8bcd06a4a18b2b1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -441,9 +441,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1917903645}
     m_Modifications:
+    - target: {fileID: 4690377872759005999, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 202.2214
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690377872759005999, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 41.110676
+      objectReference: {fileID: 0}
     - target: {fileID: 4690377872759006000, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
       propertyPath: m_Text
-      value: Injuries heal, let your happiness come first.
+      value: I avoided my parents expectations to pursue my passion
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690377872759006000, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4690377872759006000, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4690377873289625514, guid: 3bf22ac1dc03b0e4eb83a3cc8eb82d20, type: 3}
       propertyPath: m_Sprite
@@ -9086,7 +9102,7 @@ MonoBehaviour:
   _projectileSpawnPoint: {fileID: 1690113459}
   _projectileSpeed: 1.7
   _projectileDirection: {x: 0, y: -1}
-  _projectileSpawnRange: {x: 18.29, y: 0}
+  _projectileSpawnRange: {x: 17.28, y: 0}
   _projectileToSpawn: {fileID: 2361626826625171715, guid: 2d2eb4f625491cc418e22b5f63edb661, type: 3}
   _projectileSpawnDelay: 0.45
   _projectileDuration: 0

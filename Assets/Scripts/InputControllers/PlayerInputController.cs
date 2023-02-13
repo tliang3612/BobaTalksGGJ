@@ -67,6 +67,8 @@ public class PlayerInputController : MonoBehaviour
         else
             NormalizedInputY = 0;
 
+        Debug.Log(RawMovementInput.x);
+
     }
     #endregion
 
